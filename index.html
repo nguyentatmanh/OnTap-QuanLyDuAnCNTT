@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Quản Lý Dự Án CNTT - 65 Câu Trắc Nghiệm Chuẩn</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --success: #15803d;
+            --success-bg: #dcfce7;
+            --danger: #b91c1c;
+            --danger-bg: #fee2e2;
+            --slate-bg: #f8fafc;
+            --border-color: #cbd5e1;
+            --text-main: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--slate-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+            color: #fff;
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .toolbar {
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            border-bottom: 2px solid var(--border-color);
+            padding: 12px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .score-box {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-light);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .btn-outline:hover {
+            background-color: #eff6ff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 16px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid var(--primary-light);
+        }
+
+        .card.answered-correct {
+            border-left-color: var(--success);
+        }
+
+        .card.answered-wrong {
+            border-left-color: var(--danger);
+        }
+
+        .q-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #1e293b;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 6px;
+            background-color: #e2e8f0;
+            color: #334155;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.15s;
+            background: #fff;
+        }
+
+        .option-item:hover {
+            background-color: #f1f5f9;
+        }
+
+        .option-item input {
+            margin-top: 4px;
+            margin-right: 10px;
+        }
+
+        .option-item.correct {
+            background-color: var(--success-bg) !important;
+            border-color: var(--success);
+            font-weight: 600;
+            color: #065f46;
+        }
+
+        .option-item.wrong {
+            background-color: var(--danger-bg) !important;
+            border-color: var(--danger);
+            font-weight: 600;
+            color: #991b1b;
+        }
+
+        .explanation {
+            margin-top: 15px;
+            padding: 12px 16px;
+            background-color: #f8fafc;
+            border: 1px dashed #94a3b8;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .explanation strong {
+            color: #0f172a;
+        }
+
+        .citation {
+            display: block;
+            margin-top: 6px;
+            color: #475569;
+            font-style: italic;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Ngân Hàng Trắc Nghiệm Quản Lý Dự Án CNTT</h1>
+        <p>Tài liệu chuẩn hóa ôn tập theo Giáo trình Roger S. Pressman & Slide bài giảng SPM</p>
+    </header>
+
+    <div class="toolbar">
+        <div class="score-box" id="scoreIndicator">Điểm số: 0 / 65 (Đã trả lời: 0)</div>
+        <div class="btn-group">
+            <button class="btn-primary" onclick="showAllAnswers()">Xem toàn bộ giải thích</button>
+            <button class="btn-outline" onclick="resetQuiz()">Làm lại từ đầu</button>
+        </div>
+    </div>
+
+    <div class="container" id="quizContainer"></div>
+
+    <script>
+        const quizData = [
+            {
+                id: 1, tag: "SCRUM",
+                q: "Công việc nào sau đây không phải sự kiện thuộc Scrum?",
+                options: [
+                    { key: "A", text: "Sprint Review" },
+                    { key: "B", text: "Daily standup" },
+                    { key: "C", text: "Sprint Planning" },
+                    { key: "D", text: "Sprint Retrospective" }
+                ],
+                ans: "B",
+                explain: "Trong Scrum Guide chính thức quy định 4 sự kiện chuẩn bên trong một Sprint: Sprint Planning, Daily Scrum, Sprint Review và Sprint Retrospective. 'Daily standup' là thuật ngữ thực tế của Agile thông thường chứ không phải tên gọi chính thức.",
+                source: "Scrum Guide chuẩn & Slide SPM"
+            },
+            {
+                id: 2, tag: "SCRUM",
+                q: "Sản phẩm nào sau đây được bàn giao vào cuối mỗi Sprint?",
+                options: [
+                    { key: "A", text: "Tài liệu kịch bản kiểm thử của Sprint" },
+                    { key: "B", text: "Phiên bản tăng trưởng của phần mềm mức 'Done'" },
+                    { key: "C", text: "Backlog items của Sprint" },
+                    { key: "D", text: "Các bản thiết kế giao diện người dùng User Interfaces" }
+                ],
+                ans: "B",
+                explain: "Mục đích cốt lõi của mỗi Sprint là tạo ra một Increment (Phần tăng trưởng) có khả năng chuyển giao và phải thỏa mãn định nghĩa hoàn thành ('Done').",
+                source: "Scrum Guide & Tổng quan phát triển Agile"
+            },
+            {
+                id: 3, tag: "UML",
+                q: "Quan hệ kết hợp (association) giữa các lớp định nghĩa mối liên quan nào giữa các lớp?",
+                options: [
+                    { key: "A", text: "Tương tác" },
+                    { key: "B", text: "Phụ thuộc" },
+                    { key: "C", text: "Bao gồm" },
+                    { key: "D", text: "Kế thừa" }
+                ],
+                ans: "A",
+                explain: "Quan hệ Association biểu thị mối liên kết cấu trúc và giao tiếp tương tác giữa các đối tượng của các lớp với nhau.",
+                source: "UML Class Diagrams"
+            },
+            {
+                id: 4, tag: "SPM",
+                q: "WBS (Work Breakdown Structure) là một bước trong hoạt động nào?",
+                options: [
+                    { key: "A", text: "Phân tích rủi ro" },
+                    { key: "B", text: "Ước lượng chi phí" },
+                    { key: "C", text: "Xét duyệt dự án" },
+                    { key: "D", text: "Lập kế hoạch" }
+                ],
+                ans: "D",
+                explain: "WBS (Cấu trúc phân rã công việc) là công cụ chủ chốt trong hoạt động lập kế hoạch và lập lịch dự án (Project Planning & Scheduling) để phân nhỏ dự án thành các tác vụ quản lý được.",
+                source: "Pressman Ch. 7, tr. 181 & Slide SPM tr. 71"
+            },
+            {
+                id: 5, tag: "SPM",
+                q: "Sử dụng kỹ thuật nào để ước lượng lịch biểu cho dự án phát triển phần mềm?",
+                options: [
+                    { key: "A", text: "CPM (Critical Path Method)" },
+                    { key: "B", text: "COCOMO Model (Constructive Cost Model)" },
+                    { key: "C", text: "FP (Function Point based Estimation)" },
+                    { key: "D", text: "LOC (Line-Of-Code based Estimation)" }
+                ],
+                ans: "A",
+                explain: "CPM (Phương pháp đường găng) và PERT là các kỹ thuật xây dựng mạng tác vụ và lịch biểu. COCOMO, FP và LOC là các phương pháp ước lượng kích thước, nỗ lực và chi phí.",
+                source: "Pressman Ch. 7, tr. 180–181 & Slide SPM tr. 71"
+            },
+            {
+                id: 6, tag: "SCRUM",
+                q: "Các danh mục cần hoàn thành (items) trong Product Backlog nên được sắp xếp dựa theo tiêu chí nào?",
+                options: [
+                    { key: "A", text: "Sự phức tạp của danh mục cần hoàn thành" },
+                    { key: "B", text: "Giá trị đem lại của danh mục cần hoàn thành" },
+                    { key: "C", text: "Rủi ro liên quan đến danh mục cần hoàn thành" },
+                    { key: "D", text: "Dựa vào sự lựa chọn của đội Scrum" }
+                ],
+                ans: "B",
+                explain: "Product Owner ưu tiên sắp xếp Product Backlog dựa trên giá trị chuyển giao cho người dùng/doanh nghiệp (Business Value) trước.",
+                source: "Scrum Guide chuẩn"
+            },
+            {
+                id: 7, tag: "SCRUM",
+                q: "User story trong Product Backlog cho biết các thông tin gì?",
+                options: [
+                    { key: "A", text: "Yêu cầu của khách hàng là gì" },
+                    { key: "B", text: "Ai sẽ là người sử dụng chức năng" },
+                    { key: "C", text: "Tất cả các đáp án" },
+                    { key: "D", text: "Mục đích của người sử dụng là gì" }
+                ],
+                ans: "C",
+                explain: "Cấu trúc User Story chuẩn: As a [Ai] - I want [Cái gì] - So that [Mục đích gì]. Do đó chứa đầy đủ cả 3 thông tin trên.",
+                source: "Agile Requirements"
+            },
+            {
+                id: 8, tag: "SCRUM",
+                q: "Trong môi trường phát triển phần mềm linh hoạt Agile, nhiệm vụ chính của một tester là gì?",
+                options: [
+                    { key: "A", text: "Tạo ra các kịch bản kiểm thử" },
+                    { key: "B", text: "Tìm bugs" },
+                    { key: "C", text: "Tạo các kịch bản kiểm thử tự động" },
+                    { key: "D", text: "Không có vai trò của Tester trong Scrum" }
+                ],
+                ans: "D",
+                explain: "Trong Scrum, mô hình chỉ định nghĩa 3 vai trò: Product Owner, Scrum Master và Developers. Người làm kiểm thử là thành viên trong nhóm phát triển chung đa chức năng (Cross-functional Developers), không có chức danh riêng lẻ.",
+                source: "Scrum Guide"
+            },
+            {
+                id: 9, tag: "SPM",
+                q: "Thuộc tính nào là quan trọng nhất đối với một phần mềm tốt?",
+                options: [
+                    { key: "A", text: "Dễ sử dụng" },
+                    { key: "B", text: "Bảo trì được" },
+                    { key: "C", text: "Chiếm ít tài nguyên hệ thống" },
+                    { key: "D", text: "Tin cậy" }
+                ],
+                ans: "B",
+                explain: "Khả năng bảo trì (Maintainability) chiếm tới 60-70% toàn bộ chi phí vòng đời phần mềm, là yếu tố mang tính sống còn đối với sản phẩm dài hạn.",
+                source: "Pressman Ch. 4, tr. 96"
+            },
+            {
+                id: 10, tag: "SCRUM",
+                q: "Thành phần đội Scrum bao gồm?",
+                options: [
+                    { key: "A", text: "Scrum Master, Team Leader, Developers" },
+                    { key: "B", text: "Scrum Master, Development Team, Tester" },
+                    { key: "C", text: "Product Stakeholders, Product Owner, Scrum Master" },
+                    { key: "D", text: "Product Owner, Development Team, Scrum Master" }
+                ],
+                ans: "D",
+                explain: "Một Scrum Team hoàn chỉnh bao gồm chính xác 3 bộ phận: Product Owner, Development Team và Scrum Master.",
+                source: "Scrum Framework Guide"
+            },
+            {
+                id: 11, tag: "SPM",
+                q: "Thành phần phần mềm (software component) có thể là?",
+                options: [
+                    { key: "A", text: "Module chương trình" },
+                    { key: "B", text: "Cơ sở dữ liệu" },
+                    { key: "C", text: "Các phần trung gian (middleware)" },
+                    { key: "D", text: "Tất cả các đáp án" }
+                ],
+                ans: "D",
+                explain: "Theo định nghĩa kỹ nghệ phần mềm, một component có thể là code module, thực thể CSDL, hoặc các khối trung gian middleware.",
+                source: "Pressman Ch. 5, tr. 121–122 & Ch. 9"
+            },
+            {
+                id: 12, tag: "SPM",
+                q: "Hoạt động kiểm thử được tiến hành sau bước nào trong tiến trình dự án phát triển phần mềm?",
+                options: [
+                    { key: "A", text: "Đặc tả yêu cầu phần mềm" },
+                    { key: "B", text: "Thiết kế phần mềm" },
+                    { key: "C", text: "Mã hóa phần mềm" },
+                    { key: "D", text: "Tích hợp phần mềm" }
+                ],
+                ans: "C",
+                explain: "Trong tiến trình tuần tự cổ điển (Linear sequential/Waterfall): Analysis -> Design -> Coding -> Testing.",
+                source: "Pressman Ch. 2, tr. 28"
+            },
+            {
+                id: 13, tag: "SPM",
+                q: "Nguyên lý 40-20-40 phân bổ nỗ lực trong quy trình phát triển phần mềm có ý nghĩa nào?",
+                options: [
+                    { key: "A", text: "40% cho phân tích yêu cầu, 20% cho cài đặt, 40% cho bảo trì" },
+                    { key: "B", text: "40% cho phân tích thiết kế, 20% cho cài đặt, 40% cho kiểm thử" },
+                    { key: "C", text: "40% cho lập kế hoạch và phân tích nghiệp vụ, 20% cho thiết kế, 40% cho cài đặt và bảo trì" },
+                    { key: "D", text: "40% phân tích nghiệp vụ, 20% cho thiết kế, 40% cho cài đặt và kiểm thử" }
+                ],
+                ans: "B",
+                explain: "Quy tắc 40-20-40 phân bổ: 40% front-end analysis & design, 20% coding/cài đặt, 40% back-end testing.",
+                source: "Pressman Ch. 7, tr. 172 & Slide SPM tr. 68"
+            },
+            {
+                id: 14, tag: "SCRUM",
+                q: "Hoạt động Scrum Retrospective diễn ra vào thời điểm nào?",
+                options: [
+                    { key: "A", text: "Bất cứ khi nào Scrum Master đề nghị" },
+                    { key: "B", text: "Tại cuối mỗi Sprint" },
+                    { key: "C", text: "Bất cứ khi nào đội Scrum thấy cần" },
+                    { key: "D", text: "Bất cứ khi nào Product Owner yêu cầu" }
+                ],
+                ans: "B",
+                explain: "Sprint Retrospective (Cải tiến Sprint) là sự kiện cuối cùng trước khi đóng Sprint hiện tại.",
+                source: "Scrum Guide"
+            },
+            {
+                id: 15, tag: "SPM",
+                q: "Các loại rủi ro dự án phát triển phần mềm có thể gặp?",
+                options: [
+                    { key: "A", text: "Rủi ro kỹ thuật" },
+                    { key: "B", text: "Rủi ro quản lý" },
+                    { key: "C", text: "Không loại nào" },
+                    { key: "D", text: "Cả rủi ro kỹ thuật, và rủi ro quản lý" }
+                ],
+                ans: "D",
+                explain: "Rủi ro bao gồm rủi ro quản lý dự án (Project risks) và rủi ro kỹ thuật triển khai (Technical risks).",
+                source: "Pressman Ch. 6, tr. 149–150"
+            },
+            {
+                id: 16, tag: "SPM",
+                q: "Kỹ thuật đo trực tiếp phần mềm có thể dựa vào các yếu tố nào sau đây để đo?",
+                options: [
+                    { key: "A", text: "LOC (Line of Code), Tốc độ vận hành, Kích cỡ bộ nhớ, Số khiếm khuyết phát hiện trong một khoảng thời gian nhất định" },
+                    { key: "B", text: "Chỉ dựa trên KLOC (Kilo Line of Code)" },
+                    { key: "C", text: "Dựa trên FP (Function Point)" },
+                    { key: "D", text: "LOC (Line of Code) và FP (Function Point)" }
+                ],
+                ans: "A",
+                explain: "Số đo trực tiếp là những giá trị đo lường vật lý cụ thể: dòng lệnh LOC, bộ nhớ, thời gian chạy, số bug.",
+                source: "Pressman Ch. 4, tr. 89"
+            },
+            {
+                id: 17, tag: "SCRUM",
+                q: "Khi nào một Sprint có thể bị huỷ bỏ?",
+                options: [
+                    { key: "A", text: "Bất cứ khi nào Product Owner tuyên bố" },
+                    { key: "B", text: "Các danh mục cần hoàn thành của Sprint không còn cần nữa (Mục tiêu trở nên lỗi thời)" },
+                    { key: "C", text: "Không thể huỷ bỏ một Sprint" },
+                    { key: "D", text: "Khi các Developers không thể hoàn thành nhiệm vụ" }
+                ],
+                ans: "B",
+                explain: "Sprint chỉ bị hủy khi mục tiêu của nó không còn giá trị với thực tế, do Product Owner quyết định.",
+                source: "Scrum Guide"
+            },
+            {
+                id: 18, tag: "SPM",
+                q: "Kỹ thuật đo gián tiếp phần mềm có thể đưa ra chỉ số phản ánh khía cạnh nào về phần mềm?",
+                options: [
+                    { key: "A", text: "về tính năng, độ phức tạp, chất lượng, tính hiệu quả, độ tin cậy, khả năng bảo trì được" },
+                    { key: "B", text: "Kích cỡ phần mềm" },
+                    { key: "C", text: "Phạm vi phần mềm" },
+                    { key: "D", text: "Quy mô phần mềm" }
+                ],
+                ans: "A",
+                explain: "Số đo gián tiếp thể hiện các phẩm chất trừu tượng như độ tin cậy, bảo trì, chất lượng, hiệu năng.",
+                source: "Pressman Ch. 4, tr. 89"
+            },
+            {
+                id: 19, tag: "SCRUM",
+                q: "Ai là người quyết định nội dung và thứ tự các danh mục trong Product Backlog?",
+                options: [
+                    { key: "A", text: "Scrum Master" },
+                    { key: "B", text: "Product Owner" },
+                    { key: "C", text: "Development Team" },
+                    { key: "D", text: "Scrum Team" }
+                ],
+                ans: "B",
+                explain: "Product Owner chịu trách nhiệm duy nhất và toàn quyền trong việc quản lý và sắp xếp Product Backlog.",
+                source: "Scrum Guide"
+            },
+            {
+                id: 20, tag: "SPM",
+                q: "Một nhiệm vụ cần 20 man-hours để hoàn thành thì đội 2 người mất bao nhiêu giờ để hoàn thành?",
+                options: [
+                    { key: "A", text: "5 giờ" },
+                    { key: "B", text: "4 giờ" },
+                    { key: "C", text: "2 giờ" },
+                    { key: "D", text: "10 giờ" }
+                ],
+                ans: "D",
+                explain: "Thời gian = 20 man-hours / 2 người = 10 giờ.",
+                source: "Nguyên lý ước lượng nỗ lực"
+            },
+            {
+                id: 21, tag: "SCRUM",
+                q: "Nhiệm vụ chính của Scrum Team là gì?",
+                options: [
+                    { key: "A", text: "Thực hiện các cuộc họp để cải tiến quy trình" },
+                    { key: "B", text: "Giám sát và báo cáo các hoạt động của dự án" },
+                    { key: "C", text: "Tạo ra các Product Backlog mới" },
+                    { key: "D", text: "Thực hiện các nhiệm vụ tại Sprint hiện tại và phát triển các Sprint backlog items cho Sprint tiếp theo" }
+                ],
+                ans: "D",
+                explain: "Nhóm tập trung hoàn thành các hạng mục bàn giao trong Sprint và tinh chỉnh cho đợt tiếp theo.",
+                source: "Quy trình làm việc của Scrum"
+            },
+            {
+                id: 22, tag: "SPM",
+                q: "Biểu đồ Gantt hỗ trợ người Quản lý dự án việc gì?",
+                options: [
+                    { key: "A", text: "Giám sát rủi ro dự án" },
+                    { key: "B", text: "Đảm bảo chất lượng sản phẩm phần mềm" },
+                    { key: "C", text: "Theo dõi tiến độ hoàn thành của dự án" },
+                    { key: "D", text: "Không đáp án nào" }
+                ],
+                ans: "C",
+                explain: "Biểu đồ tiến độ Gantt (Timeline chart) dùng để lập và theo dõi trực quan tiến độ các tác vụ theo thời gian.",
+                source: "Pressman Ch. 7, tr. 182 & Slide SPM tr. 72"
+            },
+            {
+                id: 23, tag: "SPM",
+                q: "Cấu trúc dữ liệu cho phần mềm được thiết kế trong giai đoạn nào?",
+                options: [
+                    { key: "A", text: "Thiết kế dữ liệu (Data Design)" },
+                    { key: "B", text: "Thiết kế kiến trúc (Architectural Design)" },
+                    { key: "C", text: "Thiết kế thủ tục (Procedural Design)" },
+                    { key: "D", text: "Thiết kế giao diện (Interface Design)" }
+                ],
+                ans: "A",
+                explain: "Data Design biến đổi mô hình dữ liệu thành các cấu trúc dữ liệu và mô hình CSDL cụ thể.",
+                source: "Pressman Ch. 13 & Ch. 2, tr. 28"
+            },
+            {
+                id: 24, tag: "SCRUM",
+                q: "Nhiệm vụ chính của Scrum Master là gì?",
+                options: [
+                    { key: "A", text: "Hỗ trợ, tổ chức cho các cuộc họp thường ngày hoặc khi cần cho đội Scrum" },
+                    { key: "B", text: "Giúp Product Owners sắp xếp Product Backlog" },
+                    { key: "C", text: "Làm cầu nối giữa Scrum Team và Khách hàng" },
+                    { key: "D", text: "Giám sát việc thực hiện các Sprint Backlog" }
+                ],
+                ans: "A",
+                explain: "Scrum Master là người phục vụ hướng dẫn (Servant Leader), tổ chức hỗ trợ các sự kiện và giải phóng các trở ngại cho nhóm.",
+                source: "Scrum Guide"
+            },
+            {
+                id: 25, tag: "SCRUM",
+                q: "Trong Scrum, khi nào một Sprint kết thúc?",
+                options: [
+                    { key: "A", text: "Khi quãng thời gian cho một Sprint kết thúc" },
+                    { key: "B", text: "Khi tất cả các Sprint Backlog items được hoàn thành" },
+                    { key: "C", text: "Khi Product Owner đề nghị" },
+                    { key: "D", text: "Khi việc kiểm thử kết thúc" }
+                ],
+                ans: "A",
+                explain: "Sprint kết thúc khi hết khung thời gian ấn định (Time-box), không phụ thuộc vào việc đã làm xong hết mọi hạng mục hay chưa.",
+                source: "Nguyên lý Time-boxing trong Scrum"
+            },
+            {
+                id: 26, tag: "SCRUM",
+                q: "Việc gì xảy ra khi tất cả Sprint items không thể hoàn thành?",
+                options: [
+                    { key: "A", text: "Sprint nên được kéo dài thêm thời gian" },
+                    { key: "B", text: "Sprint kết thúc với những Sprint items đã hoàn thành 'done'" },
+                    { key: "C", text: "Sprint nên bị huỷ bỏ" },
+                    { key: "D", text: "Bắt đầu Sprint mới với các items chưa hoàn thành trước" }
+                ],
+                ans: "B",
+                explain: "Thời gian không kéo dài. Đến hạn, Sprint kết thúc với các phần đã 'Done', các việc dở dang quay về Product Backlog.",
+                source: "Scrum Rules"
+            },
+            {
+                id: 27, tag: "SCRUM",
+                q: "Hoạt động nào dưới đây không có giới hạn thời gian?",
+                options: [
+                    { key: "A", text: "Sắp xếp và tinh chỉnh Product Backlog" },
+                    { key: "B", text: "Sprint" },
+                    { key: "C", text: "Daily Scrum" },
+                    { key: "D", text: "Sprint Review" }
+                ],
+                ans: "A",
+                explain: "Product Backlog Refinement là hoạt động liên tục diễn ra trong suốt quá trình phát triển, không phải một sự kiện đóng khung cố định.",
+                source: "Scrum Guide"
+            },
+            {
+                id: 28, tag: "SCRUM",
+                q: "Thời gian tối đa hợp lý cho một Sprint là bao nhiêu tuần?",
+                options: [
+                    { key: "A", text: "4 tuần" },
+                    { key: "B", text: "1 tuần" },
+                    { key: "C", text: "2 tuần" },
+                    { key: "D", text: "6 tuần" }
+                ],
+                ans: "A",
+                explain: "Một Sprint thường kéo dài từ 1 đến 4 tuần (tối đa 1 tháng).",
+                source: "Scrum Time-boxing rules"
+            },
+            {
+                id: 29, tag: "SPM",
+                q: "Trước khi dự án bắt đầu, người quản lý dự án phải ước lượng những gì?",
+                options: [
+                    { key: "A", text: "Các công việc cần thực hiện, các nguồn lực cần có, thời gian bắt đầu và kết thúc" },
+                    { key: "B", text: "Rủi ro có thể gặp phải" },
+                    { key: "C", text: "Kích cỡ phần mềm" },
+                    { key: "D", text: "Tất cả các đáp án" }
+                ],
+                ans: "D",
+                explain: "Quản trị viên cần ước lượng toàn diện công việc, thời gian biểu, nhân sự, tài nguyên và dự báo rủi ro.",
+                source: "Pressman Ch. 5, tr. 113 & Slide SPM tr. 47"
+            },
+            {
+                id: 30, tag: "SPM",
+                q: "Kỹ thuật kiểm thử nào được Developer dùng để kiểm thử mã nguồn?",
+                options: [
+                    { key: "A", text: "Kiểm thử đơn vị" },
+                    { key: "B", text: "Kiểm thử tích hợp" },
+                    { key: "C", text: "Kiểm thử tích hợp và kiểm thử đơn vị" },
+                    { key: "D", text: "Không đáp án nào đúng" }
+                ],
+                ans: "A",
+                explain: "Developer là người trực tiếp viết mã và chịu trách nhiệm chính về Unit Testing (Kiểm thử đơn vị).",
+                source: "Pressman Ch. 18"
+            },
+            {
+                id: 31, tag: "SPM",
+                q: "Câu hỏi nào không tồn tại trong nguyên lý W5HH?",
+                options: [
+                    { key: "A", text: "Why is the system being developed ?" },
+                    { key: "B", text: "What will be done, by When?" },
+                    { key: "C", text: "Where are the stakeholders organizationally located?" },
+                    { key: "D", text: "Who is responsible for a function?" }
+                ],
+                ans: "C",
+                explain: "Nguyên văn W5HH của Barry Boehm: 'Where are they organizationally located?' (họ ở đây là những người chịu trách nhiệm đã nêu ở câu hỏi trước, không dùng stakeholders).",
+                source: "Pressman Ch. 3, tr. 73 & Slide SPM tr. 19"
+            },
+            {
+                id: 32, tag: "SPM",
+                q: "Quản lý dự án phần mềm hiệu quả tập trung vào bốn yếu tố (4P) bao gồm: People, Product, Project, và ...?",
+                options: [
+                    { key: "A", text: "Process" },
+                    { key: "B", text: "Profit" },
+                    { key: "C", text: "Plan" },
+                    { key: "D", text: "Participants" }
+                ],
+                ans: "A",
+                explain: "Phổ 4Ps bao gồm: People, Product, Process, và Project.",
+                source: "Pressman Ch. 3, tr. 56 & Slide SPM tr. 5"
+            },
+            {
+                id: 33, tag: "SPM",
+                q: "BA có thể sử dụng các prototype ở những dạng nào dưới đây làm phương tiện trao đổi với khách hàng để làm rõ yêu cầu chức năng phần mềm?",
+                options: [
+                    { key: "A", text: "Mô hình trên giấy; Mô hình giao diện trên PC; Phần mềm cài đặt một phần các chức năng" },
+                    { key: "B", text: "Mô hình trên giấy; Phần mềm cài đặt một tập con các chức năng; Chương trình đã có thực hiện được một phần hoặc các chức năng mong muốn nhưng cần hoàn thiện thêm" },
+                    { key: "C", text: "Mô hình trên giấy; Mô hình giao diện trên PC; Chương trình cài đặt một tập con các chức năng; Phần mềm đã có" },
+                    { key: "D", text: "Tất cả các đáp án đều đúng" }
+                ],
+                ans: "D",
+                explain: "Mẫu thử có thể từ bản vẽ thô sơ trên giấy đến các mockup UI phần mềm hoặc bản code thu nhỏ.",
+                source: "Pressman Ch. 11, tr. 289–291"
+            },
+            {
+                id: 34, tag: "SPM",
+                q: "Các nguồn lực cần Người quản lý dự án phần mềm quan tâm bao gồm: Con người, Công cụ phần cứng-phần mềm, và ...?",
+                options: [
+                    { key: "A", text: "Người dùng cuối" },
+                    { key: "B", text: "Kinh phí" },
+                    { key: "C", text: "Các thành phần phần mềm dùng lại" },
+                    { key: "D", text: "Nguồn vốn" }
+                ],
+                ans: "C",
+                explain: "3 nhóm tài nguyên dự án (Project Resources): People, Environmental resources (phần cứng/phần mềm), và Reusable software components.",
+                source: "Pressman Ch. 5, tr. 120–121"
+            },
+            {
+                id: 35, tag: "UML",
+                q: "Use case A có quan hệ «extend» với use case B có nghĩa là?",
+                options: [
+                    { key: "A", text: "A cần có các hành vi trong B để hoàn thiện" },
+                    { key: "B", text: "A có thể sử dụng các hành vi trong B như một lựa chọn để hoàn thiện" },
+                    { key: "C", text: "A bao gồm các hành vi của B" },
+                    { key: "D", text: "A không thể hoàn thiện nếu thiếu B" }
+                ],
+                ans: "B",
+                explain: "Quan hệ «extend» thể hiện hành vi mở rộng tùy chọn hoặc có điều kiện.",
+                source: "Chuẩn UML Use Case Diagrams"
+            },
+            {
+                id: 36, tag: "SPM",
+                q: "Số lượng người cần có đối với một dự án phần mềm chỉ xác định được sau khi?",
+                options: [
+                    { key: "A", text: "Có ước lượng về rủi ro dự án" },
+                    { key: "B", text: "Có ước lượng về thời gian của dự án" },
+                    { key: "C", text: "Có ước lượng về công sức phát triển" },
+                    { key: "D", text: "Có ước lượng về chi phí dự án" }
+                ],
+                ans: "C",
+                explain: "Số lượng nhân sự chỉ tính toán được khi đã ước lượng được tổng nỗ lực công sức (development effort, person-months).",
+                source: "Pressman Ch. 5, tr. 121"
+            },
+            {
+                id: 37, tag: "UML",
+                q: "Biểu đồ trường hợp sử dụng (Use case diagram) biểu diễn khía cạnh nào của hệ thống?",
+                options: [
+                    { key: "A", text: "Hành vi hệ thống" },
+                    { key: "B", text: "Cấu trúc tĩnh của hệ thống" },
+                    { key: "C", text: "Kiến trúc của hệ thống" },
+                    { key: "D", text: "Yêu cầu chức năng của hệ thống" }
+                ],
+                ans: "A",
+                explain: "Use Case Diagram thuộc nhóm biểu đồ hành vi (Behavioral Diagram) trong chuẩn UML.",
+                source: "UML Specification"
+            },
+            {
+                id: 38, tag: "SPM",
+                q: "DRE được xác định bằng: DRE = E/(E+D). Giá trị lý tưởng của DRE là bao nhiêu?",
+                options: [
+                    { key: "A", text: "0,1" },
+                    { key: "B", text: "0,5" },
+                    { key: "C", text: "0" },
+                    { key: "D", text: "1" }
+                ],
+                ans: "D",
+                explain: "Giá trị lý tưởng là 1 khi số lỗi sau bàn giao D = 0 (tất cả lỗi đều được phát hiện và loại bỏ trước khi chuyển giao).",
+                source: "Pressman Ch. 4, tr. 98 & Slide SPM tr. 46"
+            },
+            {
+                id: 39, tag: "SPM",
+                q: "Việc đo lường sản phẩm phần mềm được tiến hành khi nào?",
+                options: [
+                    { key: "A", text: "Trước khi lập kế hoạch phần mềm" },
+                    { key: "B", text: "Trước khi phân tích yêu cầu phần mềm" },
+                    { key: "C", text: "Sau khi xây dựng xong phần mềm" },
+                    { key: "D", text: "Trước khi cài đặt phần mềm" }
+                ],
+                ans: "C",
+                explain: "Các chỉ số đo lường trực tiếp của sản phẩm (LOC, dung lượng, số lỗi thực tế) chỉ có thể thu thập khi phần mềm đã hình thành.",
+                source: "Pressman Ch. 4, tr. 89"
+            },
+            {
+                id: 40, tag: "SPM",
+                q: "Thứ tự các bước trong một dự án phát triển phần mềm cổ điển?",
+                options: [
+                    { key: "A", text: "Phân tích yêu cầu hệ thống và phần mềm; Lập kế hoạch và ước lượng dự án; Thiết kế cấu trúc dữ liệu, kiến trúc chương trình, thủ tục, giao diện; Mã hóa; Kiểm thử; Bảo trì." },
+                    { key: "B", text: "Lập kế hoạch và ước lượng dự án; Phân tích yêu cầu hệ thống và phần mềm; Thiết kế cấu trúc dữ liệu, kiến trúc chương trình, thủ tục, giao diện; Mã hóa; Kiểm thử; Bảo trì." },
+                    { key: "C", text: "Phân tích yêu cầu hệ thống và phần mềm; Lập kế hoạch và ước lượng dự án; Thiết kế cấu trúc dữ liệu, kiến trúc chương trình, thủ tục, giao diện; Mã hóa; Bảo trì; Kiểm thử." },
+                    { key: "D", text: "Lập kế hoạch và ước lượng dự án; Phân tích yêu cầu hệ thống và phần mềm; Thiết kế cấu trúc dữ liệu, kiến trúc chương trình, thủ tục, giao diện; Kiểm thử; Mã hóa; Bảo trì." }
+                ],
+                ans: "B",
+                explain: "Tiến trình chuẩn: Planning -> Analysis -> Design -> Coding -> Testing -> Maintenance.",
+                source: "Pressman Ch. 2, tr. 28"
+            },
+            {
+                id: 41, tag: "SPM",
+                q: "Số lượng rủi ro cần theo dõi?",
+                options: [
+                    { key: "A", text: "Top 20 rủi ro dự án" },
+                    { key: "B", text: "Top 10 rủi ro của dự án" },
+                    { key: "C", text: "Top 5 rủi ro dự án" },
+                    { key: "D", text: "Top 15 rủi ro dự án" }
+                ],
+                ans: "B",
+                explain: "Nguyên tắc thực hành sống còn (Airlie Council): Luôn tập trung theo dõi Top 10 rủi ro lớn nhất.",
+                source: "Pressman Ch. 3, tr. 74 & Slide SPM tr. 21"
+            },
+            {
+                id: 42, tag: "SPM",
+                q: "Các khía cạnh quan trọng cần theo dõi đối với một rủi ro dự án?",
+                options: [
+                    { key: "A", text: "Tác nhân và nguồn gốc" },
+                    { key: "B", text: "Không đáp án nào đúng" },
+                    { key: "C", text: "Thời điểm và thời lượng xảy ra" },
+                    { key: "D", text: "Khả năng xảy ra và mức độ gây thiệt hại" }
+                ],
+                ans: "D",
+                explain: "Mức độ phơi nhiễm rủi ro (Risk Exposure) phụ thuộc vào 2 yếu tố: Xác suất xảy ra (Probability) và Thiệt hại (Impact/Cost).",
+                source: "Pressman Ch. 6, tr. 149–153"
+            },
+            {
+                id: 43, tag: "SPM",
+                q: "Khái niệm 'constraints' trong đặc tả yêu cầu phần mềm có nghĩa gì?",
+                options: [
+                    { key: "A", text: "Các dịch vụ mà hệ thống phải cung cấp" },
+                    { key: "B", text: "Các ràng buộc mà hệ thống phải tuân theo" },
+                    { key: "C", text: "Không đáp án nào đúng" },
+                    { key: "D", text: "Các dịch vụ mà hệ thống phải cung cấp và các ràng buộc mà hệ thống phải tuân theo" }
+                ],
+                ans: "B",
+                explain: "Constraints là các giới hạn, ràng buộc về phần cứng, môi trường hay công nghệ mà giải pháp phải tuân thủ.",
+                source: "Pressman Ch. 5, tr. 116"
+            },
+            {
+                id: 44, tag: "SPM",
+                q: "Danh sách các dịch vụ mà hệ thống phải giải quyết, các ràng buộc mà hệ thống phải tuân theo, được mô tả chi tiết trong tài liệu nào sau đây?",
+                options: [
+                    { key: "A", text: "Bản đặc tả hệ thống" },
+                    { key: "B", text: "Bản ước lượng kế hoạch dự án" },
+                    { key: "C", text: "Bản thiết kế chi tiết" },
+                    { key: "D", text: "Bản đặc tả yêu cầu phần mềm" }
+                ],
+                ans: "D",
+                explain: "Bản đặc tả yêu cầu phần mềm (SRS - Software Requirements Specification) quy định mọi chức năng và ràng buộc.",
+                source: "Pressman Ch. 11, tr. 299"
+            },
+            {
+                id: 45, tag: "SPM",
+                q: "Các loại hoạt động trong giai đoạn bảo trì phần mềm?",
+                options: [
+                    { key: "A", text: "Phân tích hệ thống; Lập kế hoạch phần mềm; Phân tích yêu cầu phần mềm" },
+                    { key: "B", text: "Thiết kế phần mềm; Mã hóa; Kiểm thử phần mềm" },
+                    { key: "C", text: "Sửa đổi; Thích nghi hóa; Nâng cấp" },
+                    { key: "D", text: "Mã hóa; Kiểm thử; Bảo trì" }
+                ],
+                ans: "C",
+                explain: "3 hình thái bảo trì chính gồm: Correction (Sửa đổi), Adaptation (Thích nghi hóa) và Enhancement (Nâng cấp/Hoàn thiện).",
+                source: "Pressman Ch. 4, tr. 96 & Ch. 30, tr. 804"
+            },
+            {
+                id: 46, tag: "SPM",
+                q: "Các hoạt động kỹ thuật trong giai đoạn đầu của dự án phần mềm?",
+                options: [
+                    { key: "A", text: "Phân tích hệ thống; Lập kế hoạch phần mềm; Phân tích yêu cầu phần mềm" },
+                    { key: "B", text: "Thiết kế phần mềm; Mã hóa; Kiểm thử phần mềm" },
+                    { key: "C", text: "Sửa đổi; Thích nghi hóa; Nâng cấp" },
+                    { key: "D", text: "Mã hóa; Kiểm thử; Bảo trì" }
+                ],
+                ans: "A",
+                explain: "Giai đoạn khởi đầu (Front-end activities) tập trung nghiên cứu bối cảnh hệ thống, lập kế hoạch và phân tích yêu cầu.",
+                source: "Pressman Ch. 2, tr. 28"
+            },
+            {
+                id: 47, tag: "SPM",
+                q: "Work product của hoạt động phân tích nghiệp vụ là gì?",
+                options: [
+                    { key: "A", text: "Bản đặc tả hệ thống" },
+                    { key: "B", text: "Bản thiết kế chi tiết" },
+                    { key: "C", text: "Bản ước lượng kế hoạch phần mềm" },
+                    { key: "D", text: "Bản đặc tả yêu cầu phần mềm" }
+                ],
+                ans: "D",
+                explain: "Kết quả của phân tích nghiệp vụ và yêu cầu là bản SRS (Software Requirements Specification).",
+                source: "Pressman Ch. 11, tr. 299"
+            },
+            {
+                id: 48, tag: "SPM",
+                q: "Khái niệm 'Off-the-shelf components' có nghĩa là gì?",
+                options: [
+                    { key: "A", text: "Các thành phần phần mềm sẵn có nhưng đội dự án hiểu không đầy đủ" },
+                    { key: "B", text: "Các thành phần phần mềm mới cần phát triển" },
+                    { key: "C", text: "Các thành phần phần mềm sẵn có mà đội dự án hiểu rõ" },
+                    { key: "D", text: "Các thành phần phần mềm sẵn có do bên thứ 3 phát triển" }
+                ],
+                ans: "D",
+                explain: "Off-the-shelf (hay COTS) là các thành phần thương mại có sẵn do bên thứ ba sản xuất có thể dùng lại ngay.",
+                source: "Pressman Ch. 5, tr. 121"
+            },
+            {
+                id: 49, tag: "SPM",
+                q: "Thực hiện các bước kỹ thuật nào để phát triển phần mềm quy mô lớn?",
+                options: [
+                    { key: "A", text: "Lập kế hoạch; Phân tích rủi ro; Kỹ nghệ; Đánh giá khách hàng" },
+                    { key: "B", text: "Phân tích yêu cầu; Phân tích rủi ro; Kỹ nghệ; Đánh giá khách hàng" },
+                    { key: "C", text: "Xác định mục tiêu; Phân tích yêu cầu; Đánh giá khách hàng; Kỹ nghệ" },
+                    { key: "D", text: "Phân tích yêu cầu; Ước lượng chi phí; Kỹ nghệ; Đánh giá khách hàng" }
+                ],
+                ans: "A",
+                explain: "Mô hình xoắn ốc (Spiral Model) chuyên dùng cho các dự án lớn, bao gồm các vùng: Planning, Risk analysis, Engineering, Customer evaluation.",
+                source: "Pressman Ch. 2, tr. 36 & Slide SPM tr. 15"
+            },
+            {
+                id: 50, tag: "SPM",
+                q: "Các thuộc tính nào của rủi ro dự án phần mềm?",
+                options: [
+                    { key: "A", text: "Tính chắc chắn và không gây thiệt hại khi xảy ra" },
+                    { key: "B", text: "Tính không chắc chắn và gây thiệt hại khi xảy ra" },
+                    { key: "C", text: "Tính linh hoạt và không kiểm soát được" },
+                    { key: "D", text: "Không đáp án nào đúng" }
+                ],
+                ans: "B",
+                explain: "Rủi ro luôn có 2 đặc tính gốc: Uncertainty (tính bất định, không chắc chắn) và Loss (gây ra mất mát, thiệt hại).",
+                source: "Pressman Ch. 6, tr. 145"
+            },
+            {
+                id: 51, tag: "UML",
+                q: "Biểu đồ tuần tự (Sequence diagram) biểu diễn khía cạnh nào của hệ thống?",
+                options: [
+                    { key: "A", text: "Hành vi của hệ thống" },
+                    { key: "B", text: "Cấu trúc tĩnh của hệ thống" },
+                    { key: "C", text: "Thành phần kiến trúc của hệ thống" },
+                    { key: "D", text: "Trạng thái của hệ thống" }
+                ],
+                ans: "A",
+                explain: "Sequence diagram là biểu đồ tương tác thể hiện hành vi động của hệ thống theo chuỗi thời gian.",
+                source: "UML Interaction Diagrams"
+            },
+            {
+                id: 52, tag: "UML",
+                q: "Phát biểu nào sai trong số các phát biểu về tác nhân (actor) của hệ thống?",
+                options: [
+                    { key: "A", text: "Tác nhân của một hệ thống luôn là con người" },
+                    { key: "B", text: "Một phần mềm khác có thể là một tác nhân của hệ thống" },
+                    { key: "C", text: "Một thiết bị phần cứng có thể là tác nhân của hệ thống" },
+                    { key: "D", text: "Các tác nhân được phân biệt theo vai trò khi tham gia hệ thống" }
+                ],
+                ans: "A",
+                explain: "Actor có thể là con người, thiết bị ngoại vi hoặc các phần mềm hệ thống khác tương tác với ứng dụng.",
+                source: "UML Use Case Specifications"
+            },
+            {
+                id: 53, tag: "UML",
+                q: "Biểu đồ lớp (Class diagram) biểu diễn khía cạnh nào của hệ thống?",
+                options: [
+                    { key: "A", text: "Các ràng buộc phi chức năng đối với hệ thống" },
+                    { key: "B", text: "Cấu trúc tĩnh của hệ thống" },
+                    { key: "C", text: "Sự cộng tác giữa các phần tử trong hệ thống" },
+                    { key: "D", text: "Sự tương tác của các phần tử hệ thống theo trình tự thời gian" }
+                ],
+                ans: "B",
+                explain: "Class diagram biểu diễn cấu trúc tĩnh gồm các lớp, thuộc tính, phương thức và quan hệ.",
+                source: "UML Structural Diagrams"
+            },
+            {
+                id: 54, tag: "SPM",
+                q: "Các Mô hình phát triển phần mềm có quan hệ với nhau như thế nào?",
+                options: [
+                    { key: "A", text: "Bổ sung cho nhau" },
+                    { key: "B", text: "Độc lập với nhau" },
+                    { key: "C", text: "Độc lập với nhau nhưng có thể kết hợp" },
+                    { key: "D", text: "Mâu thuẫn với nhau" }
+                ],
+                ans: "C",
+                explain: "Mỗi mô hình có phương pháp luận độc lập nhưng trên thực tế dự án có thể kết hợp linh hoạt các mô hình với nhau.",
+                source: "Pressman Ch. 2 & Ch. 7, tr. 177"
+            },
+            {
+                id: 55, tag: "SPM",
+                q: "Mô hình nào dưới đây phù hợp với tư tưởng phát triển phần mềm linh hoạt Agile và có thể áp dụng trong quy trình SCRUM?",
+                options: [
+                    { key: "A", text: "Mô hình thác nước (Water Fall Model)" },
+                    { key: "B", text: "Mô hình bản mẫu (Prototyping Model)" },
+                    { key: "C", text: "Mô hình áp dụng kỹ thuật thế hệ thứ tư (4GT Techniques)" },
+                    { key: "D", text: "Mô hình RAD (Rapid Application Development Model)" }
+                ],
+                ans: "B",
+                explain: "Mô hình bản mẫu (Prototyping) lặp đi lặp lại để lấy phản hồi của người dùng, rất đồng nhất với triết lý Agile/Scrum.",
+                source: "Pressman Ch. 2, tr. 30–32"
+            },
+            {
+                id: 56, tag: "SPM",
+                q: "Loại tài nguyên nào cần ước lượng cho dự án phần mềm?",
+                options: [
+                    { key: "A", text: "Con người" },
+                    { key: "B", text: "Thành phần phần mềm dùng lại" },
+                    { key: "C", text: "Công cụ phần cứng và phần mềm" },
+                    { key: "D", text: "Tất cả các đáp án đều đúng" }
+                ],
+                ans: "D",
+                explain: "3 nguồn tài nguyên chính cần ước lượng: People, Reusable components, Hardware/Software tools.",
+                source: "Pressman Ch. 5, tr. 120–121, Hình 5.2"
+            },
+            {
+                id: 57, tag: "SPM",
+                q: "Thông tin nào không thuộc nội dung Bảng rủi ro dự án?",
+                options: [
+                    { key: "A", text: "Tên rủi ro" },
+                    { key: "B", text: "Loại rủi ro" },
+                    { key: "C", text: "Khả năng xảy ra" },
+                    { key: "D", text: "Chi phí khắc phục thiệt hại khi rủi ro xảy ra" }
+                ],
+                ans: "D",
+                explain: "Risk Table chỉ ghi: Risk, Category, Probability, và Impact (1-4). Chi phí chi tiết nằm ở bản kế hoạch ngân sách dự phòng riêng.",
+                source: "Pressman Ch. 6, tr. 151, Hình 6.2"
+            },
+            {
+                id: 58, tag: "SPM",
+                q: "Yếu tố nào không thuộc tập nhiệm vụ (task set) trong dự án phần mềm?",
+                options: [
+                    { key: "A", text: "Tập hợp các nhiệm vụ kỹ nghệ hoá phần mềm" },
+                    { key: "B", text: "Các cột mốc cần đạt được" },
+                    { key: "C", text: "Các phiên bản phần mềm cần bàn giao" },
+                    { key: "D", text: "Các hoạt động kỹ thuật để giảm thiểu rủi ro" }
+                ],
+                ans: "D",
+                explain: "Một task set bao gồm: Work tasks, Milestones, và Deliverables/work products. Giảm thiểu rủi ro thuộc về kế hoạch RMMM riêng.",
+                source: "Pressman Ch. 7, tr. 172 & Slide SPM tr. 71"
+            },
+            {
+                id: 59, tag: "SPM",
+                q: "Rủi ro dự án được ước lượng theo các tiêu chí nào?",
+                options: [
+                    { key: "A", text: "Theo khả năng xảy ra và mức độ thiệt hại khi rủi ro xảy ra" },
+                    { key: "B", text: "Theo chi phí cho các hoạt động ngăn chặn và giảm thiểu rủi ro" },
+                    { key: "C", text: "Theo nỗ lực cho hoạt động kiểm soát rủi ro" },
+                    { key: "D", text: "Theo phân loại các rủi ro có thể xảy ra đối với một dự án phần mềm" }
+                ],
+                ans: "A",
+                explain: "Ước lượng rủi ro lượng hóa dựa trên: Probability of occurrence & Impact/Damage.",
+                source: "Pressman Ch. 6, tr. 149–153"
+            },
+            {
+                id: 60, tag: "SPM",
+                q: "Lập lịch (project scheduling) trong quản lý dự án phần mềm là hoạt động gì?",
+                options: [
+                    { key: "A", text: "Ước lượng nỗ lực và thời gian hoàn thành dự án" },
+                    { key: "B", text: "Phân rã chức năng hệ thống và ước lượng chi phí dự án" },
+                    { key: "C", text: "Xác định các tài nguyên và quy trình thực hiện dự án" },
+                    { key: "D", text: "Cấp phát nhân lực và thời gian biểu cho các hoạt động kỹ nghệ" }
+                ],
+                ans: "D",
+                explain: "Lập lịch là quá trình phân phối nỗ lực ước tính và gán nhân sự, thời gian cụ thể cho từng tác vụ kỹ thuật.",
+                source: "Pressman Ch. 7, tr. 169 & Slide SPM tr. 68"
+            },
+            {
+                id: 61, tag: "SPM",
+                q: "Hoạt động nào sau đây không thuộc nhiệm vụ lập kế hoạch dự án phần mềm?",
+                options: [
+                    { key: "A", text: "Xác định và phân tích nghiệp vụ của hệ thống" },
+                    { key: "B", text: "Xác định các rủi ro và kỹ thuật giảm thiểu rủi ro dự án" },
+                    { key: "C", text: "Xác định chi phí và lịch biểu dự án" },
+                    { key: "D", text: "Xác định phạm vị dự án và các tài nguyên dự án" }
+                ],
+                ans: "A",
+                explain: "Xác định và phân tích nghiệp vụ thuộc về pha Kỹ nghệ yêu cầu (Requirements Engineering), không thuộc giai đoạn lập kế hoạch dự án.",
+                source: "Pressman Ch. 5, tr. 113–115 & Slide SPM tr. 76"
+            },
+            {
+                id: 62, tag: "SPM",
+                q: "Loại tài nguyên nào không thuộc loại thành phần phần mềm dùng lại?",
+                options: [
+                    { key: "A", text: "Thành phần phần mềm do bên thứ 3 cung cấp trong dự án quá khứ" },
+                    { key: "B", text: "Thành phần phần mềm trong dự án quá khứ" },
+                    { key: "C", text: "Thành phần phần mềm được tạo mới cho dự án hiện tại" },
+                    { key: "D", text: "Phần mềm công cụ (software tools)" }
+                ],
+                ans: "D",
+                explain: "Software tools (CASE tools, IDEs, compiler) được xếp vào tài nguyên môi trường (Environmental resources), không phải thành phần tái sử dụng.",
+                source: "Pressman Ch. 5, tr. 121–122"
+            },
+            {
+                id: 63, tag: "SPM",
+                q: "Hoạt động nào sau đây không thuộc hoạt động theo dõi giám sát dự án?",
+                options: [
+                    { key: "A", text: "Tiến hành các cuộc họp định kỳ để thành viên đội dự án có thể báo tiến độ và các vấn đề gặp phải" },
+                    { key: "B", text: "Xác định xem các cột mốc dự án có đạt được theo đúng lịch biểu hay không" },
+                    { key: "C", text: "Phân rã các nhiệm vụ và lập lịch dự án" },
+                    { key: "D", text: "So sánh ngày bắt đầu dự kiến và ngày bắt đầu thực tế đối với từng nhiệm vụ trong bảng dự án" }
+                ],
+                ans: "C",
+                explain: "Phân rã nhiệm vụ và lập lịch là công việc thuộc pha Lập kế hoạch (Planning), không phải giám sát (Tracking).",
+                source: "Pressman Ch. 7, tr. 185 & Slide SPM tr. 74"
+            },
+            {
+                id: 64, tag: "SPM",
+                q: "Vòng đời phần mềm trải qua các giai đoạn từ lúc hình thành đến khi bị huỷ bỏ, các giai đoạn đó là gì?",
+                options: [
+                    { key: "A", text: "Giai đoạn thiết kế, giai đoạn cài đặt, giai đoạn kiểm thử" },
+                    { key: "B", text: "Giai đoạn xác định, giai đoạn phát triển, giai đoạn hỗ trợ" },
+                    { key: "C", text: "Giai đoạn nghiên cứu khả thi, giai đoạn phân tích, giai đoạn triển khai" },
+                    { key: "D", text: "Giai đoạn định nghĩa, giai đoạn thiết kế, giai đoạn thực thi" }
+                ],
+                ans: "B",
+                explain: "3 pha cốt lõi của vòng đời phần mềm: Definition, Development, và Support.",
+                source: "Pressman Ch. 2, tr. 23 & Ch. 3, tr. 74"
+            },
+            {
+                id: 65, tag: "SPM",
+                q: "Thông tin nào không thuộc Bảng dự án?",
+                options: [
+                    { key: "A", text: "Tập các nhiệm vụ và nhiệm vụ thuộc cấp" },
+                    { key: "B", text: "Chi phí cho từng nhiệm vụ" },
+                    { key: "C", text: "Nỗ lực (person-day) cho từng nhiệm vụ" },
+                    { key: "D", text: "Tên người thực hiện nhiệm vụ" }
+                ],
+                ans: "B",
+                explain: "Bảng tiến độ dự án (Project Table) liệt kê tác vụ, ngày bắt đầu/kết thúc, nỗ lực (person-days) và người thực hiện. Chi phí được quản lý riêng trong bảng ngân sách tài chính.",
+                source: "Pressman Ch. 7, tr. 184, Hình 7.5 & Slide SPM tr. 73"
+            }
+        ];
+
+        let userAnswers = {};
+
+        function renderQuiz() {
+            const container = document.getElementById("quizContainer");
+            container.innerHTML = "";
+
+            quizData.forEach((item, index) => {
+                const card = document.createElement("div");
+                card.className = "card";
+                card.id = `qCard_${item.id}`;
+
+                let optionsHtml = item.options.map(opt => `
+      <label class="option-item" id="opt_${item.id}_${opt.key}">
+        <input type="radio" name="question_${item.id}" value="${opt.key}" onchange="selectAnswer(${item.id}, '${opt.key}')">
+        <span><strong>${opt.key}.</strong> ${opt.text}</span>
+      </label>
+    `).join("");
+
+                card.innerHTML = `
+      <div class="q-title">
+        <span class="badge">${item.tag}</span>
+        <span>Câu ${item.id}: ${item.q}</span>
+      </div>
+      <div class="options">
+        ${optionsHtml}
+      </div>
+      <div class="explanation" id="explain_${item.id}">
+        <strong>Đáp án chính xác: ${item.ans}</strong><br>
+        <span>${item.explain}</span>
+        <span class="citation">Nguồn: ${item.source}</span>
+      </div>
+    `;
+                container.appendChild(card);
+            });
+        }
+
+        function selectAnswer(qid, selectedKey) {
+            userAnswers[qid] = selectedKey;
+            const item = quizData.find(q => q.id === qid);
+            const card = document.getElementById(`qCard_${qid}`);
+            const explainBox = document.getElementById(`explain_${qid}`);
+
+            // Reset style của các options
+            item.options.forEach(opt => {
+                const el = document.getElementById(`opt_${qid}_${opt.key}`);
+                el.classList.remove("correct", "wrong");
+            });
+
+            if (selectedKey === item.ans) {
+                card.classList.remove("answered-wrong");
+                card.classList.add("answered-correct");
+                document.getElementById(`opt_${qid}_${selectedKey}`).classList.add("correct");
+            } else {
+                card.classList.remove("answered-correct");
+                card.classList.add("answered-wrong");
+                document.getElementById(`opt_${qid}_${selectedKey}`).classList.add("wrong");
+                document.getElementById(`opt_${qid}_${item.ans}`).classList.add("correct");
+            }
+
+            explainBox.style.display = "block";
+            updateScore();
+        }
+
+        function updateScore() {
+            let score = 0;
+            let answeredCount = Object.keys(userAnswers).length;
+
+            quizData.forEach(item => {
+                if (userAnswers[item.id] === item.ans) {
+                    score++;
+                }
+            });
+
+            document.getElementById("scoreIndicator").innerText = `Điểm số: ${score} / ${quizData.length} (Đã trả lời: ${answeredCount})`;
+        }
+
+        function showAllAnswers() {
+            quizData.forEach(item => {
+                const explainBox = document.getElementById(`explain_${item.id}`);
+                explainBox.style.display = "block";
+                document.getElementById(`opt_${item.id}_${item.ans}`).classList.add("correct");
+            });
+        }
+
+        function resetQuiz() {
+            userAnswers = {};
+            renderQuiz();
+            updateScore();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Khởi tạo hiển thị bài ôn tập
+        renderQuiz();
+    </script>
+</body>
+
+</html>

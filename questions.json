@@ -1,0 +1,2752 @@
+[
+    {
+        "id": 1,
+        "topic": "SCRUM",
+        "question": "Công việc nào sau đây không phải sự kiện thuộc Scrum?",
+        "examPage": 1,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Sprint Review"
+            },
+            {
+                "letter": "B",
+                "text": "Daily standup"
+            },
+            {
+                "letter": "C",
+                "text": "Sprint Planning"
+            },
+            {
+                "letter": "D",
+                "text": "Sprint Retrospective"
+            }
+        ],
+        "key": "B*",
+        "status": "conditional",
+        "answer": "B — nếu chỉ phân biệt tên sự kiện chính thức; câu hỏi chưa chặt chẽ.",
+        "explain": "Tên chính thức là Daily Scrum. “Daily standup” là tên thường gọi của cuộc họp hằng ngày, không phải tên được Scrum Guide dùng cho một sự kiện độc lập. Vì vậy B có thể là ý định của đề khi kiểm tra thuật ngữ.",
+        "eliminate": "Sprint Planning, Sprint Review và Sprint Retrospective đều là sự kiện Scrum. Nếu Daily standup trong đề được dùng đồng nghĩa với Daily Scrum thì cả bốn lựa chọn đều là hoạt động thuộc các sự kiện Scrum.",
+        "note": "Không học rằng Scrum không có họp hằng ngày. Danh sách sự kiện là Sprint, Sprint Planning, Daily Scrum, Sprint Review và Sprint Retrospective. B chỉ hợp lý theo cách hỏi về tên chính thức.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; Scrum Events; Daily Scrum; trang in 9, 12; trang PDF 9, 12.",
+                "title": "Scrum Guide 2017 · trang 9",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=9"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Scrum Events; The Sprint; Daily Scrum; trang in 7, 9; trang PDF 8, 10.",
+                "title": "Scrum Guide 2020 · trang PDF 8",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=8"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "topic": "SCRUM",
+        "question": "Sản phẩm nào sau đây được bàn giao vào cuối mỗi Sprint ?",
+        "examPage": 1,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tài liệu kịch bản kiểm thử của Sprint"
+            },
+            {
+                "letter": "B",
+                "text": "Phiên bản tăng trưởng của phần mềm mức “Done”"
+            },
+            {
+                "letter": "C",
+                "text": "Backlog items của Sprint"
+            },
+            {
+                "letter": "D",
+                "text": "Các bản thiết kế giao diện người dùng User Interfaces"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Phiên bản tăng trưởng của phần mềm mức “Done”.",
+        "explain": "Đầu ra cần đạt của Sprint là Increment có thể sử dụng và đáp ứng Definition of Done. Đây là phần sản phẩm đã hoàn thành, cộng thêm vào sản phẩm hiện có.",
+        "eliminate": "Tài liệu kiểm thử hoặc bản thiết kế có thể là sản phẩm công việc trung gian. Các backlog item là những việc cần thực hiện; bản thân danh sách này không thay thế một Increment hoàn thành.",
+        "note": "Done không chỉ có nghĩa “đã viết xong code”. Increment phải đáp ứng tiêu chuẩn chất lượng đã thống nhất. Bản 2020 còn cho phép bàn giao Increment trước khi Sprint kết thúc.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; Increment; trang in 17; trang PDF 17.",
+                "title": "Scrum Guide 2017 · trang 17",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=17"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Increment; Definition of Done; trang in 11–12; trang PDF 12–13.",
+                "title": "Scrum Guide 2020 · trang PDF 12",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=12"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "topic": "UML",
+        "question": "Quan hệ kết hợp (association) giữa các lớp định nghĩa mối liên quan nào giữa các lớp?",
+        "examPage": 1,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tương tác"
+            },
+            {
+                "letter": "B",
+                "text": "Phụ thuộc"
+            },
+            {
+                "letter": "C",
+                "text": "Bao gồm"
+            },
+            {
+                "letter": "D",
+                "text": "Kế thừa"
+            }
+        ],
+        "key": "A*",
+        "status": "conditional",
+        "answer": "A — Tương tác, là lựa chọn gần nhất.",
+        "explain": "Association mô tả một mối liên hệ có ý nghĩa giữa các thể hiện của các lớp. Các đối tượng thuộc những lớp được kết hợp có thể được liên kết với nhau; ví dụ một Candidate liên hệ với các JobApplication.",
+        "eliminate": "B là dependency; C gần với aggregation/composition hoặc quan hệ chứa; D là generalization/inheritance. Những quan hệ này không đồng nhất với association thông thường.",
+        "note": "Từ “tương tác” trong A là cách nói giản lược. Association là quan hệ cấu trúc, không bắt buộc phải biểu diễn một lần gọi phương thức hay thông điệp theo thời gian.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §21.5 The Object-Relationship Model; trang in 591; trang PDF 619.",
+                "title": "Pressman · trang PDF 619",
+                "href": "tai-lieu/pressman.pdf#page=619"
+            },
+            {
+                "text": "OMG UML 2.5.1; §11.5.3.1 Associations; trang in 199; trang PDF 241.",
+                "title": "OMG UML 2.5.1 · trang PDF 241",
+                "href": "https://www.omg.org/spec/UML/2.5.1/PDF#page=241"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "topic": "SPM",
+        "question": "WBS (Work Breakdown Structure) là một bước trong hoạt động nào ?",
+        "examPage": 1,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Phân tích rủi ro"
+            },
+            {
+                "letter": "B",
+                "text": "Ước lượng chi phí"
+            },
+            {
+                "letter": "C",
+                "text": "Xét duyệt dự án"
+            },
+            {
+                "letter": "D",
+                "text": "Lập kế hoạch"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Lập kế hoạch.",
+        "explain": "WBS phân rã công việc của dự án thành những phần có thể quản lý. Việc này tạo cơ sở để ước lượng công sức, gán người thực hiện và xây dựng lịch biểu.",
+        "eliminate": "WBS có thể hỗ trợ ước lượng chi phí hoặc nhận diện rủi ro, nhưng đó là những công việc sử dụng kết quả phân rã. Xét duyệt dự án không phải hoạt động chính tạo WBS.",
+        "note": "Phân biệt WBS với Gantt: WBS trả lời “cần làm những việc gì”; Gantt thể hiện các việc đó trên trục thời gian.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.7 Scheduling; §7.7.1 Timeline Charts; trang in 181–182; trang PDF 209–210.",
+                "title": "Pressman · trang PDF 209",
+                "href": "tai-lieu/pressman.pdf#page=209"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 72: Gantt chart bắt đầu từ WBS.",
+                "title": "Bài giảng · slide 72",
+                "href": "tai-lieu/slides.pdf#page=72"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "topic": "SPM",
+        "question": "Sử dụng kỹ thuật nào để ước lượng lịch biểu cho dự án phát triển phần mềm ?",
+        "examPage": 1,
+        "options": [
+            {
+                "letter": "A",
+                "text": "CPM (Critical Path Method)"
+            },
+            {
+                "letter": "B",
+                "text": "COCOMO Model (Constructive Cost Model)"
+            },
+            {
+                "letter": "C",
+                "text": "FP (Function Point based Estimation)"
+            },
+            {
+                "letter": "D",
+                "text": "LOC (Line-Of-Code based Estimation)"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "CPM — Critical Path Method.",
+        "explain": "CPM dùng quan hệ phụ thuộc và thời lượng công việc để xác định đường găng, thời gian hoàn thành dự án và khoảng thời gian có thể dịch chuyển của nhiệm vụ. Đây là kỹ thuật lập lịch phù hợp nhất trong các lựa chọn.",
+        "eliminate": "FP và LOC là cơ sở đo kích thước hoặc ước lượng. COCOMO là mô hình ước lượng công sức/chi phí và cũng có thể ước lượng thời gian phát triển; nó không thay thế mạng phụ thuộc công việc của CPM.",
+        "note": "Đường găng quyết định thời gian tối thiểu của dự án theo mạng công việc và các giả định đã lập. Nếu đề chỉ hỏi chung về dự đoán thời gian, COCOMO cũng có liên quan; cụm “lịch biểu” làm A phù hợp hơn.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.7 Scheduling; trang in 181–182; trang PDF 209–210.",
+                "title": "Pressman · trang PDF 209",
+                "href": "tai-lieu/pressman.pdf#page=209"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 71: PERT và CPM.",
+                "title": "Bài giảng · slide 71",
+                "href": "tai-lieu/slides.pdf#page=71"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "topic": "SCRUM",
+        "question": "Các danh mục cần hoàn thành (items) trong Product Backlog nên được sắp xếp dựa theo tiêu chí nào ?",
+        "examPage": 2,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Sự phức tạp của danh mục cần hoàn thành"
+            },
+            {
+                "letter": "B",
+                "text": "Giá trị đem lại của danh mục cần hoàn thành"
+            },
+            {
+                "letter": "C",
+                "text": "Rủi ro liên quan đến danh mục cần hoàn thành"
+            },
+            {
+                "letter": "D",
+                "text": "Dựa vào sự lựa chọn của đội Scrum"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Giá trị đem lại của danh mục cần hoàn thành.",
+        "explain": "Product Owner quản lý thứ tự Product Backlog nhằm đạt mục tiêu sản phẩm và tối ưu giá trị. Trong cách hỏi một tiêu chí nổi bật của đề, giá trị là lựa chọn phù hợp nhất.",
+        "eliminate": "Độ phức tạp hoặc rủi ro có thể ảnh hưởng thứ tự nhưng không phải tiêu chí duy nhất. D bỏ qua trách nhiệm quyết định của Product Owner.",
+        "note": "Scrum Guide không quy định chỉ được sắp xếp theo giá trị. Rủi ro, phụ thuộc và nhu cầu học hỏi vẫn có thể ảnh hưởng quyết định của Product Owner.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; The Product Owner; trang in 6; trang PDF 6.",
+                "title": "Scrum Guide 2017 · trang 6",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=6"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Product Owner; trang in 5; trang PDF 6.",
+                "title": "Scrum Guide 2020 · trang PDF 6",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=6"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "topic": "SCRUM",
+        "question": "User story trong Product Backlog cho biết các thông tin gì ?",
+        "examPage": 2,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Yêu cầu của khách hàng là gì"
+            },
+            {
+                "letter": "B",
+                "text": "Ai sẽ là người sử dụng chức năng"
+            },
+            {
+                "letter": "C",
+                "text": "Tất cả các đáp án"
+            },
+            {
+                "letter": "D",
+                "text": "Mục đích của người sử dụng là gì"
+            }
+        ],
+        "key": "C",
+        "status": "supported",
+        "answer": "Tất cả các đáp án.",
+        "explain": "Một user story thường làm rõ ba yếu tố: ai cần chức năng, muốn làm gì và lợi ích/mục đích là gì. Do đó thông tin ở A, B và D đều có thể xuất hiện trong story.",
+        "eliminate": "A, B hoặc D riêng lẻ chỉ nêu một phần thông tin. C gom đủ cả người dùng, nhu cầu và lý do.",
+        "note": "Ví dụ tự xây dựng: “Là ứng viên, tôi muốn xem kỹ năng còn thiếu so với công việc để lập kế hoạch học tập”. User story là kỹ thuật diễn đạt yêu cầu, không phải một artifact bắt buộc riêng trong Scrum.",
+        "sources": [
+            {
+                "text": "Scrum.org, bài User Story or Stakeholder Story?, đoạn trình bày mẫu user story; nguồn HTML không có số trang/slide: https://www.scrum.org/resources/blog/user-story-or-stakeholder-story",
+                "title": "Bài đọc bổ sung · Scrum.org",
+                "href": "https://www.scrum.org/resources/blog/user-story-or-stakeholder-story"
+            },
+            {
+                "text": "Pressman 5e; §11.2.4 Use-Cases — đối chiếu nhu cầu từ góc nhìn người dùng; trang in 280–281; trang PDF 308–309.",
+                "title": "Pressman · trang PDF 308",
+                "href": "tai-lieu/pressman.pdf#page=308"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "topic": "SCRUM",
+        "question": "Trong môi trường phát triển phần mềm linh hoạt Agile, nhiệm vụ chính của một tester là gì ?",
+        "examPage": 2,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tạo ra các kịch bản kiểm thử"
+            },
+            {
+                "letter": "B",
+                "text": "Tìm bugs"
+            },
+            {
+                "letter": "C",
+                "text": "Tạo các kịch bản kiểm thử tự động"
+            },
+            {
+                "letter": "D",
+                "text": "Không có vai trò của Tester trong Scrum"
+            }
+        ],
+        "key": "—",
+        "status": "missing",
+        "answer": "Không có đáp án duy nhất theo cách hỏi hiện tại; D chỉ đúng nếu hỏi về vai trò chính thức riêng.",
+        "explain": "Câu hỏi hỏi nhiệm vụ chính của một tester trong Agile nhưng D lại trả lời về tên vai trò trong Scrum. Scrum không tạo một vai trò/accountability Tester riêng; thành viên có chuyên môn kiểm thử vẫn làm việc trong Development Team/Developers.",
+        "eliminate": "A, B và C đều có thể là công việc của người kiểm thử. Không có căn cứ để tuyên bố mọi tester Agile chỉ viết test, chỉ tìm bug hoặc chỉ tự động hóa. D không có nghĩa là Scrum loại bỏ tester hay hoạt động kiểm thử.",
+        "note": "Nếu giảng viên muốn hỏi “Vai trò Tester có được Scrum định nghĩa riêng không?” thì D là ý định hợp lý. Nếu giữ nguyên câu hỏi về nhiệm vụ, đáp án đầy đủ phải là hỗ trợ chất lượng cùng nhóm qua làm rõ tiêu chí, kiểm thử và phản hồi.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; The Development Team — không có chức danh hoặc nhóm con riêng; trang in 7; trang PDF 7.",
+                "title": "Scrum Guide 2017 · trang 7",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=7"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Scrum Team; Developers; trang in 5; trang PDF 6.",
+                "title": "Scrum Guide 2020 · trang PDF 6",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=6"
+            },
+            {
+                "text": "Scrum.org, Simon Reindl, The Role of a Professional Tester in an Agile World, 20/10/2015; mục Phase and Tester activity; nguồn HTML không có số trang: https://www.scrum.org/resources/blog/role-professional-tester-agile-world",
+                "title": "Bài đọc bổ sung · Scrum.org",
+                "href": "https://www.scrum.org/resources/blog/role-professional-tester-agile-world"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "topic": "SPM",
+        "question": "Thuộc tính nào là quan trọng nhất đối với một phần mềm tốt ?",
+        "examPage": 2,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Dễ sử dụng"
+            },
+            {
+                "letter": "B",
+                "text": "Bảo trì được"
+            },
+            {
+                "letter": "C",
+                "text": "Chiếm ít tài nguyên hệ thống"
+            },
+            {
+                "letter": "D",
+                "text": "Tin cậy"
+            }
+        ],
+        "key": "D*",
+        "status": "conditional",
+        "answer": "D — có căn cứ trong §8.8 về độ tin cậy, nhưng không đủ để chốt thuộc tính quan trọng nhất cho mọi phần mềm.",
+        "explain": "Trong các phương án, độ tin cậy là nền tảng để sản phẩm phục vụ người dùng ổn định. Pressman nhấn mạnh rằng nếu chương trình thường xuyên thất bại khi thực hiện nhiệm vụ, các yếu tố chất lượng khác có ít ý nghĩa.",
+        "eliminate": "Dễ sử dụng, bảo trì được và tiết kiệm tài nguyên đều quan trọng, nhưng không bù được một phần mềm liên tục hoạt động sai hoặc ngừng hoạt động.",
+        "note": "Trang 96 nói bảo trì chiếm nhiều công sức; nhận xét đó không chứng minh B là thuộc tính quan trọng nhất. Slide 41 cũng không xếp hạng. D phù hợp lập luận §8.8 nhưng vẫn là lựa chọn có điều kiện, cần biết trọng tâm giảng viên muốn hỏi.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §8.8 Software Reliability; trang in 212; trang PDF 240.",
+                "title": "Pressman · trang PDF 240",
+                "href": "tai-lieu/pressman.pdf#page=240"
+            },
+            {
+                "text": "Pressman 5e; §4.5.2 Measuring Quality; trang in 96–97; trang PDF 124–125.",
+                "title": "Pressman · trang PDF 124",
+                "href": "tai-lieu/pressman.pdf#page=124"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 41: Correctness và maintainability; không có xếp hạng quan trọng nhất.",
+                "title": "Bài giảng · slide 41",
+                "href": "tai-lieu/slides.pdf#page=41"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "topic": "SCRUM",
+        "question": "Thành phần đội Scrum bao gồm ?",
+        "examPage": 2,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Scrum Master, Team Leader, Developers"
+            },
+            {
+                "letter": "B",
+                "text": "Scrum Master, Development Team, Tester"
+            },
+            {
+                "letter": "C",
+                "text": "Product Stakeholders, Product Owner, Scrum Master"
+            },
+            {
+                "letter": "D",
+                "text": "Product Owner, Development Team, Scrum Master"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Product Owner, Development Team, Scrum Master.",
+        "explain": "Ba thành phần này đúng theo thuật ngữ Scrum Guide 2017 mà đề sử dụng. Product Owner tối ưu giá trị, Development Team tạo sản phẩm và Scrum Master hỗ trợ áp dụng Scrum.",
+        "eliminate": "A thêm Team Leader; B thiếu Product Owner; C thay nhóm phát triển bằng stakeholders. Stakeholders có thể tham gia trao đổi nhưng không tự động là thành phần Scrum Team.",
+        "note": "Bản 2020 dùng Product Owner, Scrum Master và Developers trong một Scrum Team. Khi làm đề này vẫn chọn D vì nó dùng thuật ngữ của bản 2017.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; The Scrum Team; trang in 6; trang PDF 6.",
+                "title": "Scrum Guide 2017 · trang 6",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=6"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Scrum Team; trang in 5; trang PDF 6.",
+                "title": "Scrum Guide 2020 · trang PDF 6",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=6"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "topic": "SPM",
+        "question": "Thành phần phần mềm (software component) có thể là ?",
+        "examPage": 3,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Module chương trình"
+            },
+            {
+                "letter": "B",
+                "text": "Cơ sở dữ liệu"
+            },
+            {
+                "letter": "C",
+                "text": "Các phần trung gian (middleware)"
+            },
+            {
+                "letter": "D",
+                "text": "Tất cả các đáp án"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Tất cả các đáp án.",
+        "explain": "Một hệ thống phần mềm có thể chứa module chương trình, thành phần dữ liệu/cơ sở dữ liệu và middleware. Pressman mô tả các subsystem của hệ thống client/server gồm phần ứng dụng, quản lý cơ sở dữ liệu và middleware hỗ trợ kết nối.",
+        "eliminate": "A, B và C đều là những dạng thành phần có thể xuất hiện; không cần giới hạn thành phần phần mềm chỉ ở module mã nguồn.",
+        "note": "Đề dùng software component theo nghĩa rộng. Trong một mô hình component cụ thể, ranh giới triển khai và giao diện của từng component cần được định nghĩa rõ.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §14.9 Summary; trang in 395; trang PDF 423.",
+                "title": "Pressman · trang PDF 423",
+                "href": "tai-lieu/pressman.pdf#page=423"
+            },
+            {
+                "text": "Pressman 5e; §28.1.1 Software Components for c/s Systems; trang in 750; trang PDF 778.",
+                "title": "Pressman · trang PDF 778",
+                "href": "tai-lieu/pressman.pdf#page=778"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "topic": "SPM",
+        "question": "Hoạt động kiểm thử được tiến hành sau bước nào trong tiến trình dự án phát triển phần mềm ?",
+        "examPage": 3,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Đặc tả yêu cầu phần mềm"
+            },
+            {
+                "letter": "B",
+                "text": "Thiết kế phần mềm"
+            },
+            {
+                "letter": "C",
+                "text": "Mã hóa phần mềm"
+            },
+            {
+                "letter": "D",
+                "text": "Tích hợp phần mềm"
+            }
+        ],
+        "key": "C",
+        "status": "supported",
+        "answer": "Mã hóa phần mềm.",
+        "explain": "Trong tiến trình tuần tự cổ điển, sau khi thiết kế được chuyển thành mã nguồn, kiểm thử chương trình bắt đầu. Pressman viết rõ điều này trong mô hình linear sequential.",
+        "eliminate": "Yêu cầu và thiết kế được đánh giá bằng review/validation và dùng để chuẩn bị kiểm thử. Tích hợp không phải điều kiện tiên quyết cho mọi kiểm thử: unit test được thực hiện trước khi ghép toàn bộ chương trình.",
+        "note": "Đây là đáp án theo trình tự cổ điển. Trong Agile/TDD, chuẩn bị và viết kiểm thử có thể diễn ra sớm hơn; kiểm thử không phải công việc chỉ bắt đầu ở cuối dự án.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.4 The Linear Sequential Model; trang in 29; trang PDF 57.",
+                "title": "Pressman · trang PDF 57",
+                "href": "tai-lieu/pressman.pdf#page=57"
+            },
+            {
+                "text": "Pressman 5e; §18.3 Unit Testing; trang in 485; trang PDF 513.",
+                "title": "Pressman · trang PDF 513",
+                "href": "tai-lieu/pressman.pdf#page=513"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "topic": "SPM",
+        "question": "Nguyên lý 40-20-40 phân bổ nỗ lực trong quy trình phát triển phần mềm có ý nghĩa nào?",
+        "examPage": 3,
+        "options": [
+            {
+                "letter": "A",
+                "text": "40% cho phân tích yêu cầu, 20% cho cài đặt, 40% cho bảo trì"
+            },
+            {
+                "letter": "B",
+                "text": "40% cho phân tích thiết kế, 20% cho cài đặt, 40% cho kiểm thử"
+            },
+            {
+                "letter": "C",
+                "text": "40% cho lập kế hoạch và phân tích nghiệp vụ, 20% cho thiết kế, 40% cho cài đặt và bảo trì"
+            },
+            {
+                "letter": "D",
+                "text": "40% phân tích nghiệp vụ, 20% cho thiết kế, 40% cho cài đặt và kiểm thử"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "40% phân tích–thiết kế, 20% cài đặt/mã hóa, 40% kiểm thử.",
+        "explain": "Quy tắc 40–20–40 đề xuất dành nhiều công sức cho phân tích và thiết kế ở đầu quy trình, tương tự cho kiểm thử ở phía sau; phần viết mã chiếm khoảng 20%.",
+        "eliminate": "Các phương án còn lại thay đổi nhóm hoạt động, gộp bảo trì hoặc tách thiết kế làm sai ý nghĩa của quy tắc trong sách.",
+        "note": "Đây là tỷ lệ hướng dẫn, không phải định mức bắt buộc hay tỷ lệ lịch theo ngày. Pressman nêu rõ việc phân bổ phải dựa trên đặc điểm từng dự án.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.2.3 Effort Distribution; trang in 172; trang PDF 200.",
+                "title": "Pressman · trang PDF 200",
+                "href": "tai-lieu/pressman.pdf#page=200"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 68: Effort Distribution: 40–20–40.",
+                "title": "Bài giảng · slide 68",
+                "href": "tai-lieu/slides.pdf#page=68"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "topic": "SCRUM",
+        "question": "Hoạt động Scrum Retrospective diễn ra vào thời điểm nào ?",
+        "examPage": 3,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Bất cứ khi nào Scrum Master đề nghị"
+            },
+            {
+                "letter": "B",
+                "text": "Tại cuối mỗi Sprint"
+            },
+            {
+                "letter": "C",
+                "text": "Bất cứ khi nào đội Scrum thấy cần"
+            },
+            {
+                "letter": "D",
+                "text": "Bất cứ khi nào Product Owner yêu cầu"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Tại cuối mỗi Sprint.",
+        "explain": "Sprint Retrospective dành cho việc nhìn lại cách nhóm đã làm việc và xác định cải tiến. Nó diễn ra sau Sprint Review và trước Sprint Planning của Sprint tiếp theo; bản 2020 nêu đây là sự kiện kết thúc Sprint.",
+        "eliminate": "Đây là sự kiện theo nhịp Sprint, không chỉ tổ chức khi Scrum Master, Product Owner hoặc nhóm tùy ý đề nghị.",
+        "note": "Review tập trung vào kết quả sản phẩm và việc tiếp theo; Retrospective tập trung vào cải thiện cách làm việc, chất lượng và hiệu quả.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; Sprint Retrospective; trang in 14; trang PDF 14.",
+                "title": "Scrum Guide 2017 · trang 14",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=14"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Sprint Retrospective; trang in 10; trang PDF 11.",
+                "title": "Scrum Guide 2020 · trang PDF 11",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=11"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "topic": "SPM",
+        "question": "Các loại rủi ro dự án phát triển phần mềm có thể gặp ?",
+        "examPage": 3,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Rủi ro kỹ thuật"
+            },
+            {
+                "letter": "B",
+                "text": "Rủi ro quản lý"
+            },
+            {
+                "letter": "C",
+                "text": "Không loại nào"
+            },
+            {
+                "letter": "D",
+                "text": "Cả rủi ro kỹ thuật, và rủi ro quản lý"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Cả rủi ro kỹ thuật và rủi ro quản lý.",
+        "explain": "Dự án có thể gặp lỗi hoặc bất định về công nghệ, thiết kế, tích hợp; đồng thời cũng gặp vấn đề nhân sự, ngân sách, kế hoạch và quản lý. Vì vậy cần xét cả hai nhóm.",
+        "eliminate": "A hoặc B chỉ chọn một phần; C phủ nhận các rủi ro có thể tồn tại.",
+        "note": "Cách phân loại chi tiết của Pressman còn gồm project risks, technical risks và business risks. D bao quát các lựa chọn của đề, không phải danh sách phân loại đầy đủ.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §6.2 Software Risks; trang in 147; trang PDF 175.",
+                "title": "Pressman · trang PDF 175",
+                "href": "tai-lieu/pressman.pdf#page=175"
+            },
+            {
+                "text": "Pressman 5e; §2.7.2 The Spiral Model — Risk analysis; trang in 36; trang PDF 64.",
+                "title": "Pressman · trang PDF 64",
+                "href": "tai-lieu/pressman.pdf#page=64"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 60: Project, technical và business risks.",
+                "title": "Bài giảng · slide 60",
+                "href": "tai-lieu/slides.pdf#page=60"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "topic": "SPM",
+        "question": "Kỹ thuật đo trực tiếp phần mềm có thể dựa vào các yếu tố nào sau đây để đo ?",
+        "examPage": 4,
+        "options": [
+            {
+                "letter": "A",
+                "text": "LOC (Line of Code), Tốc độ vận hành, Kích cỡ bộ nhớ, Số khiếm khuyết phát hiện trong một khoảng thời gian nhất định"
+            },
+            {
+                "letter": "B",
+                "text": "Chỉ dựa trên KLOC (Kilo Line of Code)"
+            },
+            {
+                "letter": "C",
+                "text": "Dựa trên FP (Function Point)"
+            },
+            {
+                "letter": "D",
+                "text": "LOC (Line of Code) và FP (Function Point)"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "LOC, tốc độ vận hành, kích cỡ bộ nhớ và số khiếm khuyết trong một khoảng thời gian.",
+        "explain": "Đây là các đại lượng trực tiếp được Pressman liệt kê khi nói về sản phẩm phần mềm: số dòng mã, tốc độ thực thi, bộ nhớ và các defect được ghi nhận.",
+        "eliminate": "B chỉ nêu một trường hợp và quá hẹp. FP phản ánh chức năng qua quy tắc đếm/tính nên không thuộc danh sách đo trực tiếp của đoạn này; do đó C và D không phù hợp.",
+        "note": "KLOC là nghìn dòng mã, chỉ là đơn vị quy đổi của LOC; nó không phải một nhóm đại lượng đo riêng.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §4.3 Software Measurement; trang in 87; trang PDF 115.",
+                "title": "Pressman · trang PDF 115",
+                "href": "tai-lieu/pressman.pdf#page=115"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "topic": "SCRUM",
+        "question": "Khi nào một Sprint có thể bị huỷ bỏ ?",
+        "examPage": 4,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Bất cứ khi nào Product Owner tuyên bố"
+            },
+            {
+                "letter": "B",
+                "text": "Các danh mục cần hoàn thành của Sprint không còn cần nữa"
+            },
+            {
+                "letter": "C",
+                "text": "Không thể huỷ bỏ một Sprint"
+            },
+            {
+                "letter": "D",
+                "text": "Khi các Developers không thể hoàn thành nhiệm vụ"
+            }
+        ],
+        "key": "B*",
+        "status": "conditional",
+        "answer": "B — gần nhất, với điều kiện Sprint Goal không còn phù hợp và Product Owner quyết định hủy.",
+        "explain": "Điều kiện được Scrum Guide nêu là Sprint Goal trở nên obsolete. B gần với tình huống công việc không còn giá trị, nhưng cần kiểm tra mục tiêu Sprint thay vì chỉ một vài item.",
+        "eliminate": "A diễn đạt quyền quyết định của Product Owner quá rộng, không nêu lý do hủy. C sai vì Sprint có thể bị hủy. D không đủ: không làm xong toàn bộ công việc không tự động khiến Sprint phải hủy.",
+        "note": "Phải nhớ cả hai vế: lý do là mục tiêu Sprint không còn phù hợp; người có thẩm quyền hủy là Product Owner. Việc bỏ một số item vẫn có thể cho phép tiếp tục đạt Sprint Goal.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; Cancelling a Sprint; trang in 10; trang PDF 10.",
+                "title": "Scrum Guide 2017 · trang 10",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=10"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; The Sprint — cancellation; trang in 8; trang PDF 9.",
+                "title": "Scrum Guide 2020 · trang PDF 9",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=9"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "topic": "SPM",
+        "question": "Kỹ thuật đo gián tiếp phần mềm có thể đưa ra chỉ số phản ánh khía cạnh nào về phần mềm ?",
+        "examPage": 4,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Về tính năng, độ phức tạp, chất lượng, tính hiệu quả, độ tin cậy, khả năng bảo trì được"
+            },
+            {
+                "letter": "B",
+                "text": "Kích cỡ phần mềm"
+            },
+            {
+                "letter": "C",
+                "text": "Phạm vi phần mềm"
+            },
+            {
+                "letter": "D",
+                "text": "Quy mô phần mềm"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Tính năng, độ phức tạp, chất lượng, hiệu quả, độ tin cậy và khả năng bảo trì.",
+        "explain": "Các khía cạnh này khó đo trực tiếp bằng một thao tác đếm đơn giản; người đánh giá dùng các chỉ số hoặc mô hình để phản ánh chúng. Danh sách A khớp đoạn mô tả indirect measures trong sách.",
+        "eliminate": "B, C và D chỉ nói kích cỡ, phạm vi hoặc quy mô, không phản ánh đầy đủ nhóm thuộc tính được hỏi.",
+        "note": "Không nhầm số dòng mã với chất lượng: hai chương trình cùng LOC vẫn có thể khác xa về độ phức tạp, khả năng bảo trì và độ tin cậy.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §4.3 Software Measurement; trang in 87; trang PDF 115.",
+                "title": "Pressman · trang PDF 115",
+                "href": "tai-lieu/pressman.pdf#page=115"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "topic": "SCRUM",
+        "question": "Ai là người quyết định nội dung và thứ tự các danh mục trong Product Backlog?",
+        "examPage": 4,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Scrum Master"
+            },
+            {
+                "letter": "B",
+                "text": "Product Owner"
+            },
+            {
+                "letter": "C",
+                "text": "Development Team"
+            },
+            {
+                "letter": "D",
+                "text": "Scrum Team"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Product Owner.",
+        "explain": "Product Owner chịu trách nhiệm quản lý Product Backlog và thứ tự ưu tiên. Nhóm hoặc stakeholders có thể đề xuất thay đổi, nhưng trách nhiệm cuối cùng về nội dung/thứ tự vẫn thuộc Product Owner.",
+        "eliminate": "Scrum Master hỗ trợ cách áp dụng Scrum; Developers tham gia làm rõ và ước lượng công việc. Cả Scrum Team không thay thế trách nhiệm riêng của Product Owner đối với Product Backlog.",
+        "note": "Có thể giao người khác thực hiện một số việc quản lý backlog, nhưng không chuyển đi trách nhiệm của Product Owner.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; The Product Owner; trang in 6; trang PDF 6.",
+                "title": "Scrum Guide 2017 · trang 6",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=6"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Product Owner; trang in 5–6; trang PDF 6–7.",
+                "title": "Scrum Guide 2020 · trang PDF 6",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=6"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "topic": "SPM",
+        "question": "Một nhiệm vụ cần 20 man-hours để hoàn thành thì đội 2 người mất bao nhiêu giờ để hoàn thành ?",
+        "examPage": 4,
+        "options": [
+            {
+                "letter": "A",
+                "text": "5 giờ"
+            },
+            {
+                "letter": "B",
+                "text": "4 giờ"
+            },
+            {
+                "letter": "C",
+                "text": "2 giờ"
+            },
+            {
+                "letter": "D",
+                "text": "10 giờ"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "10 giờ, theo giả định chia đều và làm song song hoàn toàn.",
+        "explain": "20 man-hours là tổng công sức 20 giờ-người. Nếu hai người cùng làm, có năng suất như nhau và công việc phân chia được, thời gian lịch lý tưởng là 20 / 2 = 10 giờ.",
+        "eliminate": "Các số 5, 4 hoặc 2 giờ không bảo toàn tổng công sức khi chỉ có hai người làm việc trong giả định của bài toán.",
+        "note": "Không áp dụng phép chia này máy móc cho dự án thật: phụ thuộc công việc, trao đổi, năng lực và onboarding có thể làm thời gian dài hơn. Pressman cảnh báo thêm người không làm giảm thời gian theo đúng tỷ lệ.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.1.2 Basic Principles — chú thích 3; trang in 168; trang PDF 196.",
+                "title": "Pressman · trang PDF 196",
+                "href": "tai-lieu/pressman.pdf#page=196"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "topic": "SCRUM",
+        "question": "Nhiệm vụ chính của Scrum Team là gì ?",
+        "examPage": 5,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Thực hiện các cuộc họp để cải tiến quy trình"
+            },
+            {
+                "letter": "B",
+                "text": "Giám sát và báo cáo các hoạt động của dự án"
+            },
+            {
+                "letter": "C",
+                "text": "Tạo ra các Product Backlog mới"
+            },
+            {
+                "letter": "D",
+                "text": "Thực hiện các nhiệm vụ tại Sprint hiện tại và phát triển các Sprint backlog items cho Sprint tiếp theo"
+            }
+        ],
+        "key": "D*",
+        "status": "conditional",
+        "answer": "D — gần nhất trong các lựa chọn, nhưng mô tả chưa chuẩn.",
+        "explain": "Scrum Team làm công việc cần thiết để tạo giá trị sản phẩm qua Sprint. D là lựa chọn duy nhất nhấn mạnh thực hiện công việc; vì vậy có thể là ý định của đề.",
+        "eliminate": "A và B nhấn vào họp hoặc báo cáo; C coi tạo backlog là mục tiêu chính. Tuy nhiên D cũng không chính xác khi ngụ ý phải phát triển sẵn Sprint Backlog của Sprint sau.",
+        "note": "Cần học diễn đạt chuẩn: tạo Increment có giá trị, hữu ích trong mỗi Sprint. Công việc tương lai được refinement trong Product Backlog; Sprint Backlog của Sprint tiếp theo được hình thành qua Sprint Planning tiếp theo.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Scrum Team; Sprint Planning; Sprint Backlog; trang in 5, 8–9, 11; trang PDF 6, 9–10, 12.",
+                "title": "Scrum Guide 2020 · trang PDF 6",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=6"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "topic": "SPM",
+        "question": "Biểu đồ Gantt hỗ trợ người Quản lý dự án việc gì?",
+        "examPage": 5,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Giám sát rủi ro dự án"
+            },
+            {
+                "letter": "B",
+                "text": "Đảm bảo chất lượng sản phẩm phần mềm"
+            },
+            {
+                "letter": "C",
+                "text": "Theo dõi tiến độ hoàn thành của dự án"
+            },
+            {
+                "letter": "D",
+                "text": "Không đáp án nào"
+            }
+        ],
+        "key": "C",
+        "status": "supported",
+        "answer": "Theo dõi tiến độ hoàn thành của dự án.",
+        "explain": "Gantt đặt các nhiệm vụ trên trục thời gian, thể hiện lúc bắt đầu, thời lượng, sự đồng thời và mốc hoàn thành. Người quản lý dùng nó cùng bảng dự án để so sánh tiến độ với kế hoạch.",
+        "eliminate": "Gantt không tự phân tích rủi ro hay chứng minh chất lượng phần mềm. Các thông tin đó cần kỹ thuật và dữ liệu bổ sung.",
+        "note": "Một thanh công việc đúng lịch không có nghĩa sản phẩm đã đạt chất lượng; cần xác minh work product và các tiêu chí hoàn thành.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.7.1 Timeline Charts; Hình 7.4–7.5; trang in 182–184; trang PDF 210–212.",
+                "title": "Pressman · trang PDF 210",
+                "href": "tai-lieu/pressman.pdf#page=210"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "topic": "SPM",
+        "question": "Cấu trúc dữ liệu cho phần mềm được thiết kế trong giai đoạn nào ?",
+        "examPage": 5,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Thiết kế dữ liệu (Data Design)"
+            },
+            {
+                "letter": "B",
+                "text": "Thiết kế kiến trúc (Architectural Design)"
+            },
+            {
+                "letter": "C",
+                "text": "Thiết kế thủ tục (Procedural Design)"
+            },
+            {
+                "letter": "D",
+                "text": "Thiết kế giao diện (Interface Design)"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Thiết kế dữ liệu — Data Design.",
+        "explain": "Data Design chuyển mô hình thông tin ở giai đoạn phân tích thành cấu trúc dữ liệu phục vụ cài đặt. Đối tượng dữ liệu, quan hệ và từ điển dữ liệu là cơ sở cho công việc này.",
+        "eliminate": "Architectural Design xác định cấu trúc lớn và quan hệ giữa các thành phần; Procedural Design xử lý thuật toán; Interface Design xử lý các giao diện.",
+        "note": "Các hoạt động thiết kế có thể liên quan và diễn ra phối hợp. Câu hỏi đang hỏi loại thiết kế chịu trách nhiệm chính về cấu trúc dữ liệu.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §13.1 Software Design and Software Engineering; trang in 336; trang PDF 364.",
+                "title": "Pressman · trang PDF 364",
+                "href": "tai-lieu/pressman.pdf#page=364"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "topic": "SCRUM",
+        "question": "Nhiệm vụ chính của Scrum Master là gì ?",
+        "examPage": 5,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Hỗ trợ, tổ chức cho các cuộc họp thường ngày hoặc khi cần cho đội Scrum"
+            },
+            {
+                "letter": "B",
+                "text": "Giúp Product Owners sắp xếp Product Backlog"
+            },
+            {
+                "letter": "C",
+                "text": "Làm cầu nối giữa Scrum Team và Khách hàng"
+            },
+            {
+                "letter": "D",
+                "text": "Giám sát việc thực hiện các Sprint Backlog"
+            }
+        ],
+        "key": "A*",
+        "status": "conditional",
+        "answer": "A — gần nhất, nhưng không diễn đạt đầy đủ nhiệm vụ chính của Scrum Master.",
+        "explain": "Scrum Master giúp Scrum được hiểu và áp dụng hiệu quả; hỗ trợ nhóm, tháo gỡ trở ngại và hỗ trợ các sự kiện khi cần. A phản ánh phần hỗ trợ/facilitation nên là lựa chọn gần nhất.",
+        "eliminate": "B có thể là một hình thức hỗ trợ Product Owner nhưng quyền quản lý backlog thuộc Product Owner. C không bao quát vai trò Scrum Master; D dễ biến Scrum Master thành người giao việc/giám sát Developers.",
+        "note": "Scrum Master không bắt buộc phải chủ trì mọi Daily Scrum. Developers tự quản lý cuộc họp này. Nếu hỏi định nghĩa “nhiệm vụ chính”, các lựa chọn của đề chưa chứa đáp án chuẩn và đầy đủ.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; The Scrum Master; Scrum Master Service to the Development Team; Daily Scrum; trang in 7–8, 12; trang PDF 7–8, 12.",
+                "title": "Scrum Guide 2017 · trang 7",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=7"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Scrum Master; Daily Scrum; trang in 6–7, 9; trang PDF 7–8, 10.",
+                "title": "Scrum Guide 2020 · trang PDF 7",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=7"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "topic": "SCRUM",
+        "question": "Trong Scrum, khi nào một Sprint kết thúc ?",
+        "examPage": 5,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Khi quãng thời gian cho một Sprint kết thúc"
+            },
+            {
+                "letter": "B",
+                "text": "Khi tất cả các Sprint Backlog items được hoàn thành"
+            },
+            {
+                "letter": "C",
+                "text": "Khi Product Owner đề nghị"
+            },
+            {
+                "letter": "D",
+                "text": "Khi việc kiểm thử kết thúc"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Khi quãng thời gian cho một Sprint kết thúc.",
+        "explain": "Sprint có độ dài cố định đã chọn từ đầu. Khi hết time-box, Sprint kết thúc theo lịch; không đợi hoàn thành tất cả item hay đợi kiểm thử xong mới đóng Sprint.",
+        "eliminate": "B và D biến Sprint thành khoảng thời gian phụ thuộc lượng công việc. C nhầm thời điểm kết thúc thông thường với quyền hủy trước thời hạn của Product Owner.",
+        "note": "Sprint vẫn có thể bị hủy sớm theo điều kiện riêng ở câu 17. Đáp án A mô tả trường hợp Sprint diễn ra bình thường.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; Scrum Events; The Sprint; Cancelling a Sprint; trang in 9–10; trang PDF 9–10.",
+                "title": "Scrum Guide 2017 · trang 9",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=9"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; The Sprint; trang in 7–8; trang PDF 8–9.",
+                "title": "Scrum Guide 2020 · trang PDF 8",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=8"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "topic": "SCRUM",
+        "question": "Việc gì xảy ra khi tất cả Sprint items không thể hoàn thành ?",
+        "examPage": 6,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Sprint nên được kéo dài thêm thời gian"
+            },
+            {
+                "letter": "B",
+                "text": "Sprint kết thúc với những Sprint items đã hoàn thành \"done\""
+            },
+            {
+                "letter": "C",
+                "text": "Sprint nên bị huỷ bỏ"
+            },
+            {
+                "letter": "D",
+                "text": "Bắt đầu Sprint mới với các items chưa hoàn thành trước"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Sprint kết thúc với những Sprint item đã đạt “Done”.",
+        "explain": "Hết time-box thì Sprint kết thúc. Chỉ công việc đạt Definition of Done được tính vào Increment; những việc chưa hoàn thành cần được xem xét lại trong Product Backlog.",
+        "eliminate": "A sai vì không kéo dài Sprint để làm cho xong. C sai vì thiếu item không tự động là lý do hủy. D sai nếu hiểu là tự động chuyển mọi việc chưa xong sang Sprint mới mà không xem xét mục tiêu và ưu tiên.",
+        "note": "Công việc chưa Done không được báo cáo như một phần Increment hoàn thành. Cần làm rõ công việc còn lại rồi cân nhắc lựa chọn trong Sprint Planning sau.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; Scrum Events; Increment; trang in 9, 17; trang PDF 9, 17.",
+                "title": "Scrum Guide 2017 · trang 9",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=9"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Definition of Done; trang in 12; trang PDF 13.",
+                "title": "Scrum Guide 2020 · trang PDF 13",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=13"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "topic": "SCRUM",
+        "question": "Hoạt động nào dưới đây không có giới hạn thời gian?",
+        "examPage": 6,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Sắp xếp và tinh chỉnh Product Backlog"
+            },
+            {
+                "letter": "B",
+                "text": "Sprint"
+            },
+            {
+                "letter": "C",
+                "text": "Daily Scrum"
+            },
+            {
+                "letter": "D",
+                "text": "Sprint Review"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Sắp xếp và tinh chỉnh Product Backlog.",
+        "explain": "Product Backlog refinement là hoạt động diễn ra liên tục khi cần làm rõ, chia nhỏ và sắp xếp công việc. Nó không phải một sự kiện Scrum có time-box cố định bắt buộc như những sự kiện ở B, C và D.",
+        "eliminate": "Sprint, Daily Scrum và Sprint Review đều có giới hạn thời gian. Vì vậy chúng không đáp ứng yêu cầu “không có giới hạn thời gian” theo cách hỏi về time-box chính thức.",
+        "note": "Nhóm vẫn có thể đặt giới hạn cho một buổi refinement để quản lý thời gian. Bản 2017 đề cập mức năng lực thường dành cho refinement; đó không phải time-box bắt buộc của một sự kiện.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; Scrum Events; Product Backlog; trang in 9, 15; trang PDF 9, 15.",
+                "title": "Scrum Guide 2017 · trang 9",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=9"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; Product Backlog; trang in 10; trang PDF 11.",
+                "title": "Scrum Guide 2020 · trang PDF 11",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=11"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "topic": "SCRUM",
+        "question": "Thời gian tối đa hợp lý cho một Sprint là bao nhiêu tuần?",
+        "examPage": 6,
+        "options": [
+            {
+                "letter": "A",
+                "text": "4 tuần"
+            },
+            {
+                "letter": "B",
+                "text": "1 tuần"
+            },
+            {
+                "letter": "C",
+                "text": "2 tuần"
+            },
+            {
+                "letter": "D",
+                "text": "6 tuần"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "4 tuần — cách quy đổi gần đúng của lựa chọn “một tháng hoặc ít hơn”.",
+        "explain": "Scrum Guide quy định độ dài Sprint là một tháng hoặc ngắn hơn. Trong bốn lựa chọn theo tuần của đề, 4 tuần là mức tối đa gần nhất.",
+        "eliminate": "Một hoặc hai tuần là những độ dài có thể dùng nhưng không phải mức tối đa. Sáu tuần vượt giới hạn một tháng.",
+        "note": "Một tháng lịch không luôn bằng đúng 28 ngày. Khi ghi lý thuyết, dùng “một tháng hoặc ít hơn”, tránh khẳng định tiêu chuẩn Scrum luôn quy định tối đa chính xác 4 tuần.",
+        "sources": [
+            {
+                "text": "Scrum Guide 2017, bản tiếng Anh; The Sprint; trang in 9; trang PDF 9.",
+                "title": "Scrum Guide 2017 · trang 9",
+                "href": "https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#page=9"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; The Sprint; trang in 7; trang PDF 8.",
+                "title": "Scrum Guide 2020 · trang PDF 8",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=8"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "topic": "SPM",
+        "question": "Trước khi dự án bắt đầu, người quản lý dự án phải ước lượng những gì?",
+        "examPage": 6,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Các công việc cần thực hiện, các nguồn lực cần có, thời gian bắt đầu và kết thúc"
+            },
+            {
+                "letter": "B",
+                "text": "Rủi ro có thể gặp phải"
+            },
+            {
+                "letter": "C",
+                "text": "Kích cỡ phần mềm"
+            },
+            {
+                "letter": "D",
+                "text": "Tất cả các đáp án"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Tất cả các đáp án.",
+        "explain": "Lập kế hoạch cần ước lượng công việc, nguồn lực và thời gian; kích thước/phạm vi giúp suy ra công sức và chi phí. Rủi ro và mức bất định cũng cần được xét để có ước lượng hợp lý.",
+        "eliminate": "A, B hoặc C riêng lẻ không bao quát những thông tin quan trọng trước khi thực hiện dự án.",
+        "note": "Ước lượng ban đầu không bất biến. Cần cập nhật khi biết thêm thông tin, có thay đổi yêu cầu hoặc phát hiện rủi ro mới.",
+        "sources": [
+            {
+                "text": "Pressman 5e; Mở đầu Chương 5; §5.1 Observations on Estimating; §5.2 Project Planning Objectives; trang in 113–115; trang PDF 141–143.",
+                "title": "Pressman · trang PDF 141",
+                "href": "tai-lieu/pressman.pdf#page=141"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 48, 56, 59–63: Ước lượng ban đầu, bất định và rủi ro; slide 48 trực tiếp hỗ trợ A, các nội dung còn lại bổ sung cho D.",
+                "title": "Bài giảng · slide 48",
+                "href": "tai-lieu/slides.pdf#page=48"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "topic": "SPM",
+        "question": "Kỹ thuật kiểm thử nào được Developer dùng để kiểm thử mã nguồn ?",
+        "examPage": 6,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Kiểm thử đơn vị"
+            },
+            {
+                "letter": "B",
+                "text": "Kiểm thử tích hợp"
+            },
+            {
+                "letter": "C",
+                "text": "Kiểm thử tích hợp và kiểm thử đơn vị"
+            },
+            {
+                "letter": "D",
+                "text": "Không đáp án nào đúng"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Kiểm thử đơn vị — Unit Testing.",
+        "explain": "Mục §18.1.3 gắn unit testing với từng đơn vị được cài đặt bằng mã nguồn; integration testing tập trung vào thiết kế và xây dựng kiến trúc. Vì đề nhấn mạnh “kiểm thử mã nguồn”, A là lựa chọn sát hơn.",
+        "eliminate": "B tập trung việc phối hợp các thành phần. C đúng nếu hỏi bao quát các loại kiểm thử developer có thể làm, nhưng phạm vi rộng hơn trọng tâm mã nguồn của câu này. D không phù hợp.",
+        "note": "Sửa đáp án C trong bản trước thành A sau khi đối chiếu §18.1.3. Developer vẫn có thể thực hiện integration testing theo §18.1.2; không học rằng chỉ tester mới được làm integration test. Việc developer có thể làm cả hai chưa đủ để buộc chọn C.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §18.1.2 Organizing for Software Testing; trang in 480; trang PDF 508.",
+                "title": "Pressman · trang PDF 508",
+                "href": "tai-lieu/pressman.pdf#page=508"
+            },
+            {
+                "text": "Pressman 5e; §18.1.3 A Software Testing Strategy; Hình 18.1; trang in 481; trang PDF 509.",
+                "title": "Pressman · trang PDF 509",
+                "href": "tai-lieu/pressman.pdf#page=509"
+            },
+            {
+                "text": "Pressman 5e; §18.3 Unit Testing; trang in 485; trang PDF 513.",
+                "title": "Pressman · trang PDF 513",
+                "href": "tai-lieu/pressman.pdf#page=513"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "topic": "SPM",
+        "question": "Câu hỏi nào không tồn tại trong nguyên lý W5HH?",
+        "examPage": 7,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Why is the system being developed ?"
+            },
+            {
+                "letter": "B",
+                "text": "What will be done, by When ?"
+            },
+            {
+                "letter": "C",
+                "text": "Where are the stakeholders organizationally located?"
+            },
+            {
+                "letter": "D",
+                "text": "Who is responsible for a function?"
+            }
+        ],
+        "key": "—",
+        "status": "missing",
+        "answer": "Đề sai: cả A, B, C và D đều thuộc W5HH.",
+        "explain": "W5HH gồm Why, What, When, Who, Where, How và How much. A là Why; B gộp What với When; C là Where; D là Who. Vì vậy không có phương án nào “không tồn tại”.",
+        "eliminate": "Không loại C chỉ vì nó nhắc stakeholders. Sách giải thích rằng khách hàng, người dùng và các bên liên quan khác cũng có trách nhiệm và vị trí trong tổ chức, không chỉ thành viên nhóm phần mềm.",
+        "note": "Pressman dùng câu “Where are they organizationally located?” và giải thích trực tiếp đến stakeholders. Nếu muốn tạo câu có đáp án duy nhất, đề phải thay một lựa chọn bằng câu hỏi ngoài bảy nhóm này. Không giữ C đã khoanh sẵn như đáp án chuẩn.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §3.6 The W5HH Principle; trang in 73; trang PDF 101.",
+                "title": "Pressman · trang PDF 101",
+                "href": "tai-lieu/pressman.pdf#page=101"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 19: W5HH principle.",
+                "title": "Bài giảng · slide 19",
+                "href": "tai-lieu/slides.pdf#page=19"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "topic": "SPM",
+        "question": "Quản lý dự án phần mềm hiệu quả tập trung vào bốn yếu tố (4P) bao gồm: People, Product, Project, và ...?",
+        "examPage": 7,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Process"
+            },
+            {
+                "letter": "B",
+                "text": "Profit"
+            },
+            {
+                "letter": "C",
+                "text": "Plan"
+            },
+            {
+                "letter": "D",
+                "text": "Participants"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Process.",
+        "explain": "Bốn P trong quản lý dự án phần mềm là People, Product, Process và Project. Process xác định cách thức và các hoạt động cần áp dụng để phát triển sản phẩm.",
+        "eliminate": "Profit, Plan và Participants không phải phần còn thiếu của bộ 4P được Pressman nêu.",
+        "note": "Ghi nhớ theo câu: con người tạo sản phẩm bằng một quy trình trong một dự án. Không thay Process bằng Plan dù kế hoạch là công việc quan trọng.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §3.1 The Management Spectrum; trang in 56; trang PDF 84.",
+                "title": "Pressman · trang PDF 84",
+                "href": "tai-lieu/pressman.pdf#page=84"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 5: People, Product, Process, Project.",
+                "title": "Bài giảng · slide 5",
+                "href": "tai-lieu/slides.pdf#page=5"
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "topic": "SPM",
+        "question": "BA có thể sử dụng các prototype ở những dạng nào dưới đây làm phương tiện trao đổi với khách hàng để làm rõ yêu cầu chức năng phần mềm ?",
+        "examPage": 7,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Mô hình trên giấy; Mô hình giao diện trên PC; Phần mềm cài đặt một phần các chức năng"
+            },
+            {
+                "letter": "B",
+                "text": "Mô hình trên giấy; Phần mềm cài đặt một tập con các chức năng; Chương trình đã có thực hiện được một phần hoặc các chức năng mong muốn nhưng cần hoàn thiện thêm"
+            },
+            {
+                "letter": "C",
+                "text": "Mô hình trên giấy; Mô hình giao diện trên PC; Chương trình cài đặt một tập con các chức năng; Phần mềm đã có"
+            },
+            {
+                "letter": "D",
+                "text": "Tất cả các đáp án đều đúng"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Tất cả các đáp án đều đúng.",
+        "explain": "Prototype dùng để trao đổi và làm rõ yêu cầu, nên có thể đơn giản như bản mô phỏng trên giấy, giao diện tương tác trên máy tính hoặc bản phần mềm thực hiện một phần chức năng. Một sản phẩm có sẵn cũng có thể làm phương tiện tham chiếu cho yêu cầu.",
+        "eliminate": "A, B và C đều đưa ra những dạng bản mẫu có thể dùng. Các tập hợp khác nhau này không loại trừ nhau nên D phù hợp nhất.",
+        "note": "Không nhầm bản mẫu giao diện với sản phẩm hoàn chỉnh. Throwaway prototype có thể được bỏ sau khi làm rõ yêu cầu; evolutionary prototype được phát triển tiếp có kiểm soát. Các dạng cụ thể trong đề được đối chiếu theo mục đích prototyping, không phải một danh sách sách chép nguyên văn.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.5 The Prototyping Model; trang in 30–31; trang PDF 58–59.",
+                "title": "Pressman · trang PDF 58",
+                "href": "tai-lieu/pressman.pdf#page=58"
+            },
+            {
+                "text": "Pressman 5e; §11.4 Software Prototyping; trang in 289–291; trang PDF 317–319.",
+                "title": "Pressman · trang PDF 317",
+                "href": "tai-lieu/pressman.pdf#page=317"
+            },
+            {
+                "text": "Pressman 5e; §2.7.2 The Spiral Model — paper model/prototype; trang in 36; trang PDF 64.",
+                "title": "Pressman · trang PDF 64",
+                "href": "tai-lieu/pressman.pdf#page=64"
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "topic": "SPM",
+        "question": "Các nguồn lực cần Người quản lý dự án phần mềm quan tâm bao gồm: Con người, Công cụ phần cứng-phần mềm, và ...?",
+        "examPage": 7,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Người dùng cuối"
+            },
+            {
+                "letter": "B",
+                "text": "Kinh phí"
+            },
+            {
+                "letter": "C",
+                "text": "Các thành phần phần mềm dùng lại"
+            },
+            {
+                "letter": "D",
+                "text": "Nguồn vốn"
+            }
+        ],
+        "key": "C",
+        "status": "supported",
+        "answer": "Các thành phần phần mềm dùng lại.",
+        "explain": "Hình 5.2 trong sách có ba nhóm tài nguyên: People; Reusable software components; Hardware/software tools. Vì đề đã có con người và công cụ, phần còn thiếu là thành phần dùng lại.",
+        "eliminate": "Kinh phí và nguồn vốn liên quan chi phí/khả năng tài chính, nhưng không phải nhóm thứ ba trong mô hình tài nguyên này. Người dùng cuối cũng không thay thế reusable components.",
+        "note": "Đây là câu cần sửa đáp án B đã khoanh trong bản PDF: theo mô hình nguồn lực của Pressman, chọn C.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §5.4 Resources; Hình 5.2 Project resources; trang in 120–121; trang PDF 148–149.",
+                "title": "Pressman · trang PDF 148",
+                "href": "tai-lieu/pressman.pdf#page=148"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 50: Hình tháp Project resources: people, reusable components, hardware/software tools.",
+                "title": "Bài giảng · slide 50",
+                "href": "tai-lieu/slides.pdf#page=50"
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "topic": "UML",
+        "question": "Use case A có quan hệ <> với use case B có nghĩa là ?",
+        "examPage": 7,
+        "options": [
+            {
+                "letter": "A",
+                "text": "A cần có các hành vi trong B để hoàn thiện"
+            },
+            {
+                "letter": "B",
+                "text": "A có thể sử dụng các hành vi trong B như một lựa chọn để hoàn thiện"
+            },
+            {
+                "letter": "C",
+                "text": "A bao gồm các hành vi của B"
+            },
+            {
+                "letter": "D",
+                "text": "A không thể hoàn thiện nếu thiếu B"
+            }
+        ],
+        "key": "—",
+        "status": "missing",
+        "answer": "Thiếu dữ kiện: PDF chỉ ghi quan hệ “<>”, không có include/extend và hướng quan hệ.",
+        "explain": "Nếu A «include» B thì hành vi B được đưa vào A; C nêu định nghĩa trực tiếp, còn A và D là những cách diễn đạt hệ quả thường dùng trong bài nhập môn. Nếu B «extend» A thì A có thể nhận thêm hành vi B ở điểm mở rộng, gần với lựa chọn B.",
+        "eliminate": "Nếu A «extend» B thì A mới là use case mở rộng cho B; không thể tự đổi thành “A tùy chọn dùng B”. Vì vậy chỉ biết tên quan hệ mà chưa biết chiều cũng có thể chưa đủ.",
+        "note": "Đã kiểm tra hình trang 7 của đề: ký hiệu thực sự bị mất trong bản gốc, không phải lỗi trích xuất văn bản. Không chốt A, B, C hay D. Cần bổ sung nhãn và mũi tên; nếu là include thì các phương án A/C/D còn bị chồng lấn.",
+        "sources": [
+            {
+                "text": "OMG UML 2.5.1; §18.1.3.2 Extends; §18.1.3.3 Includes; trang in 640–641; trang PDF 682–683.",
+                "title": "OMG UML 2.5.1 · trang PDF 682",
+                "href": "https://www.omg.org/spec/UML/2.5.1/PDF#page=682"
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "topic": "SPM",
+        "question": "Số lượng người cần có đối với một dự án phần mềm chỉ xác định được sau khi ?",
+        "examPage": 8,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Có ước lượng về rủi ro dự án"
+            },
+            {
+                "letter": "B",
+                "text": "Có ước lượng về thời gian của dự án"
+            },
+            {
+                "letter": "C",
+                "text": "Có ước lượng về công sức phát triển"
+            },
+            {
+                "letter": "D",
+                "text": "Có ước lượng về chi phí dự án"
+            }
+        ],
+        "key": "C",
+        "status": "supported",
+        "answer": "Có ước lượng về công sức phát triển.",
+        "explain": "Sách nêu chỉ có thể xác định số người cần cho dự án sau khi ước lượng development effort, ví dụ theo person-month. Công sức cho biết lượng lao động cần phân bổ.",
+        "eliminate": "Thời gian, chi phí và rủi ro đều liên quan, nhưng không thay thế cơ sở công sức mà đoạn sách đang hỏi.",
+        "note": "Muốn bố trí nhân sự cụ thể còn cần lịch, kỹ năng và quan hệ phụ thuộc; số người không chỉ được suy ra bằng chia person-month cho số tháng mà bỏ qua những yếu tố đó.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §5.4.1 Human Resources; trang in 121; trang PDF 149.",
+                "title": "Pressman · trang PDF 149",
+                "href": "tai-lieu/pressman.pdf#page=149"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 52: Số người được xác định sau ước lượng effort.",
+                "title": "Bài giảng · slide 52",
+                "href": "tai-lieu/slides.pdf#page=52"
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "topic": "UML",
+        "question": "Biểu đồ trường hợp sử dụng (Use case diagram) biểu diễn khía cạnh nào của hệ thống ?",
+        "examPage": 8,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Hành vi hệ thống"
+            },
+            {
+                "letter": "B",
+                "text": "Cấu trúc tĩnh của hệ thống"
+            },
+            {
+                "letter": "C",
+                "text": "Kiến trúc của hệ thống"
+            },
+            {
+                "letter": "D",
+                "text": "Yêu cầu chức năng của hệ thống"
+            }
+        ],
+        "key": "D*",
+        "status": "conditional",
+        "answer": "D — nếu hỏi mục đích mô tả yêu cầu; A cũng đúng khi hỏi phân loại UML nên câu chưa thật sự có đáp án duy nhất.",
+        "explain": "Use case diagram mô tả những chức năng/dịch vụ hệ thống cung cấp cho các actor từ góc nhìn bên ngoài. Pressman dùng use case để xác định functional và operational requirements thông qua các kịch bản sử dụng.",
+        "eliminate": "B thuộc góc nhìn cấu trúc; C tập trung kiến trúc. A nói hành vi theo nghĩa rộng nên có liên quan, nhưng D chính xác hơn đối với mục đích mô tả yêu cầu của use case diagram trong câu hỏi này.",
+        "note": "Use case diagram thuộc nhóm biểu đồ hành vi trong UML; A có cơ sở theo phân loại. D sát mục đích xác định yêu cầu chức năng trong Pressman. Chuyển D của bản trước thành D* để không khẳng định A sai tuyệt đối. Không ghép chữ “Hành vi / Yêu cầu chức năng” rồi coi hai phương án là một.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §21.4.1 Use-Cases; trang in 581–582; trang PDF 609–610.",
+                "title": "Pressman · trang PDF 609",
+                "href": "tai-lieu/pressman.pdf#page=609"
+            },
+            {
+                "text": "OMG UML 2.5.1; Annex A, Hình A.5, The taxonomy of structure and behavior diagrams; trang in 685; trang PDF 727.",
+                "title": "OMG UML 2.5.1 · trang PDF 727",
+                "href": "https://www.omg.org/spec/UML/2.5.1/PDF#page=727"
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "topic": "SPM",
+        "question": "DRE (Defect Removal Efficiency) được xác định bằng công thức: DRE = E / (E + D) trong đó, E: số lỗi được phát hiện trước khi bàn giao cho người dùng cuối, D: số lỗi số khiếm khuyết được phát hiện sau khi bàn giao. Giá trị lý tưởng của DRE là bao nhiêu ?",
+        "examPage": 8,
+        "options": [
+            {
+                "letter": "A",
+                "text": "0,1"
+            },
+            {
+                "letter": "B",
+                "text": "0,5"
+            },
+            {
+                "letter": "C",
+                "text": "0"
+            },
+            {
+                "letter": "D",
+                "text": "1"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "1.",
+        "explain": "DRE = E / (E + D). Trong trường hợp lý tưởng không phát hiện defect sau bàn giao, D = 0; với E > 0 thì DRE = E / E = 1, tương đương 100%.",
+        "eliminate": "0 hoặc các tỷ lệ 0,1 và 0,5 biểu thị hiệu quả loại bỏ thấp hơn mức lý tưởng.",
+        "note": "Ví dụ tự xây dựng: 90 lỗi phát hiện trước bàn giao và 10 lỗi sau bàn giao thì DRE = 90/100 = 0,9. Nếu E = D = 0, công thức tạo 0/0 nên không được tự kết luận DRE = 1.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §4.5.3 Defect Removal Efficiency; công thức (4-4); trang in 98; trang PDF 126.",
+                "title": "Pressman · trang PDF 126",
+                "href": "tai-lieu/pressman.pdf#page=126"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 46: DRE và giá trị lý tưởng bằng 1.",
+                "title": "Bài giảng · slide 46",
+                "href": "tai-lieu/slides.pdf#page=46"
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "topic": "SPM",
+        "question": "Việc đo lường sản phẩm phần mềm được tiến hành khi nào ?",
+        "examPage": 8,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Trước khi lập kế hoạch phần mềm"
+            },
+            {
+                "letter": "B",
+                "text": "Trước khi phân tích yêu cầu phần mềm"
+            },
+            {
+                "letter": "C",
+                "text": "Sau khi xây dựng xong phần mềm"
+            },
+            {
+                "letter": "D",
+                "text": "Trước khi cài đặt phần mềm"
+            }
+        ],
+        "key": "C*",
+        "status": "conditional",
+        "answer": "C — nếu đề hỏi đo số liệu thực tế của sản phẩm hoàn chỉnh; câu hiện tại khái quát quá rộng.",
+        "explain": "Sau khi xây dựng, có thể đếm LOC thực tế, đo tốc độ thực thi hoặc bộ nhớ sử dụng của sản phẩm. Trong cách hiểu hẹp này, C là lựa chọn gần nhất.",
+        "eliminate": "Không thể dùng C để khẳng định mọi phép đo sản phẩm đều chờ phần mềm hoàn thành. Pressman mô tả đo chất lượng các mô hình phân tích, thiết kế, mã nguồn và test case khi phần mềm đang được xây dựng.",
+        "note": "Câu hỏi cần nêu loại phép đo. Nếu hỏi “measurement được tiến hành khi nào” nói chung, bốn phương án không chứa đáp án đầy đủ: việc đo có thể xuyên suốt quá trình, ở thời điểm phù hợp với work product.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §4.3 Software Measurement; trang in 87; trang PDF 115.",
+                "title": "Pressman · trang PDF 115",
+                "href": "tai-lieu/pressman.pdf#page=115"
+            },
+            {
+                "text": "Pressman 5e; §4.5 Metrics for Software Quality; trang in 95; trang PDF 123.",
+                "title": "Pressman · trang PDF 123",
+                "href": "tai-lieu/pressman.pdf#page=123"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 25, 40: Đo lường work products và chất lượng trong khi dự án tiến triển.",
+                "title": "Bài giảng · slide 25",
+                "href": "tai-lieu/slides.pdf#page=25"
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "topic": "SPM",
+        "question": "Thứ tự các bước trong một dự án phát triển phần mềm cổ điển ?",
+        "examPage": 8,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Phân tích yêu cầu hệ thống và phần mềm; Lập kế hoạch và ước lượng dự án; Thiết kế cấu trúc dữ liệu, kiến trúc chương trình, thủ tục, giao diện; Mã hóa; Kiểm thử; Bảo trì."
+            },
+            {
+                "letter": "B",
+                "text": "Lập kế hoạch và ước lượng dự án; Phân tích yêu cầu hệ thống và phần mềm; Thiết kế cấu trúc dữ liệu, kiến trúc chương trình, thủ tục, giao diện; Mã hóa; Kiểm thử; Bảo trì."
+            },
+            {
+                "letter": "C",
+                "text": "Phân tích yêu cầu hệ thống và phần mềm; Lập kế hoạch và ước lượng dự án; Thiết kế cấu trúc dữ liệu, kiến trúc chương trình, thủ tục, giao diện; Mã hóa; Bảo trì; Kiểm thử."
+            },
+            {
+                "letter": "D",
+                "text": "Lập kế hoạch và ước lượng dự án; Phân tích yêu cầu hệ thống và phần mềm; Thiết kế cấu trúc dữ liệu, kiến trúc chương trình, thủ tục, giao diện; Kiểm thử; Mã hóa; Bảo trì."
+            }
+        ],
+        "key": "B*",
+        "status": "conditional",
+        "answer": "B — gần nhất theo sơ đồ giai đoạn mà đề dự kiến.",
+        "explain": "Ở mức kế hoạch tổng quát, nhóm lập kế hoạch/ước lượng trước các công việc triển khai, rồi làm rõ yêu cầu, thiết kế, mã hóa, kiểm thử và bảo trì. B giữ đúng chuỗi thiết kế → mã hóa → kiểm thử → bảo trì.",
+        "eliminate": "C đảo kiểm thử xuống sau bảo trì; D đặt kiểm thử thực thi trước mã hóa. A và B còn khác nhau ở vị trí phân tích yêu cầu với lập kế hoạch, nên cần biết mức phân tích mà đề muốn hỏi.",
+        "note": "Pressman mô tả definition phase gồm system/information engineering, project planning và requirements analysis; phạm vi hệ thống ban đầu là đầu vào lập kế hoạch. Vì A/B gộp phân tích hệ thống và phần mềm vào một bước, không phương án nào thể hiện chính xác mọi mức chi tiết. B là lựa chọn gần nhất, không phải trình tự cứng cho mọi dự án.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.1.2 A Generic View of Software Engineering; trang in 22; trang PDF 50.",
+                "title": "Pressman · trang PDF 50",
+                "href": "tai-lieu/pressman.pdf#page=50"
+            },
+            {
+                "text": "Pressman 5e; §2.4 The Linear Sequential Model; trang in 28–29; trang PDF 56–57.",
+                "title": "Pressman · trang PDF 56",
+                "href": "tai-lieu/pressman.pdf#page=56"
+            },
+            {
+                "text": "Pressman 5e; §5.3 Software Scope; trang in 115; trang PDF 143.",
+                "title": "Pressman · trang PDF 143",
+                "href": "tai-lieu/pressman.pdf#page=143"
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "topic": "SPM",
+        "question": "Số lượng rủi ro cần theo dõi ?",
+        "examPage": 9,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Top 20 rủi ro dự án"
+            },
+            {
+                "letter": "B",
+                "text": "Top 10 rủi ro của dự án"
+            },
+            {
+                "letter": "C",
+                "text": "Top 5 rủi ro dự án"
+            },
+            {
+                "letter": "D",
+                "text": "Top 15 rủi ro dự án"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Top 10 rủi ro của dự án.",
+        "explain": "Trong §3.7 Critical Practices, câu hỏi QuickLook về formal risk management yêu cầu nêu top ten risks của dự án và đánh giá khả năng xảy ra, tác động của từng rủi ro.",
+        "eliminate": "5, 15 hoặc 20 không khớp con số trong thực hành được sách dẫn ở mục này.",
+        "note": "Top 10 là đáp án theo nguồn học, không phải giới hạn bắt buộc rằng chỉ được quản lý mười rủi ro. Nhóm cần nhận diện toàn bộ rủi ro liên quan và ưu tiên theo bối cảnh.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §3.7 Critical Practices — Formal risk management; trang in 74; trang PDF 102.",
+                "title": "Pressman · trang PDF 102",
+                "href": "tai-lieu/pressman.pdf#page=102"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 21: Formal risk management: top ten risks.",
+                "title": "Bài giảng · slide 21",
+                "href": "tai-lieu/slides.pdf#page=21"
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "topic": "SPM",
+        "question": "Các khía cạnh quan trọng cần theo dõi đối với một rủi ro dự án ?",
+        "examPage": 9,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tác nhân và nguồn gốc"
+            },
+            {
+                "letter": "B",
+                "text": "Không đáp án nào đúng"
+            },
+            {
+                "letter": "C",
+                "text": "Thời điểm và thời lượng xảy ra"
+            },
+            {
+                "letter": "D",
+                "text": "Khả năng xảy ra và mức độ gây thiệt hại"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Khả năng xảy ra và mức độ gây thiệt hại.",
+        "explain": "Hai chiều cơ bản dùng để đánh giá/ưu tiên rủi ro là probability và impact. Một rủi ro ít khả năng nhưng hậu quả rất lớn vẫn cần được cân nhắc; chỉ xét một chiều sẽ dễ bỏ sót.",
+        "eliminate": "Nguồn gốc, thời điểm và thời lượng là thông tin hữu ích, nhưng không thay cặp đánh giá cốt lõi mà đề hỏi. B sai.",
+        "note": "Thời điểm và phạm vi còn được sách dùng khi phân tích tác động chi tiết. Chọn D không có nghĩa A hoặc C luôn không cần theo dõi.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §3.7 Critical Practices; trang in 74; trang PDF 102.",
+                "title": "Pressman · trang PDF 102",
+                "href": "tai-lieu/pressman.pdf#page=102"
+            },
+            {
+                "text": "Pressman 5e; §6.4 Risk Projection; §6.4.2 Assessing Risk Impact; trang in 151, 153; trang PDF 179, 181.",
+                "title": "Pressman · trang PDF 179",
+                "href": "tai-lieu/pressman.pdf#page=179"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 21, 63: Chance/probability và impact/consequences.",
+                "title": "Bài giảng · slide 21",
+                "href": "tai-lieu/slides.pdf#page=21"
+            }
+        ]
+    },
+    {
+        "id": 43,
+        "topic": "SPM",
+        "question": "Khái niệm “constraints” trong đặc tả yêu cầu phần mềm có nghĩa gì ?",
+        "examPage": 9,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Các dịch vụ mà hệ thống phải cung cấp"
+            },
+            {
+                "letter": "B",
+                "text": "Các ràng buộc mà hệ thống phải tuân theo"
+            },
+            {
+                "letter": "C",
+                "text": "Không đáp án nào đúng"
+            },
+            {
+                "letter": "D",
+                "text": "Các dịch vụ mà hệ thống phải cung cấp và các ràng buộc mà hệ thống phải tuân theo"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Các ràng buộc mà hệ thống phải tuân theo.",
+        "explain": "Constraints là những giới hạn/điều kiện phải tôn trọng khi xây dựng hoặc vận hành hệ thống: nền tảng yêu cầu, giới hạn tài nguyên, quy định tích hợp hoặc các hạn chế thiết kế.",
+        "eliminate": "A nói dịch vụ/chức năng cần cung cấp. D gộp cả dịch vụ với constraints, phù hợp hơn với khái quát yêu cầu chứ không phải nghĩa riêng của từ constraints. C sai.",
+        "note": "Ví dụ tự xây dựng: “hệ thống cho phép nộp CV” là chức năng; “dung lượng file không vượt giới hạn quy định” là một ràng buộc của chức năng.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §5.3 Software Scope; trang in 116; trang PDF 144.",
+                "title": "Pressman · trang PDF 144",
+                "href": "tai-lieu/pressman.pdf#page=144"
+            },
+            {
+                "text": "Pressman 5e; §11.5.3 The Software Requirements Specification; trang in 293; trang PDF 321.",
+                "title": "Pressman · trang PDF 321",
+                "href": "tai-lieu/pressman.pdf#page=321"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 10, 49: Constraints trong context và software scope.",
+                "title": "Bài giảng · slide 10",
+                "href": "tai-lieu/slides.pdf#page=10"
+            }
+        ]
+    },
+    {
+        "id": 44,
+        "topic": "SPM",
+        "question": "Danh sách các dịch vụ mà hệ thống phải giải quyết, các ràng buộc mà hệ thống phải tuân theo, được mô tả chi tiết trong tài liệu nào sau đây ?",
+        "examPage": 9,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Bản đặc tả hệ thống"
+            },
+            {
+                "letter": "B",
+                "text": "Bản ước lượng kế hoạc dự án"
+            },
+            {
+                "letter": "C",
+                "text": "Bản thiết kế chi tiết"
+            },
+            {
+                "letter": "D",
+                "text": "Bản đặc tả yêu cầu phần mềm"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Bản đặc tả yêu cầu phần mềm — SRS.",
+        "explain": "SRS mô tả những chức năng phần mềm phải thực hiện, dữ liệu/giao diện, hành vi, yêu cầu hiệu năng, ràng buộc thiết kế và tiêu chí xác nhận. Nó là căn cứ để thiết kế và kiểm thử phần mềm.",
+        "eliminate": "B tập trung kế hoạch/ước lượng; C mô tả giải pháp thiết kế. A ở mức toàn hệ thống, có thể bao gồm phần cứng và con người, nên D khớp hơn với đặc tả phần mềm mà đề hướng tới.",
+        "note": "SRS trả lời “phần mềm cần làm gì và phải tuân thủ điều gì”; Design Specification trả lời cách xây dựng giải pháp ở mức thiết kế.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §11.5.3 The Software Requirements Specification; trang in 293; trang PDF 321.",
+                "title": "Pressman · trang PDF 321",
+                "href": "tai-lieu/pressman.pdf#page=321"
+            },
+            {
+                "text": "Pressman 5e; §10.5.3 Requirements Specification; trang in 259; trang PDF 287.",
+                "title": "Pressman · trang PDF 287",
+                "href": "tai-lieu/pressman.pdf#page=287"
+            }
+        ]
+    },
+    {
+        "id": 45,
+        "topic": "SPM",
+        "question": "Các loại hoạt động trong giai đoạn bảo trì phần mềm ?",
+        "examPage": 10,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Phân tích hệ thống; Lập kế hoạch phần mềm; Phân tích yêu cầu phần mềm"
+            },
+            {
+                "letter": "B",
+                "text": "Thiết kế phần mềm; Mã hóa; Kiểm thử phần mềm"
+            },
+            {
+                "letter": "C",
+                "text": "Sửa đổi; Thích nghi hóa; Nâng cấp"
+            },
+            {
+                "letter": "D",
+                "text": "Mã hóa; Kiểm thử; Bảo trì"
+            }
+        ],
+        "key": "C",
+        "status": "supported",
+        "answer": "Sửa đổi, thích nghi hóa, nâng cấp.",
+        "explain": "Bảo trì sửa lỗi đã phát hiện, thích nghi với thay đổi môi trường và cải tiến/chỉnh sửa chức năng theo nhu cầu mới. C khớp ba nhóm hoạt động được lựa chọn trong đề.",
+        "eliminate": "A là các hoạt động định nghĩa ban đầu; B là nhóm công việc phát triển; D lặp lại tên bảo trì thay vì phân loại các dạng bảo trì.",
+        "note": "Nguồn sách còn nêu preventive maintenance, tức bảo trì phòng ngừa để phần mềm dễ sửa, thích nghi và nâng cấp hơn. Vì vậy C là đáp án đúng trong các lựa chọn nhưng chưa phải danh sách bốn loại đầy đủ.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.1.2 A Generic View of Software Engineering — Support phase; trang in 22–23; trang PDF 50–51.",
+                "title": "Pressman · trang PDF 50",
+                "href": "tai-lieu/pressman.pdf#page=50"
+            }
+        ]
+    },
+    {
+        "id": 46,
+        "topic": "SPM",
+        "question": "Các hoạt động kỹ thuật trong giai đoạn đầu của dự án phần mềm ?",
+        "examPage": 10,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Phân tích hệ thống; Lập kế hoạch phần mềm; Phân tích yêu cầu phần mềm"
+            },
+            {
+                "letter": "B",
+                "text": "Thiết kế phần mềm; Mã hóa; Kiểm thử phần mềm"
+            },
+            {
+                "letter": "C",
+                "text": "Sửa đổi; Thích nghi hóa; Nâng cấp"
+            },
+            {
+                "letter": "D",
+                "text": "Mã hóa; Kiểm thử; Bảo trì"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Phân tích hệ thống, lập kế hoạch phần mềm, phân tích yêu cầu phần mềm.",
+        "explain": "Trong definition phase, nhóm xác định hệ thống/phần mềm cần làm gì, phạm vi, dữ liệu, hành vi, ràng buộc và tiêu chí xác nhận. Sách nêu ba nhóm nhiệm vụ tương ứng system/information engineering, project planning và requirements analysis.",
+        "eliminate": "B thuộc development phase. C thuộc support/maintenance. D trộn các giai đoạn và bỏ các công việc định nghĩa đầu dự án.",
+        "note": "Định nghĩa tập trung “what”; phát triển tập trung “how”; hỗ trợ tập trung “change”. Bộ ba này cũng giải câu 64.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.1.2 A Generic View of Software Engineering; trang in 22; trang PDF 50.",
+                "title": "Pressman · trang PDF 50",
+                "href": "tai-lieu/pressman.pdf#page=50"
+            }
+        ]
+    },
+    {
+        "id": 47,
+        "topic": "SPM",
+        "question": "Work product của hoạt động phân tích nghiệp vụ là gì ?",
+        "examPage": 10,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Bản đặc tả hệ thống"
+            },
+            {
+                "letter": "B",
+                "text": "Bản thiết kế chi tiết"
+            },
+            {
+                "letter": "C",
+                "text": "Bản ước lượng kế hoạch phần mềm"
+            },
+            {
+                "letter": "D",
+                "text": "Bản đặc tả yêu cầu phần mềm"
+            }
+        ],
+        "key": "D*",
+        "status": "conditional",
+        "answer": "D — nếu “phân tích nghiệp vụ” ở đây được dùng cho phân tích yêu cầu phần mềm.",
+        "explain": "Sách nêu SRS được tạo ra khi hoàn thành analysis task ở mức phần mềm. Nếu BA đang thu thập và phân tích các yêu cầu của ứng dụng, D là lựa chọn phù hợp.",
+        "eliminate": "B là đầu ra thiết kế; C là đầu ra lập kế hoạch. A lại có thể đúng nếu “phân tích nghiệp vụ” được đề dùng theo nghĩa phân tích/kỹ nghệ toàn hệ thống, vì công việc đó kết thúc bằng System Specification.",
+        "note": "Đề không định nghĩa mức phân tích nên D chỉ là đáp án có điều kiện. Không mặc định mọi business analysis chỉ tạo một loại tài liệu; cần đọc cách giảng viên phân biệt phân tích hệ thống và phân tích yêu cầu phần mềm.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §11.5.3 The Software Requirements Specification; trang in 293; trang PDF 321.",
+                "title": "Pressman · trang PDF 321",
+                "href": "tai-lieu/pressman.pdf#page=321"
+            },
+            {
+                "text": "Pressman 5e; §10.7 Summary — System engineering work product; trang in 266; trang PDF 294.",
+                "title": "Pressman · trang PDF 294",
+                "href": "tai-lieu/pressman.pdf#page=294"
+            }
+        ]
+    },
+    {
+        "id": 48,
+        "topic": "SPM",
+        "question": "Khái niệm \"Off-the-shelf components\" có nghĩa là gì ?",
+        "examPage": 10,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Các thành phần phần mềm sẵn có nhưng đội dự án hiểu không đầy đủ"
+            },
+            {
+                "letter": "B",
+                "text": "Các thành phần phần mềm mới cần phát triển"
+            },
+            {
+                "letter": "C",
+                "text": "Các thành phần phần mềm sẵn có mà đội dự án hiểu rõ"
+            },
+            {
+                "letter": "D",
+                "text": "Các thành phần phần mềm sẵn có do bên thứ 3 phát triển"
+            }
+        ],
+        "key": "D*",
+        "status": "conditional",
+        "answer": "D — gần nhất, nhưng định nghĩa trong sách rộng hơn.",
+        "explain": "Off-the-shelf là thành phần phần mềm đã có sẵn để sử dụng. D mô tả trường hợp lấy từ bên thứ ba; đây là ví dụ đúng, đặc biệt khi nói đến COTS.",
+        "eliminate": "A mô tả mức kinh nghiệm hạn chế với thành phần, không phải ý nghĩa sẵn có. C gần với full-experience components. B là thành phần mới cần phát triển.",
+        "note": "Pressman còn cho phép off-the-shelf là phần mềm nội bộ đã phát triển cho dự án trước. Do đó không khẳng định mọi off-the-shelf đều do bên thứ ba tạo; D chỉ là lựa chọn gần nhất của đề.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §5.4.2 Reusable Software Resources — Off-the-shelf components; trang in 121; trang PDF 149.",
+                "title": "Pressman · trang PDF 149",
+                "href": "tai-lieu/pressman.pdf#page=149"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 53: Off-the-shelf: nguồn bên thứ ba hoặc phần mềm nội bộ của dự án trước.",
+                "title": "Bài giảng · slide 53",
+                "href": "tai-lieu/slides.pdf#page=53"
+            }
+        ]
+    },
+    {
+        "id": 49,
+        "topic": "SPM",
+        "question": "Thực hiện các bước kỹ thuật nào để phát triển phần mềm quy mô lớn ?",
+        "examPage": 10,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Lập kế hoạch; Phân tích rủi ro; Kỹ nghệ; Đánh giá khách hàng"
+            },
+            {
+                "letter": "B",
+                "text": "Phân tích yêu cầu; Phân tích rủi ro; Kỹ nghệ; Đánh giá khách hàng"
+            },
+            {
+                "letter": "C",
+                "text": "Xác định mục tiêu; Phân tích yêu cầu; Đánh giá khách hàng; Kỹ nghệ"
+            },
+            {
+                "letter": "D",
+                "text": "Phân tích yêu cầu; Ước lượng chi phí; Kỹ nghệ; Đánh giá khách hàng"
+            }
+        ],
+        "key": "A*",
+        "status": "conditional",
+        "answer": "A — nếu đề muốn hỏi chu trình của mô hình xoắn ốc.",
+        "explain": "Lập kế hoạch, phân tích rủi ro, kỹ nghệ và đánh giá khách hàng là cách tóm tắt quen thuộc của chu trình spiral. A là lựa chọn phản ánh rõ việc xử lý rủi ro cùng phát triển lặp và phản hồi.",
+        "eliminate": "B bỏ lập kế hoạch; C bỏ phân tích rủi ro và thay đổi trật tự; D thay phân tích rủi ro bằng ước lượng chi phí. Chúng không khớp chu trình mà A đang mô tả.",
+        "note": "Câu hỏi hiện tại chỉ nói “phần mềm quy mô lớn” nên quá rộng: quy mô lớn không bắt buộc mọi dự án dùng spiral. Pressman 5e minh họa sáu task regions, bổ sung customer communication và construction/release; bốn nhóm trong A là bản tóm tắt, không phải danh sách sáu nhóm nguyên văn.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.7.2 The Spiral Model; Hình 2.8; trang in 36–37; trang PDF 64–65.",
+                "title": "Pressman · trang PDF 64",
+                "href": "tai-lieu/pressman.pdf#page=64"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 12: Sáu framework activities đang được đề liệt kê.",
+                "title": "Bài giảng · slide 12",
+                "href": "tai-lieu/slides.pdf#page=12"
+            }
+        ]
+    },
+    {
+        "id": 50,
+        "topic": "SPM",
+        "question": "Các thuộc tính nào của rủi ro dự án phần mềm ?",
+        "examPage": 10,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tính chắc chắn và không gây thiệt hại khi xảy ra"
+            },
+            {
+                "letter": "B",
+                "text": "Tính không chắc chắn và gây thiệt hại khi xảy ra"
+            },
+            {
+                "letter": "C",
+                "text": "Tính linh hoạt và không kiểm soát được"
+            },
+            {
+                "letter": "D",
+                "text": "Không đáp án nào đúng"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Tính không chắc chắn và gây thiệt hại khi xảy ra.",
+        "explain": "Risk có thể xảy ra hoặc không xảy ra; nếu xảy ra thì gây hậu quả bất lợi/loss. Đây là hai đặc điểm uncertainty và loss được sách liệt kê.",
+        "eliminate": "A sai cả tính chắc chắn và việc không gây thiệt hại. C nêu tính chất không phải cặp định nghĩa. D sai vì B phù hợp.",
+        "note": "Trong cách định nghĩa ở đoạn này, một điều chắc chắn xảy ra cần được xem như ràng buộc hoặc vấn đề đã biết, thay vì một biến cố rủi ro chưa chắc xảy ra.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §6.2 Software Risks; trang in 146–147; trang PDF 174–175.",
+                "title": "Pressman · trang PDF 174",
+                "href": "tai-lieu/pressman.pdf#page=174"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 59: Uncertainty và loss.",
+                "title": "Bài giảng · slide 59",
+                "href": "tai-lieu/slides.pdf#page=59"
+            }
+        ]
+    },
+    {
+        "id": 51,
+        "topic": "UML",
+        "question": "Biểu đồ tuần tự (Sequence diagram) biểu diễn khía cạnh nào của hệ thống ?",
+        "examPage": 11,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Hành vi của hệ thống"
+            },
+            {
+                "letter": "B",
+                "text": "Cấu trúc tĩnh của hệ thống"
+            },
+            {
+                "letter": "C",
+                "text": "Thành phần kiến trúc của hệ thống"
+            },
+            {
+                "letter": "D",
+                "text": "Trạng thái của hệ thống"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Hành vi của hệ thống.",
+        "explain": "Sequence diagram mô tả sự tương tác/thông điệp giữa các đối tượng hoặc lifeline theo thứ tự thời gian. Nó thuộc góc nhìn động, thể hiện cách một tình huống được thực hiện.",
+        "eliminate": "B nói cấu trúc tĩnh; C tập trung thành phần kiến trúc; D phù hợp hơn với state machine diagram theo dõi trạng thái và chuyển trạng thái.",
+        "note": "Ví dụ tự xây dựng: ứng viên bấm phân tích CV; frontend gọi backend; backend gọi AI service; các kết quả trả về theo trình tự. Sequence thể hiện ai gọi ai và thứ tự, không tự mô tả đầy đủ mọi trạng thái.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §21.6 The Object-Behavior Model; phần kết luận về biểu đồ UML; trang in 598; trang PDF 626.",
+                "title": "Pressman · trang PDF 626",
+                "href": "tai-lieu/pressman.pdf#page=626"
+            },
+            {
+                "text": "OMG UML 2.5.1; §17.8 Sequence Diagrams; trang in 595; trang PDF 637.",
+                "title": "OMG UML 2.5.1 · trang PDF 637",
+                "href": "https://www.omg.org/spec/UML/2.5.1/PDF#page=637"
+            }
+        ]
+    },
+    {
+        "id": 52,
+        "topic": "UML",
+        "question": "Phát biểu nào sai trong số các phát biểu về tác nhân (actor) của hệ thống ?",
+        "examPage": 11,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tác nhân của một hệ thống luôn là con người"
+            },
+            {
+                "letter": "B",
+                "text": "Một phần mềm khác có thể là một tác nhân của hệ thống"
+            },
+            {
+                "letter": "C",
+                "text": "Một thiết bị phần cứng có thể là tác nhân của hệ thống"
+            },
+            {
+                "letter": "D",
+                "text": "Các tác nhân được phân biệt theo vai trò khi tham gia hệ thống"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Phát biểu sai: tác nhân của hệ thống luôn là con người.",
+        "explain": "Actor đại diện một vai trò của thực thể bên ngoài giao tiếp với hệ thống. Thực thể đó có thể là người, thiết bị hoặc một hệ thống/phần mềm khác.",
+        "eliminate": "B và C là những loại actor có thể có. D đúng vì actor được phân biệt theo vai trò, không chỉ theo một cá nhân vật lý.",
+        "note": "Một người có thể đóng nhiều vai trò; nhiều người cũng có thể đóng cùng vai trò. Biên hệ thống quyết định một thực thể có được xem là actor hay là bộ phận bên trong.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §11.2.4 Use-Cases; trang in 280; trang PDF 308.",
+                "title": "Pressman · trang PDF 308",
+                "href": "tai-lieu/pressman.pdf#page=308"
+            },
+            {
+                "text": "Pressman 5e; §21.4.1 Use-Cases; trang in 581; trang PDF 609.",
+                "title": "Pressman · trang PDF 609",
+                "href": "tai-lieu/pressman.pdf#page=609"
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "topic": "UML",
+        "question": "Biểu đồ lớp (Class diagram) biểu diễn khía cạnh nào của hệ thống ?",
+        "examPage": 11,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Các ràng buộc phi chức năng đối với hệ thống"
+            },
+            {
+                "letter": "B",
+                "text": "Cấu trúc tĩnh của hệ thống"
+            },
+            {
+                "letter": "C",
+                "text": "Sự cộng tác giữa các phần tử trong hệ thống"
+            },
+            {
+                "letter": "D",
+                "text": "Sự tương tác của các phần tử hệ thống theo trình tự thời gian"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Cấu trúc tĩnh của hệ thống.",
+        "explain": "Class diagram thể hiện lớp, thuộc tính, thao tác và các quan hệ như kết hợp, kế thừa hoặc chứa. Đây là cấu trúc, không phải một chuỗi sự kiện xảy ra theo thời gian.",
+        "eliminate": "A nói ràng buộc phi chức năng; C nhấn vào cộng tác; D là đặc trưng của sequence diagram. Không phương án nào chính xác hơn B.",
+        "note": "Tĩnh ở đây nói loại góc nhìn mô hình, không có nghĩa lớp hoặc phần mềm không bao giờ thay đổi trong quá trình phát triển.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §21.4.3 Defining Structures and Hierarchies; Hình 21.4–21.5; trang in 588–589; trang PDF 616–617.",
+                "title": "Pressman · trang PDF 616",
+                "href": "tai-lieu/pressman.pdf#page=616"
+            }
+        ]
+    },
+    {
+        "id": 54,
+        "topic": "SPM",
+        "question": "Các Mô hình phát triển phần mềm có quan hệ với nhau như thế nào?",
+        "examPage": 11,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Bổ xung cho nhau"
+            },
+            {
+                "letter": "B",
+                "text": "Độc lập với nhau"
+            },
+            {
+                "letter": "C",
+                "text": "Độc lập với nhau nhưng có thể kết hợp"
+            },
+            {
+                "letter": "D",
+                "text": "Mâu thuẫn với nhau"
+            }
+        ],
+        "key": "C*",
+        "status": "conditional",
+        "answer": "C — gần nhất nếu nhấn mạnh có thể kết hợp; A cũng có cơ sở nên đề chưa có đáp án duy nhất rõ ràng.",
+        "explain": "Các mô hình cung cấp những cách tổ chức phát triển khác nhau và có thể phối hợp. Pressman nêu incremental model kết hợp linear sequential với tư tưởng lặp của prototyping; spiral cũng kết hợp những đặc điểm của các cách tiếp cận khác.",
+        "eliminate": "B sai nếu hiểu là tuyệt đối tách biệt và không thể phối hợp; D sai vì không mặc nhiên mâu thuẫn. A “bổ sung cho nhau” cũng phù hợp với ví dụ kết hợp trong sách nên không thể bác bỏ hoàn toàn để chỉ giữ C.",
+        "note": "Kiến thức cần nhớ là có thể chọn và kết hợp mô hình theo dự án, không loại trừ lẫn nhau. C là lựa chọn gần nhất theo cách diễn đạt của đề, nhưng không có nguồn để bảo đảm A bị loại; cần đáp án/mô tả của giảng viên để chốt riêng câu này.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.7.1 The Incremental Model; §2.7.2 The Spiral Model; trang in 35–36; trang PDF 63–64.",
+                "title": "Pressman · trang PDF 63",
+                "href": "tai-lieu/pressman.pdf#page=63"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 11: Chỉ liệt kê mô hình; căn cứ về kết hợp phải đọc trong sách.",
+                "title": "Bài giảng · slide 11",
+                "href": "tai-lieu/slides.pdf#page=11"
+            }
+        ]
+    },
+    {
+        "id": 55,
+        "topic": "SPM",
+        "question": "Mô hình nào dưới đây phù hợp với tư tưởng phát triển phần mềm linh hoạt Agile và có thể áp dụng trong quy trình SCRUM?",
+        "examPage": 11,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Mô hình thác nước (Water Fall Model)"
+            },
+            {
+                "letter": "B",
+                "text": "Mô hình bản mẫu (Prototyping Model)"
+            },
+            {
+                "letter": "C",
+                "text": "Mô hình áp dụng kỹ thuật thế hệ thứ tư (4GT Techniques)"
+            },
+            {
+                "letter": "D",
+                "text": "Mô hình RAD (Rapid Application Development Model)"
+            }
+        ],
+        "key": "B*",
+        "status": "conditional",
+        "answer": "B — phù hợp nhất với ý nhấn mạnh làm bản mẫu và nhận phản hồi, nhưng không phải lựa chọn duy nhất có thể phối hợp Scrum.",
+        "explain": "Prototyping cho phép dựng nhanh biểu diễn sản phẩm, nhận phản hồi và làm rõ yêu cầu qua lặp. Điều đó phù hợp với tinh thần kiểm tra, thích nghi và hợp tác với khách hàng.",
+        "eliminate": "Waterfall theo luồng tuyến tính không phải lựa chọn điển hình của phát triển linh hoạt. 4GT là nhóm kỹ thuật/công cụ, không tự định nghĩa một cách quản lý Sprint. RAD cũng có thể chứa phát triển nhanh và phối hợp với cách làm lặp, nên câu “có thể áp dụng” chưa loại trừ hoàn toàn D.",
+        "note": "Scrum là framework, không yêu cầu phải chọn Prototyping Model. Một prototype chưa đáp ứng Definition of Done không tự động trở thành Increment bàn giao. B là đáp án gần nhất theo trọng tâm đề; không khẳng định Scrum chỉ dùng prototyping.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.5 The Prototyping Model; trang in 30–31; trang PDF 58–59.",
+                "title": "Pressman · trang PDF 58",
+                "href": "tai-lieu/pressman.pdf#page=58"
+            },
+            {
+                "text": "Pressman 5e; §2.6 The RAD Model; trang in 32–34; trang PDF 60–62.",
+                "title": "Pressman · trang PDF 60",
+                "href": "tai-lieu/pressman.pdf#page=60"
+            },
+            {
+                "text": "Scrum Guide 2020, bản tiếng Anh; End Note; Increment; Definition of Done; trang in 11–13; trang PDF 12–14.",
+                "title": "Scrum Guide 2020 · trang PDF 12",
+                "href": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#page=12"
+            }
+        ]
+    },
+    {
+        "id": 56,
+        "topic": "SPM",
+        "question": "Loại tài nguyên nào cần ước lượng cho dự án phần mềm ?",
+        "examPage": 12,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Con người"
+            },
+            {
+                "letter": "B",
+                "text": "Thành phần phần mềm dùng lại"
+            },
+            {
+                "letter": "C",
+                "text": "Công cụ phần cứng và phần mềm"
+            },
+            {
+                "letter": "D",
+                "text": "Tất cả các đáp án đều đúng"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Tất cả các đáp án đều đúng.",
+        "explain": "Sách mô tả nguồn lực phát triển theo ba tầng: con người, các thành phần phần mềm dùng lại và môi trường công cụ phần cứng/phần mềm. Do đó cả A, B và C đều cần xem xét.",
+        "eliminate": "Chọn riêng một loại nguồn lực sẽ bỏ sót những điều kiện khác để thực hiện dự án.",
+        "note": "Không chỉ đếm số lượng: nguồn lực còn cần có mô tả, mức sẵn có, thời điểm cần và thời gian sử dụng. Câu này kiểm tra cùng mô hình với câu 34.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §5.4 Resources; Hình 5.2; trang in 120–122; trang PDF 148–150.",
+                "title": "Pressman · trang PDF 148",
+                "href": "tai-lieu/pressman.pdf#page=148"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 50–55: Nguồn lực con người, thành phần phần mềm và môi trường công cụ.",
+                "title": "Bài giảng · slide 50",
+                "href": "tai-lieu/slides.pdf#page=50"
+            }
+        ]
+    },
+    {
+        "id": 57,
+        "topic": "SPM",
+        "question": "Thông tin nào không thuộc nội dung Bảng rủi ro dự án?",
+        "examPage": 12,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tên rủi ro"
+            },
+            {
+                "letter": "B",
+                "text": "Loại rủi ro"
+            },
+            {
+                "letter": "C",
+                "text": "Khả năng xảy ra"
+            },
+            {
+                "letter": "D",
+                "text": "Chi phí khắc phục thiệt hại khi rủi ro xảy ra"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Chi phí khắc phục thiệt hại khi rủi ro xảy ra.",
+        "explain": "Bảng rủi ro mẫu của Pressman có các cột risk, category, probability, impact và RMMM. Tên, loại và khả năng xảy ra khớp các cột của bảng; chi phí khắc phục không phải cột riêng trong mẫu đó.",
+        "eliminate": "A, B và C đều là thông tin có mặt trực tiếp trong Hình 6.2, nên không chọn chúng khi đề hỏi thông tin “không thuộc”.",
+        "note": "Có thể mở rộng bảng rủi ro thật để thêm chi phí. Sách còn dùng mức tổn thất tiền tệ khi tính risk exposure; điều đó không biến chi phí khắc phục thành cột bắt buộc của bảng mẫu ở câu này.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §6.4.1 Developing a Risk Table; Hình 6.2; trang in 151–152; trang PDF 179–180.",
+                "title": "Pressman · trang PDF 179",
+                "href": "tai-lieu/pressman.pdf#page=179"
+            },
+            {
+                "text": "Pressman 5e; §6.4.2 Assessing Risk Impact; trang in 153–154; trang PDF 181–182.",
+                "title": "Pressman · trang PDF 181",
+                "href": "tai-lieu/pressman.pdf#page=181"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 64: Hình risk table có Risks, Category, Probability, Impact, RMMM.",
+                "title": "Bài giảng · slide 64",
+                "href": "tai-lieu/slides.pdf#page=64"
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "topic": "SPM",
+        "question": "Yếu tố nào không thuộc tập nhiệm vụ (task set) trong dự án phần mềm ?",
+        "examPage": 12,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tập hợp các nhiệm vụ kỹ nghệ hoá phần mềm"
+            },
+            {
+                "letter": "B",
+                "text": "Các cột mốc cần đạt được"
+            },
+            {
+                "letter": "C",
+                "text": "Các phiên bản phần mềm cần bàn giao"
+            },
+            {
+                "letter": "D",
+                "text": "Các hoạt động kỹ thuật để giảm thiểu rủi ro"
+            }
+        ],
+        "key": "D*",
+        "status": "conditional",
+        "answer": "D — theo cách hỏi về ba thành phần định nghĩa task set; cần đọc ghi chú.",
+        "explain": "Định nghĩa task set trong sách gồm work tasks, milestones và deliverables. A là nhiệm vụ kỹ nghệ; B là cột mốc; C có thể là sản phẩm bàn giao. D không phải một thành phần riêng trong bộ ba định nghĩa này.",
+        "eliminate": "Không vì vậy mà kết luận công việc giảm thiểu rủi ro bị cấm trong task set. Một hoạt động kỹ thuật giảm rủi ro vẫn có thể được lập thành một work task; chính sách cũng trình bày technical risk assessment trong mạng nhiệm vụ dự án.",
+        "note": "Nếu đề hỏi “loại yếu tố không được nêu như một thành phần riêng của định nghĩa” thì chọn D. Nếu hỏi “hoạt động nào không thể nằm trong task set” thì đề không có đáp án đúng rõ ràng. D là đáp án gần nhất, không phải một loại trừ tuyệt đối.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.3 Defining a Task Set for the Software Project; trang in 172–173; trang PDF 200–201.",
+                "title": "Pressman · trang PDF 200",
+                "href": "tai-lieu/pressman.pdf#page=200"
+            },
+            {
+                "text": "Pressman 5e; §7.6 Defining a Task Network; Hình 7.3; trang in 180–181; trang PDF 208–209.",
+                "title": "Pressman · trang PDF 208",
+                "href": "tai-lieu/pressman.pdf#page=208"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 69–70: Định nghĩa task set và ví dụ mạng nhiệm vụ có technical risk assessment.",
+                "title": "Bài giảng · slide 69",
+                "href": "tai-lieu/slides.pdf#page=69"
+            }
+        ]
+    },
+    {
+        "id": 59,
+        "topic": "SPM",
+        "question": "Rủi ro dự án được ước lượng theo các tiêu chí nào ?",
+        "examPage": 12,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Theo khả năng xảy ra và mức độ thiệt hại khi rủi ro xảy ra"
+            },
+            {
+                "letter": "B",
+                "text": "Theo chi phí cho các hoạt động ngăn chặn và giảm thiểu rủi ro"
+            },
+            {
+                "letter": "C",
+                "text": "Theo nỗ lực cho hoạt động kiểm soát rủi ro"
+            },
+            {
+                "letter": "D",
+                "text": "Theo phân loại các rủi ro có thể xảy ra đối với một dự án phần mềm"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Khả năng xảy ra và mức độ thiệt hại khi xảy ra.",
+        "explain": "Risk estimation/risk projection đánh giá probability và consequences/impact. Hai tiêu chí giúp xếp thứ tự rủi ro để dành nguồn lực phù hợp.",
+        "eliminate": "B và C đo chi phí/nỗ lực kiểm soát rủi ro, không phải hai chiều đánh giá bản thân rủi ro. D chỉ phân nhóm mà chưa đánh giá mức rủi ro.",
+        "note": "Khi dùng đơn vị tiền tệ phù hợp, risk exposure có thể tính theo xác suất nhân tổn thất; việc đó hỗ trợ ưu tiên chứ không thay thế phân tích bối cảnh.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §6.4 Risk Projection; trang in 151; trang PDF 179.",
+                "title": "Pressman · trang PDF 179",
+                "href": "tai-lieu/pressman.pdf#page=179"
+            },
+            {
+                "text": "Pressman 5e; §6.4.2 Assessing Risk Impact; RE = P × C; trang in 153; trang PDF 181.",
+                "title": "Pressman · trang PDF 181",
+                "href": "tai-lieu/pressman.pdf#page=181"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 63: Probability và consequences.",
+                "title": "Bài giảng · slide 63",
+                "href": "tai-lieu/slides.pdf#page=63"
+            }
+        ]
+    },
+    {
+        "id": 60,
+        "topic": "SPM",
+        "question": "Lập lịch (project scheduling) trong quản lý dự án phần mềm là hoạt động gì ?",
+        "examPage": 12,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Ước lượng nỗ lực và thời gian hoàn thành dự án"
+            },
+            {
+                "letter": "B",
+                "text": "Phân rã chức năng hệ thống và ước lượng chi phí dự án"
+            },
+            {
+                "letter": "C",
+                "text": "Xác định các tài nguyên và quy trình thực hiện dự án"
+            },
+            {
+                "letter": "D",
+                "text": "Cấp phát nhân lực và thời gian biểu cho các hoạt động kỹ nghệ"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Cấp phát nhân lực và thời gian biểu cho các hoạt động kỹ nghệ.",
+        "explain": "Project scheduling phân bổ công sức đã ước lượng vào các nhiệm vụ cụ thể trên thời gian dự án. Công việc bao gồm phân rã, xác định phụ thuộc, thời gian bắt đầu/kết thúc và người chịu trách nhiệm.",
+        "eliminate": "A tập trung ước lượng; B tập trung phân rã chức năng và chi phí; C mô tả tài nguyên/quy trình ở mức lập kế hoạch. D khớp hơn với nhiệm vụ lập lịch thực hiện.",
+        "note": "Effort là lượng công sức; duration là thời gian lịch. Lập lịch cần phân biệt hai đại lượng thay vì xem person-day là ngày lịch bất kể số người.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.1.2 Basic Principles; trang in 168–169; trang PDF 196–197.",
+                "title": "Pressman · trang PDF 196",
+                "href": "tai-lieu/pressman.pdf#page=196"
+            },
+            {
+                "text": "Pressman 5e; §7.7.1 Timeline Charts; trang in 182; trang PDF 210.",
+                "title": "Pressman · trang PDF 210",
+                "href": "tai-lieu/pressman.pdf#page=210"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 68, 75: Định nghĩa scheduling và các nguyên lý phân công/lập lịch.",
+                "title": "Bài giảng · slide 68",
+                "href": "tai-lieu/slides.pdf#page=68"
+            }
+        ]
+    },
+    {
+        "id": 61,
+        "topic": "SPM",
+        "question": "Hoạt động nào sau đây không thuộc nhiệm vụ lập kế hoạch dự án phần mềm ?",
+        "examPage": 13,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Xác định và phân tích nghiệp vụ của hệ thống"
+            },
+            {
+                "letter": "B",
+                "text": "Xác định các rủi ro và kỹ thuật giảm thiểu rủi ro dự án"
+            },
+            {
+                "letter": "C",
+                "text": "Xác định chi phí và lịch biểu dự án"
+            },
+            {
+                "letter": "D",
+                "text": "Xác định phạm vị dự án và các tài nguyên dự án"
+            }
+        ],
+        "key": "A",
+        "status": "supported",
+        "answer": "Xác định và phân tích nghiệp vụ của hệ thống.",
+        "explain": "Trong cách phân chia công việc của đề, phân tích nghiệp vụ/yêu cầu thuộc nhiệm vụ phân tích; còn lập kế hoạch quản lý tập trung phạm vi, nguồn lực, chi phí, lịch và rủi ro.",
+        "eliminate": "B, C và D đều là các phần quan trọng của kế hoạch dự án: chuẩn bị rủi ro, ước lượng chi phí/lịch và xác định phạm vi/nguồn lực.",
+        "note": "Ranh giới này không tuyệt đối: người lập kế hoạch phải hiểu nghiệp vụ và phạm vi, thậm chí thu thập thêm thông tin nếu đầu vào hệ thống chưa đủ. A đúng theo phân loại hoạt động chính, không có nghĩa lập kế hoạch hoàn toàn tách khỏi nghiệp vụ.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §5.2 Project Planning Objectives; §5.3 Software Scope; trang in 115–116; trang PDF 143–144.",
+                "title": "Pressman · trang PDF 143",
+                "href": "tai-lieu/pressman.pdf#page=143"
+            },
+            {
+                "text": "Pressman 5e; §5.3 Software Scope — nguồn đầu vào từ System Specification; trang in 120; trang PDF 148.",
+                "title": "Pressman · trang PDF 148",
+                "href": "tai-lieu/pressman.pdf#page=148"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 48–49, 76: Phạm vi, nguồn lực, rủi ro, chi phí và lịch trong project planning.",
+                "title": "Bài giảng · slide 48",
+                "href": "tai-lieu/slides.pdf#page=48"
+            }
+        ]
+    },
+    {
+        "id": 62,
+        "topic": "SPM",
+        "question": "Loại tài nguyên nào không thuộc loại thành phần phần mềm dùng lại ?",
+        "examPage": 13,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Thành phần phần mềm do bên thứ 3 cung cấp trong dự án quá khứ"
+            },
+            {
+                "letter": "B",
+                "text": "Thành phần phần mềm trong dự án quá khứ"
+            },
+            {
+                "letter": "C",
+                "text": "Thành phần phần mềm được tạo mới cho dự án hiện tại"
+            },
+            {
+                "letter": "D",
+                "text": "Phần mềm công cụ (software tools)"
+            }
+        ],
+        "key": "D",
+        "status": "supported",
+        "answer": "Phần mềm công cụ — software tools.",
+        "explain": "Software tools thuộc environmental resources/hardware–software tools. Trong §5.4.2, sách xét các nhóm thành phần off-the-shelf, full-experience, partial-experience và new components; do đó A, B và cả C thuộc cách phân nhóm tài nguyên thành phần của mục này.",
+        "eliminate": "C dễ gây nhầm vì phần mềm mới chưa được dùng lại. Tuy nhiên sách vẫn đưa new components vào bốn nhóm để người lập kế hoạch xem xét lựa chọn thành phần và phần cần xây mới. D nằm ở nhóm môi trường công cụ riêng.",
+        "note": "Đề dùng “thành phần dùng lại” hơi rộng theo tên mục sách. Về nghĩa thông thường, thành phần mới chưa phải reuse; về đúng phân loại trong §5.4.2–§5.4.3 thì chọn D. Không loại C mà bỏ qua đoạn new components.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §5.4.2 Reusable Software Resources; §5.4.3 Environmental Resources; trang in 121–122; trang PDF 149–150.",
+                "title": "Pressman · trang PDF 149",
+                "href": "tai-lieu/pressman.pdf#page=149"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 53–55: Bốn nhóm software components và nhóm environmental tools riêng.",
+                "title": "Bài giảng · slide 53",
+                "href": "tai-lieu/slides.pdf#page=53"
+            }
+        ]
+    },
+    {
+        "id": 63,
+        "topic": "SPM",
+        "question": "Hoạt động nào sau đây không thuộc hoạt động theo dõi giám sát dự án ?",
+        "examPage": 13,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tiến hành các cuộc họp định kỳ để thành viên đội dự án có thể báo tiến độ và các vấn đề gặp phải"
+            },
+            {
+                "letter": "B",
+                "text": "Xác định xem các cột mốc dự án có đạt được theo đúng lịch biểu hay không"
+            },
+            {
+                "letter": "C",
+                "text": "Phân rã các nhiệm vụ và lập lịch dự án"
+            },
+            {
+                "letter": "D",
+                "text": "So sánh ngày bắt đầu dự kiến và ngày bắt đầu thực tế đối với từng nhiệm vụ trong bảng dự án"
+            }
+        ],
+        "key": "C",
+        "status": "supported",
+        "answer": "Phân rã các nhiệm vụ và lập lịch dự án.",
+        "explain": "Phân rã và lập lịch tạo kế hoạch ban đầu. Theo dõi/giám sát dùng kế hoạch đã có để xác định tiến độ thực tế và sai lệch, nên C không phải hoạt động tracking chính trong danh sách.",
+        "eliminate": "A là họp báo tiến độ; B là kiểm tra mốc theo lịch; D là so sánh ngày dự kiến với thực tế. Cả ba xuất hiện trong mô tả tracking của sách.",
+        "note": "Khi phát hiện chậm tiến độ, người quản lý có thể lập lịch lại như hành động điều chỉnh. Điều đó không làm công việc tạo lịch ban đầu trở thành một phép theo dõi.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.7.2 Tracking the Schedule; trang in 185; trang PDF 213.",
+                "title": "Pressman · trang PDF 213",
+                "href": "tai-lieu/pressman.pdf#page=213"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 74: Các hoạt động Tracking the Schedule.",
+                "title": "Bài giảng · slide 74",
+                "href": "tai-lieu/slides.pdf#page=74"
+            }
+        ]
+    },
+    {
+        "id": 64,
+        "topic": "SPM",
+        "question": "Vòng đời phần mềm trải qua các giai đoạn từ lúc hình thành đến khi bị huỷ bỏ, các giai đoạn đó là gì ?",
+        "examPage": 13,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Giai đoạn thiết kế, giai đoạn cài đặt, giai đoạn kiểm thử"
+            },
+            {
+                "letter": "B",
+                "text": "Giai đoạn xác định, giai đoạn phát triển, giai đoạn hỗ trợ"
+            },
+            {
+                "letter": "C",
+                "text": "Giai đoạn nghiên cứu khả thi, giai đoạn phân tích, giai đoạn triển khai"
+            },
+            {
+                "letter": "D",
+                "text": "Giai đoạn định nghĩa, giai đoạn thiết kế, giai đoạn thực thi"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Giai đoạn xác định, giai đoạn phát triển, giai đoạn hỗ trợ.",
+        "explain": "Pressman chia công việc kỹ nghệ phần mềm thành ba generic phases: definition, development và support. Chúng lần lượt tập trung vào cần làm gì, xây dựng như thế nào và xử lý thay đổi sau đó.",
+        "eliminate": "A chỉ là các bước trong development. C và D không khớp bộ ba giai đoạn tổng quát mà sách dùng.",
+        "note": "Đây là mô hình giai đoạn tổng quát trong sách 5e. Không có nghĩa mọi dự án thực tế chỉ có ba bước đơn giản hoặc không có triển khai, vận hành và kết thúc sử dụng.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §2.1.2 A Generic View of Software Engineering; trang in 22–23; trang PDF 50–51.",
+                "title": "Pressman · trang PDF 50",
+                "href": "tai-lieu/pressman.pdf#page=50"
+            }
+        ]
+    },
+    {
+        "id": 65,
+        "topic": "SPM",
+        "question": "Thông tin nào không thuộc Bảng dự án ?",
+        "examPage": 13,
+        "options": [
+            {
+                "letter": "A",
+                "text": "Tập các nhiệm vụ và nhiệm vụ thuộc cấp"
+            },
+            {
+                "letter": "B",
+                "text": "Chi phí cho từng nhiệm vụ"
+            },
+            {
+                "letter": "C",
+                "text": "Nỗ lực (person-day) cho từng nhiệm vụ"
+            },
+            {
+                "letter": "D",
+                "text": "Tên người thực hiện nhiệm vụ"
+            }
+        ],
+        "key": "B",
+        "status": "supported",
+        "answer": "Chi phí cho từng nhiệm vụ.",
+        "explain": "Hình 7.5 mô tả project table với nhiệm vụ, ngày bắt đầu/kết thúc dự kiến và thực tế, người được giao, effort allocated và ghi chú. Chi phí từng nhiệm vụ không có cột riêng trong bảng mẫu đó.",
+        "eliminate": "A, C và D khớp nội dung bảng: work tasks có nhiệm vụ con, effort theo person-day và assigned person.",
+        "note": "Các công cụ quản lý dự án vẫn có thể bổ sung chi phí. Chọn B theo đúng bảng mẫu Pressman mà đề hỏi, không suy ra mọi bảng dự án đều không được chứa thông tin chi phí.",
+        "sources": [
+            {
+                "text": "Pressman 5e; §7.7.1 Timeline Charts; Hình 7.5 An example project table; trang in 182, 184; trang PDF 210, 212.",
+                "title": "Pressman · trang PDF 210",
+                "href": "tai-lieu/pressman.pdf#page=210"
+            },
+            {
+                "text": "Slide bài giảng SoftwareProjectManagement, slide 73: Hình Project Table: không có cột chi phí cho từng nhiệm vụ.",
+                "title": "Bài giảng · slide 73",
+                "href": "tai-lieu/slides.pdf#page=73"
+            }
+        ]
+    }
+]

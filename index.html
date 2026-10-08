@@ -1098,6 +1098,172 @@
       box-shadow: 0 0 4px var(--warning);
     }
 
+    .q-matrix-btn.has-custom::before {
+      content: "✏";
+      position: absolute;
+      top: 1px;
+      left: 2px;
+      font-size: 8px;
+      line-height: 1;
+      color: #7c3aed;
+      font-weight: 800;
+    }
+
+    .q-matrix-btn.frequent-wrong {
+      border: 2px solid var(--danger) !important;
+    }
+
+    .meta-pill.purple {
+      background: #f5f3ff;
+      border-color: #ddd6fe;
+      color: #7c3aed;
+    }
+    [data-theme="dark"] .meta-pill.purple {
+      background: rgba(124, 58, 237, 0.16);
+      border-color: rgba(124, 58, 237, 0.35);
+      color: #c4b5fd;
+    }
+
+    .meta-pill.red {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: #ef4444;
+    }
+    [data-theme="dark"] .meta-pill.red {
+      background: rgba(239, 68, 68, 0.16);
+      border-color: rgba(239, 68, 68, 0.35);
+      color: #fca5a5;
+    }
+
+    .custom-answer-banner {
+      background: #f5f3ff;
+      border: 1.5px dashed #8b5cf6;
+      border-radius: var(--radius-md);
+      padding: 13px 16px;
+      margin-bottom: 14px;
+      color: #4c1d95;
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+    [data-theme="dark"] .custom-answer-banner {
+      background: rgba(139, 92, 246, 0.12);
+      border-color: rgba(167, 139, 250, 0.4);
+      color: #ddd6fe;
+    }
+
+    /* Modal Thống kê & Tùy chỉnh */
+    dialog.stats-dialog {
+      max-width: 740px;
+      width: calc(100% - 32px);
+      max-height: 88vh;
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      overflow-y: auto;
+    }
+    dialog.stats-dialog[open] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    dialog.custom-dialog {
+      max-width: 580px;
+      width: calc(100% - 32px);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+    }
+
+    .stats-kpi-card {
+      background: var(--surface-raised);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .stats-kpi-val {
+      font-size: 1.45rem;
+      font-weight: 850;
+      color: var(--primary);
+      margin-bottom: 3px;
+      font-family: var(--font-mono);
+    }
+    .stats-kpi-label {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 650;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .stats-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      margin-bottom: 8px;
+      transition: all 0.15s ease;
+    }
+    .stats-item-row:hover {
+      background: var(--surface-raised);
+      border-color: var(--primary-border);
+    }
+
+    .custom-opt-btn {
+      width: 100%;
+      padding: 11px 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-main);
+      font-size: 0.93rem;
+      transition: all 0.15s ease;
+    }
+    .custom-opt-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .custom-opt-btn.active {
+      border-color: #7c3aed;
+      background: #f5f3ff;
+      color: #4c1d95;
+      font-weight: 700;
+      box-shadow: 0 0 0 1px #7c3aed;
+    }
+    [data-theme="dark"] .custom-opt-btn.active {
+      background: rgba(124, 58, 237, 0.2);
+      color: #ede9fe;
+      border-color: #a78bfa;
+    }
+
+    .custom-note-textarea {
+      width: 100%;
+      min-height: 72px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-family: var(--font-main);
+      font-size: 0.92rem;
+      background: var(--surface-raised);
+      color: var(--text);
+      resize: vertical;
+      line-height: 1.5;
+    }
+    .custom-note-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
     dialog {
       background: var(--surface);
       color: var(--text);
@@ -1189,6 +1355,13 @@
       .study-container {
         padding: 0 14px;
       }
+      #stats-kpi-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .stats-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -1215,6 +1388,11 @@
         <!-- Nút mở drawer danh sách câu -->
         <button id="btn-open-drawer" class="small primary" title="Mở ma trận 65 câu hỏi">
           <span>☰</span> <span id="header-counter-label">1 / 65</span>
+        </button>
+
+        <!-- Nút mở Thống kê & Phân tích câu hay sai -->
+        <button id="btn-open-stats" class="small" title="Thống kê học tập & Câu hay làm sai">
+          <span>📊</span> <span id="stats-header-label">Thống kê</span>
         </button>
 
         <!-- Chế độ bo góc -->
@@ -1296,12 +1474,18 @@
       <div id="drawer-grid" class="question-matrix-grid"></div>
 
       <!-- Chú thích màu -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:0.82rem;color:var(--text-muted);margin:16px 0;padding-bottom:16px;border-bottom:1px solid var(--border)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:0.82rem;color:var(--text-muted);margin:16px 0 12px;padding-bottom:12px;border-bottom:1px solid var(--border)">
         <div><span style="display:inline-block;width:10px;height:10px;background:var(--success-light);border:1px solid var(--success-border);margin-right:6px"></span> Đúng</div>
         <div><span style="display:inline-block;width:10px;height:10px;background:var(--danger-light);border:1px solid var(--danger-border);margin-right:6px"></span> Cần ôn lại</div>
         <div><span style="display:inline-block;width:10px;height:10px;background:var(--warning-light);border:1px solid var(--warning-border);margin-right:6px"></span> Ghi chú</div>
         <div><span style="display:inline-block;width:10px;height:10px;background:var(--primary-light);border:1px solid var(--primary-border);margin-right:6px"></span> Đã chọn</div>
+        <div><span style="display:inline-block;width:10px;height:10px;border:2px solid var(--danger);margin-right:6px"></span> Hay làm sai</div>
+        <div><span style="display:inline-block;width:10px;height:10px;background:var(--surface);border:1px solid #7c3aed;color:#7c3aed;margin-right:6px;text-align:center;font-size:8px;line-height:9px">✏</span> Đã sửa đáp án</div>
       </div>
+
+      <button id="btn-drawer-open-stats" class="button-like primary" style="width:100%;margin-bottom:16px;justify-content:center;font-weight:700">
+        <span>📊 Mở phân tích lỗi & thống kê</span>
+      </button>
 
       <!-- Ôn tập có trọng tâm -->
       <div style="margin-top:16px">
@@ -1439,6 +1623,79 @@
     </div>
     <div style="display:flex;justify-content:flex-end;margin-top:20px">
       <button class="primary" data-close="help-dialog">Đã hiểu</button>
+    </div>
+  </dialog>
+
+  <!-- DIALOG: THỐNG KÊ & PHÂN TÍCH LỖI SAI -->
+  <dialog id="stats-dialog" class="stats-dialog">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)">
+      <h2 style="margin:0;font-size:1.3rem;display:flex;align-items:center;gap:8px">
+        <span>📊</span> <span>Thống kê ôn tập & Phân tích lỗi</span>
+      </h2>
+      <button class="plain" data-close="stats-dialog">✕</button>
+    </div>
+
+    <!-- KPI Cards Grid -->
+    <div id="stats-kpi-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px"></div>
+
+    <!-- Action Bar -->
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;padding:12px 14px;background:var(--surface-raised);border:1px solid var(--border);border-radius:var(--radius-md)">
+      <button id="btn-stats-practice-wrong" class="primary small" style="font-weight:700">
+        ⚡ Luyện tập riêng các câu thường xuyên sai
+      </button>
+      <button id="btn-stats-practice-custom" class="small">
+        ✏️ Xem câu đã chỉnh đáp án
+      </button>
+      <button id="btn-stats-reset" class="small plain" style="color:var(--danger);margin-left:auto">
+        🗑️ Xóa lịch sử thống kê
+      </button>
+    </div>
+
+    <!-- Tab bar -->
+    <div style="display:flex;gap:10px;border-bottom:1px solid var(--border);margin-bottom:14px">
+      <button id="stats-tab-btn-wrong" class="chip-btn active" style="border-radius:var(--radius-sm)">
+        🚨 Câu hay làm sai (<span id="stats-count-wrong">0</span>)
+      </button>
+      <button id="stats-tab-btn-custom" class="chip-btn" style="border-radius:var(--radius-sm)">
+        ✏️ Đáp án đã tùy chỉnh (<span id="stats-count-custom">0</span>)
+      </button>
+    </div>
+
+    <!-- Content Area -->
+    <div id="stats-content-area" style="max-height:360px;overflow-y:auto"></div>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:20px;padding-top:14px;border-top:1px solid var(--border)">
+      <button class="primary" data-close="stats-dialog">Đóng</button>
+    </div>
+  </dialog>
+
+  <!-- DIALOG: TÙY CHỈNH ĐÁP ÁN CÁ NHÂN -->
+  <dialog id="custom-dialog" class="custom-dialog">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)">
+      <h2 style="margin:0;font-size:1.25rem;display:flex;align-items:center;gap:8px">
+        <span>✏️</span> <span id="custom-modal-title">Tùy chỉnh đáp án cá nhân</span>
+      </h2>
+      <button class="plain" data-close="custom-dialog">✕</button>
+    </div>
+
+    <p id="custom-modal-question" style="font-weight:600;font-size:0.96rem;line-height:1.55;margin-bottom:12px;color:var(--text)"></p>
+    
+    <div id="custom-modal-original-info" style="font-size:0.86rem;padding:10px 12px;background:var(--surface-raised);border:1px solid var(--border);border-radius:var(--radius-md);margin-bottom:16px;color:var(--text-muted)"></div>
+
+    <label style="display:block;font-size:0.88rem;font-weight:750;margin-bottom:8px">Chọn đáp án bạn muốn dùng để chấm điểm:</label>
+    <div id="custom-modal-options-grid" style="display:grid;gap:8px;margin-bottom:16px"></div>
+
+    <div style="margin-bottom:18px">
+      <label for="custom-modal-note" style="display:block;font-size:0.86rem;font-weight:700;margin-bottom:6px">Ghi chú cá nhân của bạn (tùy chọn):</label>
+      <textarea id="custom-modal-note" class="custom-note-textarea" placeholder="Nhập lý do đổi đáp án, ý kiến của thầy cô trên lớp, hoặc lưu ý cá nhân..."></textarea>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:14px;border-top:1px solid var(--border)">
+      <button id="btn-custom-restore" class="small plain" style="color:var(--danger)">Khôi phục gốc</button>
+      <div style="display:flex;gap:8px;margin-left:auto">
+        <button data-close="custom-dialog">Hủy</button>
+        <button id="btn-custom-save" class="primary">Lưu đáp án này</button>
+      </div>
     </div>
   </dialog>
 
@@ -1649,7 +1906,69 @@
 
   const $ = id => document.getElementById(id);
   const escapeHTML = val => String(val).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const gradeable = q => q && q.status === 'supported';
+
+  // Trạng thái thống kê và tùy chỉnh đáp án cá nhân
+  let questionStats = {}; // { [id]: { attempts: 0, correct: 0, wrong: 0, lastResult: 'correct'|'wrong', lastAnsweredAt: timestamp } }
+  let customKeys = {};    // { [id]: { customKey: 'A', note: '...', updatedAt: timestamp } }
+  let statsActiveTab = 'wrong'; // 'wrong' | 'custom'
+  let editingCustomId = null;
+  let selectedCustomOpt = null;
+
+  function isCustomKeySet(id) {
+    return !!(customKeys[id] && customKeys[id].customKey);
+  }
+
+  function getEffectiveKey(q) {
+    if (q && isCustomKeySet(q.id)) {
+      return customKeys[q.id].customKey;
+    }
+    return q ? (q.key || '').replace('*', '').trim() : '';
+  }
+
+  function gradeable(q) {
+    if (!q) return false;
+    if (isCustomKeySet(q.id)) return true;
+    return q.status === 'supported';
+  }
+
+  function isFrequentlyWrong(id) {
+    const st = questionStats[id];
+    if (!st || !st.wrong) return false;
+    return st.wrong >= 2 || (st.wrong >= 1 && st.wrong >= st.correct);
+  }
+
+  function getFrequentlyWrongIds() {
+    return BANK
+      .map(q => q.id)
+      .filter(id => isFrequentlyWrong(id))
+      .sort((a, b) => {
+        const sa = questionStats[a] || { wrong: 0, attempts: 1 };
+        const sb = questionStats[b] || { wrong: 0, attempts: 1 };
+        if (sb.wrong !== sa.wrong) return sb.wrong - sa.wrong;
+        return (sb.wrong / sb.attempts) - (sa.wrong / sa.attempts);
+      });
+  }
+
+  function getCustomizedIds() {
+    return BANK
+      .map(q => q.id)
+      .filter(id => isCustomKeySet(id));
+  }
+
+  function recordAttempt(id, chosen, isCorrect) {
+    if (!questionStats[id]) {
+      questionStats[id] = { attempts: 0, correct: 0, wrong: 0, lastResult: null, lastAnsweredAt: null };
+    }
+    const st = questionStats[id];
+    st.attempts++;
+    if (isCorrect) {
+      st.correct++;
+    } else {
+      st.wrong++;
+    }
+    st.lastResult = isCorrect ? 'correct' : 'wrong';
+    st.lastAnsweredAt = Date.now();
+  }
 
   function createSession(ids = BANK.map(q => q.id)) {
     return {
@@ -1688,7 +2007,14 @@
       if (saved.revealMode === 'instant' || saved.revealMode === 'submit') revealMode = saved.revealMode;
       if (typeof saved.soundEnabled === 'boolean') SoundSystem.setEnabled(saved.soundEnabled);
       if (Object.hasOwn(TOPICS, saved.topic)) topic = saved.topic;
-      if (['all', 'wrong', 'flagged', 'reading'].includes(saved.subset)) subset = saved.subset;
+      if (['all', 'wrong', 'frequent-wrong', 'customized', 'flagged', 'reading'].includes(saved.subset)) subset = saved.subset;
+
+      if (saved.questionStats && typeof saved.questionStats === 'object') {
+        questionStats = saved.questionStats;
+      }
+      if (saved.customKeys && typeof saved.customKeys === 'object') {
+        customKeys = saved.customKeys;
+      }
 
       const s = saved.session;
       if (s && Array.isArray(s.ids) && s.ids.length && s.ids.every(id => BY_ID.has(id))) {
@@ -1716,6 +2042,8 @@
         session,
         flags: [...flags],
         wrong: [...wrongSet],
+        questionStats,
+        customKeys,
         theme,
         radiusMode,
         topic,
@@ -1762,6 +2090,8 @@
       .filter(item => topic === 'all' || item.topic === topic)
       .filter(item => {
         if (subset === 'wrong') return wrongSet.has(item.id);
+        if (subset === 'frequent-wrong') return isFrequentlyWrong(item.id);
+        if (subset === 'customized') return isCustomKeySet(item.id);
         if (subset === 'flagged') return flags.has(item.id);
         if (subset === 'reading') return !gradeable(item);
         return true;
@@ -1796,9 +2126,13 @@
     $('sound-icon').textContent = isSound ? '🔊' : '🔇';
 
     // Drawer focus items
+    const freqCount = getFrequentlyWrongIds().length;
+    const customCount = getCustomizedIds().length;
     const focusItems = [
       ['all', 'Toàn bộ câu hỏi', BANK.length],
-      ['wrong', 'Câu làm sai', wrongSet.size],
+      ['frequent-wrong', '🚨 Thường xuyên làm sai', freqCount],
+      ['wrong', 'Câu làm sai hiện tại', wrongSet.size],
+      ['customized', '✏️ Đã sửa đáp án', customCount],
       ['flagged', 'Đã đánh dấu', flags.size],
       ['reading', 'Đọc ghi chú / Điều kiện', BANK.filter(q => !gradeable(q)).length]
     ];
@@ -1820,8 +2154,9 @@
         excluded++;
         continue;
       }
+      const effKey = getEffectiveKey(q);
       if (!r) unanswered++;
-      else if (r === q.key) correct++;
+      else if (r === effKey) correct++;
       else wrong++;
     }
     const totalGradeable = session.ids.length - excluded;
@@ -1836,7 +2171,8 @@
       return 'answered';
     }
     if (!gradeable(q)) return 'reading';
-    return r === q.key ? 'correct' : 'wrong';
+    const effKey = getEffectiveKey(q);
+    return r === effKey ? 'correct' : 'wrong';
   }
 
   function renderProgressAndDrawer() {
@@ -1860,7 +2196,12 @@
       const status = getPaletteStatus(q);
       const isCur = idx === session.index;
       const isFlag = flags.has(id);
-      return `<button data-index="${idx}" class="q-matrix-btn ${status} ${isCur ? 'current' : ''} ${isFlag ? 'flagged' : ''}" aria-label="Câu ${id}">${id}</button>`;
+      const isFreqWrong = isFrequentlyWrong(id);
+      const hasCustom = isCustomKeySet(id);
+      let extraCls = '';
+      if (isFreqWrong) extraCls += ' frequent-wrong';
+      if (hasCustom) extraCls += ' has-custom';
+      return `<button data-index="${idx}" class="q-matrix-btn ${status} ${isCur ? 'current' : ''} ${isFlag ? 'flagged' : ''} ${extraCls}" aria-label="Câu ${id}">${id}</button>`;
     }).join('');
   }
 
@@ -1883,21 +2224,42 @@
   function buildExplanationHTML(q) {
     const chosen = session.responses[q.id];
     const isSupported = gradeable(q);
+    const effKey = getEffectiveKey(q);
+    const hasCustom = isCustomKeySet(q.id);
+    const st = questionStats[q.id];
     let titleText, titleCls;
 
     if (!isSupported) {
       titleText = q.status === 'missing' ? 'Chưa có đáp án chính thức duy nhất' : 'Lựa chọn có điều kiện · Đọc kỹ ghi chú';
       titleCls = 'amber';
     } else if (!chosen) {
-      titleText = 'Đáp án đối chiếu chuẩn: ' + q.key;
+      titleText = (hasCustom ? 'Đáp án của bạn: ' : 'Đáp án đối chiếu chuẩn: ') + effKey;
       titleCls = 'amber';
-    } else if (chosen === q.key) {
-      titleText = 'Chính xác! Đáp án đúng là: ' + q.key;
+    } else if (chosen === effKey) {
+      titleText = 'Chính xác! Đáp án đúng là: ' + effKey + (hasCustom ? ' (Theo đáp án cá nhân)' : '');
       titleCls = 'correct';
     } else {
-      titleText = `Chưa đúng! Đáp án đối chiếu: ${q.key} (Bạn chọn: ${chosen})`;
+      titleText = `Chưa đúng! Đáp án đúng: ${effKey} (Bạn chọn: ${chosen})` + (hasCustom ? ' (Theo đáp án cá nhân)' : '');
       titleCls = 'wrong';
     }
+
+    const customBannerHTML = hasCustom ? `
+      <div class="custom-answer-banner">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+          <strong style="color:#7c3aed">✏️ ĐANG ÁP DỤNG ĐÁP ÁN CÁ NHÂN: Phương án ${effKey}</strong>
+          <button class="small plain" id="btn-banner-edit-key" style="color:var(--primary);font-weight:700">Sửa lại</button>
+        </div>
+        ${customKeys[q.id].note ? `<div style="margin-top:6px;font-size:0.9rem"><strong>Ghi chú cá nhân:</strong> ${escapeHTML(customKeys[q.id].note)}</div>` : ''}
+        <div style="margin-top:6px;font-size:0.83rem;color:var(--text-muted)">Đáp án gốc trong tài liệu/đề: <strong>${q.key}</strong></div>
+      </div>
+    ` : '';
+
+    const statsInfoHTML = st && st.attempts > 0 ? `
+      <div style="margin-bottom:12px;font-size:0.84rem;color:var(--text-muted);display:flex;gap:12px;align-items:center;background:var(--surface-raised);padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-md);flex-wrap:wrap">
+        <span>📊 Lịch sử làm câu này: <strong>${st.attempts}</strong> lượt (Đúng: <strong style="color:var(--success)">${st.correct}</strong> · Sai: <strong style="color:var(--danger)">${st.wrong}</strong>)</span>
+        ${isFrequentlyWrong(q.id) ? '<span class="meta-pill red" style="margin:0">🚨 Hay làm sai</span>' : ''}
+      </div>
+    ` : '';
 
     const sourcesHTML = q.sources && q.sources.length ? `
       <div class="study-sources-card">
@@ -1932,6 +2294,9 @@
           <span>${titleCls === 'correct' ? '🎉' : (titleCls === 'wrong' ? '💡' : '📌')}</span>
           <span>${escapeHTML(titleText)}</span>
         </div>
+
+        ${customBannerHTML}
+        ${statsInfoHTML}
 
         <div class="study-tab-card">
           <h3><span>✓</span> Kết luận đáp án</h3>
@@ -1979,11 +2344,14 @@
     const isRevealed = session.finished || session.revealed.includes(q.id);
     const isLocked = isRevealed && (session.mode === 'exam' || revealMode === 'instant');
     const isSupported = gradeable(q);
-    const statusText = isSupported ? 'Đáp án đối chiếu' : (q.status === 'conditional' ? 'Có điều kiện' : 'Chưa chốt');
+    const effKey = getEffectiveKey(q);
+    const hasCustom = isCustomKeySet(q.id);
+    const isFreq = isFrequentlyWrong(q.id);
+    const statusText = isSupported ? (hasCustom ? 'Đáp án bạn đặt' : 'Đáp án đối chiếu') : (q.status === 'conditional' ? 'Có điều kiện' : 'Chưa chốt');
 
     const noticeHTML = !isSupported ? `
       <div class="study-notice-box">
-        <strong>Lưu ý:</strong> ${q.status === 'missing' ? 'Câu này thiếu dữ kiện hoặc chưa có đáp án duy nhất trong tài liệu.' : 'Câu này có phương án đề xuất nhưng kèm điều kiện lập luận.'} Không tính điểm đúng/sai.
+        <strong>Lưu ý:</strong> ${q.status === 'missing' ? 'Câu này thiếu dữ kiện hoặc chưa có đáp án duy nhất trong tài liệu.' : 'Câu này có phương án đề xuất nhưng kèm điều kiện lập luận.'} Bạn có thể bấm "Sửa đáp án" để chọn đáp án ôn tập riêng.
       </div>
     ` : '';
 
@@ -1996,9 +2364,9 @@
       }
 
       if (isRevealed) {
-        if (isSupported && opt.letter === q.key) {
+        if (isSupported && opt.letter === effKey) {
           cls += ' correct';
-          tagText = 'Đáp án đúng';
+          tagText = hasCustom ? 'Đáp án của bạn' : 'Đáp án đúng';
         } else if (isSupported && chosen === opt.letter) {
           cls += ' wrong';
           tagText = 'Bạn đã chọn';
@@ -2028,11 +2396,18 @@
           <span class="meta-qnum">Câu ${q.id} <span style="opacity:0.6;font-weight:600">/ 65</span></span>
           <span class="meta-pill blue">${escapeHTML(q.topic)}</span>
           <span class="meta-pill ${isSupported ? 'green' : 'amber'}">${statusText}</span>
+          ${hasCustom ? `<span class="meta-pill purple" title="Bạn đã đổi đáp án câu này">✏️ Đáp án tự chỉnh: ${customKeys[q.id].customKey}</span>` : ''}
+          ${isFreq ? `<span class="meta-pill red" title="Bạn hay làm sai câu này">🚨 Hay sai (${questionStats[q.id].wrong} lần)</span>` : ''}
           <span class="meta-page-hint">Trang PDF ${q.examPage}/14</span>
         </div>
-        <button id="btn-star-flag" class="star-flag-btn ${flags.has(q.id) ? 'active' : ''}">
-          <span>${flags.has(q.id) ? '★' : '☆'}</span> <span>${flags.has(q.id) ? 'Đã lưu' : 'Lưu câu'}</span>
-        </button>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button id="btn-edit-answer" class="small plain" title="Tùy chỉnh đáp án cá nhân cho câu này" style="display:flex;align-items:center;gap:4px;border:1px solid var(--border);border-radius:var(--radius-md);padding:6px 10px">
+            <span>✏️</span> <span>${hasCustom ? 'Sửa đáp án (' + customKeys[q.id].customKey + ')' : 'Sửa đáp án'}</span>
+          </button>
+          <button id="btn-star-flag" class="star-flag-btn ${flags.has(q.id) ? 'active' : ''}">
+            <span>${flags.has(q.id) ? '★' : '☆'}</span> <span>${flags.has(q.id) ? 'Đã lưu' : 'Lưu câu'}</span>
+          </button>
+        </div>
       </div>
 
       <h2 class="study-question-title">${escapeHTML(q.question)}</h2>
@@ -2089,12 +2464,18 @@
     if (session.mode === 'practice' && revealMode === 'instant' && session.revealed.includes(id)) return;
 
     session.responses[id] = letter;
+    const effKey = getEffectiveKey(q);
 
     if (session.mode === 'practice') {
       if (revealMode === 'instant') {
-        if (!session.revealed.includes(id)) session.revealed.push(id);
+        const wasRevealed = session.revealed.includes(id);
+        if (!wasRevealed) session.revealed.push(id);
         if (gradeable(q)) {
-          if (letter === q.key) {
+          const isCorrect = letter === effKey;
+          if (!wasRevealed) {
+            recordAttempt(id, letter, isCorrect);
+          }
+          if (isCorrect) {
             wrongSet.delete(id);
             SoundSystem.playCorrect();
           } else {
@@ -2134,10 +2515,17 @@
 
   function revealCurrentQuestion(id) {
     const q = BY_ID.get(id);
+    const wasRevealed = session.revealed.includes(id);
     if (!session.revealed.includes(id)) session.revealed.push(id);
     const chosen = session.responses[id];
+    const effKey = getEffectiveKey(q);
+
     if (gradeable(q) && chosen) {
-      if (chosen === q.key) {
+      const isCorrect = chosen === effKey;
+      if (!wasRevealed) {
+        recordAttempt(id, chosen, isCorrect);
+      }
+      if (isCorrect) {
         wrongSet.delete(id);
         SoundSystem.playCorrect();
       } else {
@@ -2224,7 +2612,10 @@
       const q = BY_ID.get(id);
       const r = session.responses[id];
       if (gradeable(q) && r) {
-        if (r === q.key) wrongSet.delete(id);
+        const effKey = getEffectiveKey(q);
+        const isCorrect = r === effKey;
+        recordAttempt(id, r, isCorrect);
+        if (isCorrect) wrongSet.delete(id);
         else wrongSet.add(id);
       }
     }
@@ -2306,6 +2697,10 @@
     const curId = session.ids[session.index];
     if (btn.id === 'btn-retry-q') resetQuestion(curId);
     if (btn.id === 'btn-reveal-now') revealCurrentQuestion(curId);
+    if (btn.id === 'btn-edit-answer' || btn.id === 'btn-banner-edit-key') {
+      openCustomDialog(curId);
+      return;
+    }
     if (btn.id === 'btn-star-flag') {
       SoundSystem.playClick();
       if (flags.has(curId)) flags.delete(curId);
@@ -2464,7 +2859,7 @@
   $('btn-result-review-wrong').addEventListener('click', () => {
     const wrongIds = session.ids.filter(id => {
       const q = BY_ID.get(id);
-      return gradeable(q) && session.responses[id] && session.responses[id] !== q.key;
+      return gradeable(q) && session.responses[id] && session.responses[id] !== getEffectiveKey(q);
     });
     closeDialog('result-dialog');
     topic = 'all';
@@ -2479,6 +2874,307 @@
     confirmCallback = null;
     closeDialog('confirm-dialog');
     if (cb) cb();
+  });
+
+  /* ============================================================
+     12. XỬ LÝ MODAL TÙY CHỈNH ĐÁP ÁN CÁ NHÂN
+     ============================================================ */
+  function openCustomDialog(id) {
+    SoundSystem.playClick();
+    const q = BY_ID.get(id);
+    if (!q) return;
+    editingCustomId = id;
+
+    $('custom-modal-title').textContent = `Tùy chỉnh đáp án Câu ${q.id}`;
+    $('custom-modal-question').textContent = q.question;
+
+    const origKeyText = q.key || 'Chưa xác định';
+    const statusLabel = q.status === 'supported' ? 'Đáp án chuẩn đối chiếu' : (q.status === 'conditional' ? 'Lựa chọn có điều kiện' : 'Chưa có đáp án chính thức');
+    $('custom-modal-original-info').innerHTML = `
+      <div><strong>Đáp án gốc trong tài liệu/đề:</strong> <span style="font-weight:700;color:var(--primary)">${origKeyText}</span> (${statusLabel})</div>
+      <div style="margin-top:4px;line-height:1.5"><strong>Kết luận gốc:</strong> ${escapeHTML(q.answer)}</div>
+    `;
+
+    const currentCustom = customKeys[id];
+    selectedCustomOpt = currentCustom ? currentCustom.customKey : (q.key ? q.key.replace('*', '').trim() : 'A');
+    $('custom-modal-note').value = currentCustom ? (currentCustom.note || '') : '';
+
+    renderCustomModalOptions(q);
+    openDialog('custom-dialog');
+  }
+
+  function renderCustomModalOptions(q) {
+    $('custom-modal-options-grid').innerHTML = q.options.map(opt => {
+      const isSel = selectedCustomOpt === opt.letter;
+      return `
+        <button type="button" class="custom-opt-btn ${isSel ? 'selected' : ''}" data-custom-opt="${opt.letter}">
+          <div class="custom-opt-letter">${opt.letter}</div>
+          <div style="flex:1">${escapeHTML(opt.text)}</div>
+          ${isSel ? '<span style="color:var(--primary);font-weight:700;font-size:0.85rem">✓ Đang chọn</span>' : ''}
+        </button>
+      `;
+    }).join('');
+  }
+
+  $('custom-modal-options-grid').addEventListener('click', e => {
+    const btn = e.target.closest('button[data-custom-opt]');
+    if (!btn) return;
+    SoundSystem.playClick();
+    selectedCustomOpt = btn.dataset.customOpt;
+    const q = BY_ID.get(editingCustomId);
+    if (q) renderCustomModalOptions(q);
+  });
+
+  $('btn-custom-save').addEventListener('click', () => {
+    SoundSystem.playClick();
+    if (!editingCustomId || !selectedCustomOpt) return;
+    const note = $('custom-modal-note').value.trim();
+    customKeys[editingCustomId] = {
+      customKey: selectedCustomOpt,
+      note,
+      updatedAt: Date.now()
+    };
+    closeDialog('custom-dialog');
+    render();
+    persist();
+    if ($('stats-dialog').open) renderStatsDialog(statsActiveTab);
+    showToast(`Đã lưu đáp án tùy chỉnh cho Câu ${editingCustomId}!`);
+  });
+
+  $('btn-custom-restore').addEventListener('click', () => {
+    SoundSystem.playClick();
+    if (!editingCustomId) return;
+    delete customKeys[editingCustomId];
+    closeDialog('custom-dialog');
+    render();
+    persist();
+    if ($('stats-dialog').open) renderStatsDialog(statsActiveTab);
+    showToast(`Đã khôi phục đáp án gốc cho Câu ${editingCustomId}!`);
+  });
+
+  /* ============================================================
+     13. XỬ LÝ MODAL THỐNG KÊ & PHÂN TÍCH LỖI SAI
+     ============================================================ */
+  function jumpToQuestionFromStats(id) {
+    SoundSystem.playClick();
+    closeDialog('stats-dialog');
+    const existingIdx = session.ids.indexOf(id);
+    if (existingIdx !== -1) {
+      navigateTo(existingIdx);
+    } else {
+      topic = 'all';
+      subset = 'all';
+      session = createSession();
+      const newIdx = session.ids.indexOf(id);
+      navigateTo(newIdx !== -1 ? newIdx : 0);
+    }
+  }
+
+  function renderStatsDialog(tab = statsActiveTab) {
+    statsActiveTab = tab;
+
+    const totalAttempts = Object.values(questionStats).reduce((a, c) => a + (c.attempts || 0), 0);
+    const totalCorrect = Object.values(questionStats).reduce((a, c) => a + (c.correct || 0), 0);
+    const frequentWrongIds = getFrequentlyWrongIds();
+    const customizedIds = getCustomizedIds();
+    const accuracyPct = totalAttempts ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
+
+    // Render KPI Cards
+    $('stats-kpi-grid').innerHTML = `
+      <div class="stats-kpi-card">
+        <div class="stats-kpi-val">${totalAttempts}</div>
+        <div class="stats-kpi-label">Lượt làm bài</div>
+      </div>
+      <div class="stats-kpi-card" style="border-color:${frequentWrongIds.length ? 'var(--danger-border)' : 'var(--border)'}">
+        <div class="stats-kpi-val" style="color:var(--danger)">${frequentWrongIds.length}</div>
+        <div class="stats-kpi-label">Câu hay làm sai</div>
+      </div>
+      <div class="stats-kpi-card" style="border-color:${customizedIds.length ? '#c4b5fd' : 'var(--border)'}">
+        <div class="stats-kpi-val" style="color:#7c3aed">${customizedIds.length}</div>
+        <div class="stats-kpi-label">Câu đã sửa đáp án</div>
+      </div>
+      <div class="stats-kpi-card">
+        <div class="stats-kpi-val" style="color:${accuracyPct >= 80 ? 'var(--success)' : (accuracyPct < 50 ? 'var(--danger)' : 'var(--text)')}">${totalAttempts ? accuracyPct + '%' : '—'}</div>
+        <div class="stats-kpi-label">Tỷ lệ chính xác</div>
+      </div>
+    `;
+
+    // Cập nhật tab buttons
+    $('stats-tab-btn-wrong').classList.toggle('active', statsActiveTab === 'wrong');
+    $('stats-tab-btn-custom').classList.toggle('active', statsActiveTab === 'custom');
+    $('stats-count-wrong').textContent = frequentWrongIds.length;
+    $('stats-count-custom').textContent = customizedIds.length;
+
+    // Render content
+    const area = $('stats-content-area');
+    if (statsActiveTab === 'wrong') {
+      if (!frequentWrongIds.length) {
+        area.innerHTML = `
+          <div style="text-align:center;padding:36px 16px;color:var(--text-muted)">
+            <div style="font-size:2.2rem;margin-bottom:8px">🎉</div>
+            <strong style="font-size:1.05rem;color:var(--text);display:block;margin-bottom:6px">Bạn chưa có câu nào hay bị làm sai!</strong>
+            <span style="font-size:0.88rem;line-height:1.5;display:block">Hệ thống sẽ tự động lưu lại những câu bạn làm sai nhiều lần (từ 2 lần hoặc tỷ lệ sai cao) để bạn ôn tập riêng tại đây.</span>
+          </div>
+        `;
+      } else {
+        area.innerHTML = frequentWrongIds.map(id => {
+          const q = BY_ID.get(id);
+          const st = questionStats[id] || { attempts: 0, correct: 0, wrong: 0 };
+          const hasCustom = isCustomKeySet(id);
+          const effKey = getEffectiveKey(q);
+          const wrongRate = Math.round((st.wrong / st.attempts) * 100);
+
+          return `
+            <div class="stats-item-row">
+              <div style="flex:1;min-width:0">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;flex-wrap:wrap">
+                  <span style="font-weight:800;color:var(--primary)">Câu ${id}</span>
+                  <span class="meta-pill blue">${escapeHTML(q.topic)}</span>
+                  ${hasCustom ? '<span class="meta-pill purple">✏️ Đáp án tự chỉnh</span>' : ''}
+                </div>
+                <div class="stats-item-title">${escapeHTML(q.question)}</div>
+                <div class="stats-item-meta">
+                  <span>Làm sai: <strong style="color:var(--danger)">${st.wrong}/${st.attempts}</strong> lần (${wrongRate}%)</span>
+                  <span>Đúng: <strong style="color:var(--success)">${st.correct}</strong></span>
+                  <span>Đáp án đang tính: <strong>${effKey}</strong></span>
+                </div>
+              </div>
+              <div style="display:flex;gap:6px;align-items:center;flex-shrink:0">
+                <button class="small primary" data-stats-jump="${id}">Luyện ngay</button>
+                <button class="small plain" data-stats-edit="${id}" title="Sửa đáp án câu này">✏️ Sửa</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    } else {
+      // Tab custom
+      if (!customizedIds.length) {
+        area.innerHTML = `
+          <div style="text-align:center;padding:36px 16px;color:var(--text-muted)">
+            <div style="font-size:2.2rem;margin-bottom:8px">✏️</div>
+            <strong style="font-size:1.05rem;color:var(--text);display:block;margin-bottom:6px">Chưa có câu nào được tùy chỉnh đáp án cá nhân</strong>
+            <span style="font-size:0.88rem;line-height:1.5;display:block">Nếu bạn muốn thay đổi đáp án chấm điểm theo ý kiến giảng viên hoặc có góc nhìn khác, hãy bấm nút "Sửa đáp án" ở mỗi câu hỏi.</span>
+          </div>
+        `;
+      } else {
+        area.innerHTML = customizedIds.map(id => {
+          const q = BY_ID.get(id);
+          const c = customKeys[id];
+          return `
+            <div class="stats-item-row">
+              <div style="flex:1;min-width:0">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;flex-wrap:wrap">
+                  <span style="font-weight:800;color:var(--primary)">Câu ${id}</span>
+                  <span class="meta-pill purple">Đáp án của bạn: ${c.customKey}</span>
+                  <span class="meta-pill amber">Gốc trong đề: ${q.key}</span>
+                </div>
+                <div class="stats-item-title">${escapeHTML(q.question)}</div>
+                ${c.note ? `<div style="font-size:0.86rem;color:var(--text);margin-top:6px;padding:6px 10px;background:var(--surface);border-radius:var(--radius-sm);border:1px solid var(--border)">💬 Ghi chú: <em>${escapeHTML(c.note)}</em></div>` : ''}
+              </div>
+              <div style="display:flex;gap:6px;align-items:center;flex-shrink:0">
+                <button class="small primary" data-stats-jump="${id}">Xem câu</button>
+                <button class="small" data-stats-edit="${id}">Sửa lại</button>
+                <button class="small plain" style="color:var(--danger)" data-stats-restore="${id}" title="Khôi phục đáp án gốc">Khôi phục</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+  }
+
+  // Mở stats dialog
+  $('btn-open-stats').addEventListener('click', () => {
+    SoundSystem.playClick();
+    renderStatsDialog();
+    openDialog('stats-dialog');
+  });
+
+  $('btn-drawer-open-stats').addEventListener('click', () => {
+    SoundSystem.playClick();
+    closeDrawer();
+    renderStatsDialog();
+    openDialog('stats-dialog');
+  });
+
+  // Chuyển tab trong stats dialog
+  $('stats-tab-btn-wrong').addEventListener('click', () => {
+    SoundSystem.playClick();
+    renderStatsDialog('wrong');
+  });
+
+  $('stats-tab-btn-custom').addEventListener('click', () => {
+    SoundSystem.playClick();
+    renderStatsDialog('custom');
+  });
+
+  // Action buttons trong stats dialog
+  $('btn-stats-practice-wrong').addEventListener('click', () => {
+    SoundSystem.playClick();
+    const wrongIds = getFrequentlyWrongIds();
+    if (!wrongIds.length) {
+      showToast('Chưa có câu nào hay làm sai để ôn tập riêng!');
+      return;
+    }
+    closeDialog('stats-dialog');
+    topic = 'all';
+    subset = 'frequent-wrong';
+    session = createSession(wrongIds);
+    render();
+    persist();
+    showToast(`Bắt đầu luyện tập ${wrongIds.length} câu thường xuyên làm sai!`);
+  });
+
+  $('btn-stats-practice-custom').addEventListener('click', () => {
+    SoundSystem.playClick();
+    renderStatsDialog('custom');
+  });
+
+  $('btn-stats-reset').addEventListener('click', () => {
+    confirmAction(
+      'Xóa toàn bộ lịch sử thống kê?',
+      'Số lần làm đúng/sai của tất cả câu hỏi sẽ được đặt lại về 0. Các đáp án bạn tự tùy chỉnh vẫn được giữ nguyên vẹn.',
+      () => {
+        questionStats = {};
+        persist();
+        renderStatsDialog(statsActiveTab);
+        render();
+        showToast('Đã xóa dữ liệu thống kê!');
+      }
+    );
+  });
+
+  // Tương tác trong danh sách stats
+  $('stats-content-area').addEventListener('click', e => {
+    const jumpBtn = e.target.closest('[data-stats-jump]');
+    if (jumpBtn) {
+      jumpToQuestionFromStats(Number(jumpBtn.dataset.statsJump));
+      return;
+    }
+
+    const editBtn = e.target.closest('[data-stats-edit]');
+    if (editBtn) {
+      openCustomDialog(Number(editBtn.dataset.statsEdit));
+      return;
+    }
+
+    const restoreBtn = e.target.closest('[data-stats-restore]');
+    if (restoreBtn) {
+      const id = Number(restoreBtn.dataset.statsRestore);
+      confirmAction(
+        `Khôi phục đáp án gốc Câu ${id}?`,
+        'Đáp án tùy chỉnh và ghi chú cá nhân của câu này sẽ bị xóa, hệ thống sẽ sử dụng lại đáp án gốc trong tài liệu.',
+        () => {
+          delete customKeys[id];
+          render();
+          persist();
+          renderStatsDialog(statsActiveTab);
+          showToast(`Đã khôi phục đáp án gốc cho Câu ${id}!`);
+        }
+      );
+      return;
+    }
   });
 
   document.addEventListener('click', e => {

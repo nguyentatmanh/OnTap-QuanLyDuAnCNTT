@@ -58,7 +58,22 @@
   * 🔵 **Xanh dương**: Đã chọn đáp án.
 * **Lọc ôn tập có trọng tâm**: Lọc nhanh *Toàn bộ câu hỏi*, *Câu làm sai*, *Câu đã đánh dấu (Star)*, *Câu có điều kiện lập luận*.
 
-### 6. Phím tắt thao tác nhanh (Keyboard Shortcuts)
+### 6. Thống kê thông minh & Ôn tập riêng câu thường xuyên làm sai (Weakness Diagnostic)
+* **Ghi nhận lịch sử làm bài liên tục**: Tự động theo dõi số lần làm đúng, làm sai, tổng số lượt làm bài và tỷ lệ lỗi sai của từng câu hỏi qua các phiên học và bài thi thử.
+* **Tự động nhận diện câu hay sai (Frequently Wrong)**: Tự động gom nhóm các câu hỏi bạn làm sai nhiều lần (từ 2 lần trở lên hoặc tỷ lệ sai cao) và gắn nhãn cảnh báo `[🚨 Hay làm sai]` trực tiếp trên thẻ học và ma trận.
+* **Chế độ luyện tập có trọng tâm**: 
+  * Nút tác vụ **"⚡ Luyện tập riêng các câu thường xuyên sai"** giúp tạo ngay một phiên học tập trung chỉ gồm các câu bạn đang gặp khó khăn.
+  * Bảng điều khiển KPI phân tích chi tiết: Tổng lượt làm bài, số câu hay làm sai, số câu đã tùy chỉnh đáp án và tỷ lệ chính xác tổng thể.
+  * Hỗ trợ xóa lịch sử thống kê khi muốn bắt đầu lại chu kỳ ôn tập mới.
+
+### 7. Tùy chỉnh đáp án cá nhân & Ghi chú riêng cho từng câu (Custom Answers & Notes)
+* **Linh hoạt theo đáp án thực tế trên lớp**: Vì mỗi giảng viên hoặc trường đại học có thể có góc nhìn hoặc quy ước đáp án khác nhau, tính năng **"✏️ Sửa đáp án"** cho phép bạn tự chọn phương án A, B, C hoặc D làm đáp án chuẩn cho tài khoản của mình.
+* **Ghi chú cá nhân chuyên biệt**: Cho phép lưu lại lời dặn của thầy cô, lập luận riêng hoặc lưu ý cá nhân cho từng câu hỏi.
+* **Chấm điểm tự động theo đáp án cá nhân**: Hệ thống sẽ lập tức dùng đáp án tùy chỉnh của bạn để chấm điểm đúng/sai, phản hồi âm thanh và tính điểm thi thử.
+* **Minh bạch & An toàn**: Luôn hiển thị song song đáp án gốc của tài liệu để bạn đối chiếu, kèm nút **"Khôi phục gốc"** bất kỳ lúc nào chỉ bằng một click.
+* **Lưu trữ cục bộ bền vững (100% Client-Side)**: Toàn bộ thống kê và tùy chỉnh được lưu an toàn trong `localStorage` của trình duyệt, không yêu cầu tài khoản và không mất đi khi tải lại trang.
+
+### 8. Phím tắt thao tác nhanh (Keyboard Shortcuts)
 | Phím | Chức năng |
 | :--- | :--- |
 | `1`, `2`, `3`, `4` hoặc `A`, `B`, `C`, `D` | Chọn phương án tương ứng |
@@ -66,7 +81,7 @@
 | `→` (Mũi tên phải) | Chuyển sang câu tiếp theo |
 | `F` | Đánh dấu sao / Lưu câu hỏi quan trọng |
 | `R` | Làm lại câu hỏi hiện tại |
-| `M` | Bật / Tắt nhanh âm thanh |
+| `M` | Mở nhanh ma trận 65 câu hỏi |
 
 ---
 

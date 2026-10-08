@@ -16,11 +16,15 @@
 
 ## ✨ Điểm nổi bật & Tính năng chính
 
-### 1. Giao diện hiện đại & Trải nghiệm thị giác (Modern UI/UX)
-* **Phong cách Flashcard tập trung**: Hiển thị câu hỏi dạng thẻ lớn trung tâm với tỷ lệ chữ và khoảng cách tối ưu cho việc tập trung ghi nhớ sâu.
-* **Bộ font chữ cao cấp**: Tích hợp font **Plus Jakarta Sans** chuẩn quốc tế kết hợp **JetBrains Mono** cho các nhãn phím tắt, hiển thị sắc nét trên mọi độ phân giải.
+### 1. Giao diện hiện đại & Trải nghiệm thị giác đa nền tảng (Responsive Multi-Device UI/UX)
+* **Tối ưu hóa hiển thị 100% đa thiết bị**: Trải nghiệm trọn vẹn, không giật lag trên mọi kích thước màn hình từ điện thoại nhỏ (iPhone SE, Galaxy Fold), smartphone tiêu chuẩn (iPhone 13-16, Samsung Galaxy), máy tính bảng (iPad, Android Tablet) đến màn hình máy tính lớn.
+* **Thanh điều hướng công thái học một tay (One-Handed Floating Bottom Dock)**: Trên màn hình di động, thanh dock chuyển thành thanh điều hướng cố định mép dưới với nền kính mờ (frosted glass) kèm đổ bóng sâu. Người dùng có thể lướt ngón tay cái bấm "Câu tiếp ▶", "◀ Câu trước" hoặc chạm vào số câu để mở ma trận ngay lập tức mà không phải vuộn cuộn trang lên xuống.
+* **Tương thích Safe Area Insets (`viewport-fit=cover`)**: Tự động căn chỉnh khoảng đệm viền trên và dưới cho các dòng máy có tai thỏ (Notch), Dynamic Island và thanh vuốt Home của iOS/Android.
+* **Trải nghiệm xúc giác chuyên biệt cho màn hình cảm ứng**: Loại bỏ hiện tượng dính hiệu ứng chuột ("sticky hover"), bổ sung hiệu ứng nảy tức thì (`scale: 0.982`), tự động ẩn các phím tắt bàn phím vật lý `[A], [B]` khi dùng điện thoại để tối đa hóa diện tích đọc câu chữ.
+* **Chống zoom ngoài ý muốn trên iOS Safari**: Chuẩn hóa cỡ chữ các trường nhập liệu đạt chuẩn 16px, ngăn chặn trình duyệt Safari tự phóng to khung nhìn khi người dùng nhập ghi chú cá nhân.
+* **Hỗ trợ chế độ xoay ngang (Landscape Mode)**: Bố cục tự động co giãn thông minh khi xoay ngang điện thoại để người dùng học tập thoải mái.
+* **Bộ font chữ cao cấp**: Tích hợp font **Plus Jakarta Sans** chuẩn quốc tế kết hợp **JetBrains Mono** cho các nhãn số, hiển thị sắc nét trên mọi độ phân giải.
 * **Hiệu ứng Mesh Gradient & Đổ bóng đa tầng**: Nền canvas kết hợp ánh sáng vệt mờ dịu mắt, hiệu ứng quầng sáng chuột mượt mà khi di chuyển qua các thẻ.
-* **Thẻ phương án xúc giác (Tactile Keycap)**: Nút bấm A, B, C, D dạng phím cơ nổi khối kèm gợi ý phím tắt `[A]`, `[B]`, `[C]`, `[D]`.
 * **Chuyển đổi giao diện linh hoạt**:
   * Chế độ **Sáng (Light)** / **Tối (Midnight Dark)** dịu mắt khi học đêm.
   * Tùy chọn **Bo mềm (Soft Radius)** hoặc **Góc phẳng (Sharp Radius)** theo sở thích.

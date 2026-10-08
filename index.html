@@ -2,7 +2,7 @@
 <html lang="vi" data-theme="light" data-radius="soft">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Ôn tập 65 câu trắc nghiệm Quản lý dự án CNTT theo phong cách thẻ lớn toàn màn hình Quizlet.">
   <meta name="color-scheme" content="light dark">
   <title>QLDA · Học trắc nghiệm 65 câu</title>
@@ -20,6 +20,12 @@
        HỆ THỐNG GIAO DIỆN HIỆN ĐẠI & SANG TRỌNG (MODERN SAAS / QUIZLET)
        ============================================================ */
     :root {
+      /* Safe area insets cho iPhone có tai thỏ / Dynamic Island & Android */
+      --sat: env(safe-area-inset-top, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+
       --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
@@ -1337,30 +1343,466 @@
       z-index: 120;
     }
 
-    @media (max-width: 768px) {
-      .study-card {
-        padding: 24px 20px;
-        border-radius: var(--radius-lg);
+    /* ============================================================
+       TỐI ƯU HÓA RESPONSIVE & TRẢI NGHIỆM ĐA NỀN TẢNG (CROSS-PLATFORM)
+       ============================================================ */
+    
+    /* Thiết bị cảm ứng không có chuột (Touch / Mobile / Tablet) */
+    @media (hover: none) and (pointer: coarse) {
+      button:hover:not(:disabled), .button-like:hover,
+      .study-option-card:hover:not(:disabled),
+      .chip-btn:hover, .q-matrix-btn:hover {
+        transform: none !important;
       }
-      .study-question-title {
-        font-size: 1.15rem;
+      button:active:not(:disabled), .button-like:active,
+      .study-option-card:active:not(:disabled),
+      .chip-btn:active, .q-matrix-btn:active {
+        transform: scale(0.982) !important;
       }
-      .study-option-card {
-        padding: 12px 14px;
-        font-size: 0.95rem;
+      .opt-shortcut-hint, .shortcut-tip {
+        display: none !important;
       }
+    }
+
+    /* Màn hình Tablet & Laptop nhỏ (<= 860px) */
+    @media (max-width: 860px) {
       .top-inner {
-        padding: 10px 14px;
+        padding: 10px 16px;
       }
       .study-container {
-        padding: 0 14px;
+        padding: 0 16px;
+        margin: 16px auto 26px;
+      }
+      .study-card {
+        padding: 28px 24px;
+        border-radius: var(--radius-xl);
+      }
+      .palette-drawer {
+        width: min(390px, 88vw);
+      }
+      .bottom-dock {
+        padding: 0 16px;
+      }
+    }
+
+    /* Màn hình Di động tiêu chuẩn (<= 720px) */
+    @media (max-width: 720px) {
+      /* Header siêu gọn */
+      .topbar {
+        padding-top: var(--sat);
+      }
+      .top-inner {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+      .brand {
+        gap: 8px;
+      }
+      .brand-logo {
+        width: 32px;
+        height: 32px;
+        font-size: 1.05rem;
+        border-radius: var(--radius-xs);
+      }
+      .brand-title {
+        font-size: 0.94rem;
+        letter-spacing: -0.02em;
+      }
+      .brand-subtitle {
+        display: none;
+      }
+      .top-actions {
+        gap: 4px;
+      }
+      .top-actions button {
+        padding: 4px 8px;
+        min-height: 32px;
+        font-size: 0.78rem;
+      }
+      #header-counter-label {
+        font-size: 0.8rem;
+      }
+
+      /* Thanh dock cố định mép dưới - Trải nghiệm ngón cái 1 tay tiện lợi */
+      .study-container {
+        padding: 0 12px;
+        margin: 12px auto 0;
+        /* Khoảng đệm đáy để nội dung thẻ học cuộn hết không bao giờ bị dock che */
+        padding-bottom: calc(82px + var(--sab));
+      }
+
+      .bottom-dock {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 85;
+        margin: 0;
+        max-width: 100%;
+        padding: 8px 12px max(10px, calc(8px + var(--sab)));
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -4px 22px rgba(0, 0, 0, 0.08);
+        gap: 8px;
+        flex-wrap: nowrap;
+      }
+      [data-theme="dark"] .bottom-dock {
+        background: rgba(17, 24, 39, 0.94);
+        box-shadow: 0 -4px 22px rgba(0, 0, 0, 0.4);
+      }
+
+      .dock-actions-left {
+        flex: 1;
+        gap: 8px;
+        display: flex;
+      }
+      .nav-dock-btn {
+        min-height: 42px;
+        padding: 8px 10px;
+        font-size: 0.88rem;
+        font-weight: 750;
+        flex: 1;
+        justify-content: center;
+      }
+      #btn-next-dock {
+        flex: 1.25;
+      }
+      .dock-center-indicator {
+        padding: 4px 10px;
+        font-size: 0.84rem;
+        min-height: 40px;
+        cursor: pointer;
+        user-select: none;
+      }
+      .dock-actions-right {
+        display: none;
+      }
+
+      /* Subbar xếp gọn */
+      .study-top-subbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+      .study-filter-chips {
+        overflow-x: auto;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .study-filter-chips::-webkit-scrollbar {
+        display: none;
+      }
+      .chip-btn {
+        flex-shrink: 0;
+        min-height: 32px;
+        padding: 3px 12px;
+        font-size: 0.82rem;
+      }
+      .study-top-subbar > div:last-child {
+        display: flex;
+        width: 100%;
+        gap: 6px;
+      }
+      .segmented-group {
+        flex: 1;
+        display: flex;
+      }
+      .segmented-group button {
+        flex: 1;
+        padding: 5px 6px;
+        font-size: 0.78rem;
+        text-align: center;
+        justify-content: center;
+      }
+
+      /* Thẻ học câu hỏi */
+      .study-card {
+        padding: 18px 14px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+      }
+      .card-meta-line {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+      }
+      .meta-tags {
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+      .meta-qnum {
+        font-size: 0.84rem;
+        padding: 3px 10px;
+      }
+      .meta-pill {
+        font-size: 0.74rem;
+        padding: 2px 8px;
+      }
+      .meta-page-hint {
+        font-size: 0.74rem;
+        width: 100%;
+        margin: 2px 0 0 2px;
+      }
+      .card-meta-line > div:last-child {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+      }
+      #btn-edit-answer, #btn-star-flag {
+        flex: 1;
+        justify-content: center;
+        min-height: 36px;
+        font-size: 0.82rem;
+      }
+
+      .study-question-title {
+        font-size: 1.12rem;
+        line-height: 1.54;
+        margin-bottom: 18px;
+        word-break: break-word;
+      }
+      .study-notice-box {
+        padding: 12px 14px;
+        font-size: 0.86rem;
+        margin-bottom: 18px;
+      }
+
+      /* Phương án lựa chọn */
+      .study-options-list {
+        gap: 9px;
+        margin-bottom: 20px;
+      }
+      .study-option-card {
+        min-height: 52px;
+        padding: 11px 13px;
+        gap: 11px;
+        border-radius: var(--radius-sm);
+      }
+      .opt-badge {
+        width: 32px;
+        height: 32px;
+        font-size: 0.88rem;
+        border-radius: var(--radius-xs);
+      }
+      .opt-text-wrap {
+        font-size: 0.94rem;
+        line-height: 1.45;
+      }
+      .opt-indicator-tag {
+        font-size: 0.72rem;
+        padding: 3px 7px;
+      }
+      .opt-shortcut-hint {
+        display: none !important;
+      }
+
+      /* Giải thích & Nguồn */
+      .explanation-verdict-banner {
+        padding: 12px 14px;
+        font-size: 0.88rem;
+        gap: 8px;
+      }
+      .custom-answer-banner {
+        padding: 12px 14px;
+        font-size: 0.86rem;
+      }
+      .study-tab-card {
+        padding: 14px 15px;
+        margin-bottom: 10px;
+        border-radius: var(--radius-sm);
+      }
+      .study-tab-card h3 {
+        font-size: 0.84rem;
+      }
+      .study-tab-card p {
+        font-size: 0.91rem;
+        line-height: 1.58;
+      }
+      .study-sources-card {
+        padding: 14px 15px;
+      }
+      .source-row button, .source-row a {
+        flex: 1 1 auto;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Drawer ma trận */
+      .palette-drawer {
+        width: min(350px, 92vw);
+      }
+      .drawer-header {
+        padding: 14px 18px;
+      }
+      .drawer-body {
+        padding: 14px 18px;
+        padding-bottom: max(20px, calc(16px + var(--sab)));
+      }
+      .question-matrix-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+      }
+      .q-matrix-btn {
+        min-height: 42px;
+        font-size: 0.9rem;
+      }
+
+      /* Dialogs trên mobile */
+      dialog {
+        border-radius: var(--radius-lg) !important;
+      }
+      dialog.stats-dialog {
+        padding: 18px 14px;
+        width: calc(100% - 20px);
+        max-height: 90vh;
       }
       #stats-kpi-grid {
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+      }
+      .stats-kpi-card {
+        padding: 10px 8px;
+      }
+      .stats-kpi-val {
+        font-size: 1.25rem;
+      }
+      .stats-kpi-label {
+        font-size: 0.7rem;
+      }
+      .stats-dialog div[style*="background:var(--surface-raised)"] {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .stats-dialog div[style*="background:var(--surface-raised)"] button {
+        width: 100%;
+        justify-content: center;
+        min-height: 38px;
+        margin: 0 !important;
       }
       .stats-item-row {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px;
+      }
+      .stats-item-row > div:last-child {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      .stats-item-row > div:last-child button {
+        flex: 1;
+        justify-content: center;
+      }
+
+      dialog.custom-dialog {
+        padding: 18px 14px;
+        width: calc(100% - 20px);
+      }
+      .custom-opt-btn {
+        padding: 10px 12px;
+        min-height: 46px;
+      }
+      .custom-note-textarea {
+        font-size: 16px !important; /* Chống iOS Safari tự zoom */
+      }
+
+      dialog.pdf-dialog {
+        width: 96vw;
+        height: 92vh;
+        padding: 12px;
+      }
+      .pdf-dialog-header h3 {
+        font-size: 0.95rem;
+      }
+
+      dialog#exam-dialog, dialog#result-dialog {
+        width: calc(100% - 20px);
+        padding: 20px 16px !important;
+      }
+      dialog#exam-dialog div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+      }
+      dialog#exam-dialog select {
+        font-size: 16px; /* Chống iOS Safari zoom */
+        min-height: 40px;
+      }
+    }
+
+    /* Màn hình Di động hẹp (<= 400px - iPhone SE, Galaxy Z Flip) */
+    @media (max-width: 400px) {
+      .top-inner {
+        padding: 6px 10px;
+      }
+      #radius-label {
+        display: none;
+      }
+      #stats-header-label {
+        display: none;
+      }
+      .brand-title {
+        font-size: 0.9rem;
+      }
+      .study-container {
+        padding: 0 8px;
+        padding-bottom: calc(82px + var(--sab));
+      }
+      .study-card {
+        padding: 15px 12px;
+      }
+      .question-matrix-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+      }
+      .q-matrix-btn {
+        min-height: 40px;
+        font-size: 0.86rem;
+      }
+      .dock-center-indicator {
+        display: none;
+      }
+      .nav-dock-btn {
+        font-size: 0.86rem;
+      }
+    }
+
+    /* Hỗ trợ Xoay ngang màn hình (Landscape Phone: height <= 520px) */
+    @media (max-height: 520px) and (orientation: landscape) {
+      .topbar {
+        position: relative;
+      }
+      .top-inner {
+        padding: 6px 14px;
+      }
+      .study-container {
+        margin: 8px auto 0;
+        padding-bottom: calc(70px + var(--sab));
+      }
+      .study-card {
+        padding: 16px 20px;
+      }
+      .study-question-title {
+        font-size: 1.08rem;
+        margin-bottom: 14px;
+      }
+      .study-option-card {
+        min-height: 46px;
+        padding: 8px 12px;
+      }
+      .bottom-dock {
+        padding: 6px 14px max(8px, calc(6px + var(--sab)));
+      }
+      dialog {
+        max-height: 94vh !important;
+        overflow-y: auto;
       }
     }
   </style>
@@ -2426,7 +2868,7 @@
 
       ${isRevealed ? `
         <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
-          <span style="font-size:0.86rem;color:var(--text-muted)">Phím tắt: 1-4 hoặc A-D chọn đáp án; ←/→ chuyển câu.</span>
+          <span class="shortcut-tip" style="font-size:0.86rem;color:var(--text-muted)">Phím tắt: 1-4 hoặc A-D chọn đáp án; ←/→ chuyển câu.</span>
           ${chosen ? `<button id="btn-retry-q" class="small">🔄 Làm lại câu này</button>` : ''}
         </div>
       ` : ''}
@@ -2719,6 +3161,9 @@
 
   // Drawer events
   $('btn-open-drawer').addEventListener('click', openDrawer);
+  if ($('dock-counter-text') && $('dock-counter-text').parentElement) {
+    $('dock-counter-text').parentElement.addEventListener('click', openDrawer);
+  }
   $('btn-close-drawer').addEventListener('click', closeDrawer);
   $('drawer-overlay').addEventListener('click', closeDrawer);
 

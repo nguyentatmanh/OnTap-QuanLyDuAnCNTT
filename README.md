@@ -77,14 +77,24 @@
 * **Minh bạch & An toàn**: Luôn hiển thị song song đáp án gốc của tài liệu để bạn đối chiếu, kèm nút **"Khôi phục gốc"** bất kỳ lúc nào chỉ bằng một click.
 * **Lưu trữ cục bộ bền vững (100% Client-Side)**: Toàn bộ thống kê và tùy chỉnh được lưu an toàn trong `localStorage` của trình duyệt, không yêu cầu tài khoản và không mất đi khi tải lại trang.
 
-### 8. Phím tắt thao tác nhanh (Keyboard Shortcuts)
+### 8. Tráo đổi ngẫu nhiên vị trí đáp án (Chống học vẹt · Option Shuffling)
+* **Thuật toán hoán vị Fisher-Yates**: Khi kích hoạt tính năng **"🔀 Tráo đáp án"**, vị trí các phương án A, B, C, D của từng câu hỏi được xáo trộn ngẫu nhiên.
+* **Xóa bỏ thói quen nhớ vẹt vị trí**: Người học buộc phải đọc kỹ nội dung câu chữ và tư duy bản chất kiến thức thay vì ghi nhớ thụ động theo thứ tự các chữ cái (như "câu này là B", "câu kia là C").
+* **Ánh xạ 2 chiều thông minh (Display Index & Original Letter)**:
+  * Phím tắt bàn phím `1 - 4` hoặc `A - D` luôn bám sát vị trí hiển thị trên màn hình.
+  * Logic chấm điểm, thống kê đúng/sai, đáp án hiệu dụng và đáp án tùy chỉnh cá nhân hoàn toàn bảo toàn 100%, không bao giờ bị lệch.
+  * Khi xem giải thích, hệ thống tự động hiển thị chú thích nhỏ `[Gốc: X]` giúp người học dễ dàng đối chiếu lại đề bài gốc trong PDF/Slide.
+* **Làm lại câu hỏi là tráo mới (`🔄 Làm lại`)**: Mỗi khi bấm làm lại câu hoặc nhấn phím `R`, thứ tự các phương án được xáo trộn ngẫu nhiên một lần nữa.
+* **Tích hợp linh hoạt**: Có thể bật/tắt nhanh bằng nút toggle trên thanh điều khiển hoặc tùy chọn checkbox khi bắt đầu bài thi thử.
+
+### 9. Phím tắt thao tác nhanh (Keyboard Shortcuts)
 | Phím | Chức năng |
 | :--- | :--- |
-| `1`, `2`, `3`, `4` hoặc `A`, `B`, `C`, `D` | Chọn phương án tương ứng |
+| `1`, `2`, `3`, `4` hoặc `A`, `B`, `C`, `D` | Chọn phương án theo vị trí hiển thị tương ứng |
 | `←` (Mũi tên trái) | Quay lại câu trước |
 | `→` (Mũi tên phải) | Chuyển sang câu tiếp theo |
 | `F` | Đánh dấu sao / Lưu câu hỏi quan trọng |
-| `R` | Làm lại câu hỏi hiện tại |
+| `R` | Làm lại câu hỏi hiện tại (kèm tráo mới nếu đang bật tráo đáp án) |
 | `M` | Mở nhanh ma trận 65 câu hỏi |
 
 ---

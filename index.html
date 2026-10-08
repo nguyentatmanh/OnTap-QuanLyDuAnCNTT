@@ -446,6 +446,13 @@
       box-shadow: 0 3px 12px var(--primary-glow);
     }
 
+    #btn-shuffle-toggle.active {
+      background: linear-gradient(135deg, #7c3aed, #6366f1) !important;
+      color: #ffffff !important;
+      border-color: #7c3aed !important;
+      box-shadow: 0 3px 12px rgba(124, 58, 237, 0.3) !important;
+    }
+
     .chip-btn .chip-count {
       font-size: 0.76rem;
       font-weight: 700;
@@ -1876,6 +1883,11 @@
           <button id="btn-reveal-instant" class="active" title="Chọn xong hiện ngay đáp án và giải thích">✓ Hiện ngay</button>
           <button id="btn-reveal-submit" title="Nộp bài hoặc bấm chấm điểm mới hiện đáp án">📋 Nộp mới hiện</button>
         </div>
+
+        <!-- Tráo đổi vị trí đáp án (Chống học vẹt) -->
+        <button id="btn-shuffle-toggle" class="chip-btn" title="Xáo trộn ngẫu nhiên thứ tự các phương án để rèn luyện phản xạ, chống học vẹt">
+          <span id="shuffle-icon">🔀</span> <span id="shuffle-label">Tráo đáp án: Tắt</span>
+        </button>
       </div>
     </div>
 
@@ -2003,6 +2015,11 @@
           <option value="60">60 phút</option>
         </select>
       </div>
+    </div>
+    <div style="margin-bottom:12px">
+      <label style="display:flex;align-items:center;gap:8px;font-size:0.9rem;cursor:pointer">
+        <input type="checkbox" id="exam-shuffle-options" checked> 🔀 Xáo trộn ngẫu nhiên vị trí các phương án (Chống học vẹt)
+      </label>
     </div>
     <div style="margin-bottom:16px">
       <label style="display:flex;align-items:center;gap:8px;font-size:0.9rem;cursor:pointer">
@@ -2420,7 +2437,8 @@
       responses: {},
       revealed: [],
       finished: false,
-      deadline: null
+      deadline: null,
+      shuffledOptions: {} // Lưu thứ tự hoán vị ngẫu nhiên cho từng câu trong phiên
     };
   }
 
@@ -2428,6 +2446,7 @@
   let subset = 'all';
   let revealMode = 'instant'; // 'instant' | 'submit'
   let radiusMode = 'soft'; // 'soft' | 'sharp'
+  let shuffleOptionsEnabled = false; // Tráo đổi vị trí đáp án ngẫu nhiên chống học vẹt
   let session = createSession();
   let flags = new Set();
   let wrongSet = new Set();
@@ -2447,6 +2466,7 @@
       if (saved.theme === 'dark' || saved.theme === 'light') theme = saved.theme;
       if (saved.radiusMode === 'soft' || saved.radiusMode === 'sharp') radiusMode = saved.radiusMode;
       if (saved.revealMode === 'instant' || saved.revealMode === 'submit') revealMode = saved.revealMode;
+      if (typeof saved.shuffleOptionsEnabled === 'boolean') shuffleOptionsEnabled = saved.shuffleOptionsEnabled;
       if (typeof saved.soundEnabled === 'boolean') SoundSystem.setEnabled(saved.soundEnabled);
       if (Object.hasOwn(TOPICS, saved.topic)) topic = saved.topic;
       if (['all', 'wrong', 'frequent-wrong', 'customized', 'flagged', 'reading'].includes(saved.subset)) subset = saved.subset;
@@ -2467,7 +2487,8 @@
           responses: s.responses || {},
           revealed: Array.isArray(s.revealed) ? s.revealed : [],
           finished: !!s.finished,
-          deadline: s.mode === 'exam' && Number.isFinite(s.deadline) ? s.deadline : null
+          deadline: s.mode === 'exam' && Number.isFinite(s.deadline) ? s.deadline : null,
+          shuffledOptions: (s && typeof s.shuffledOptions === 'object' && s.shuffledOptions) ? s.shuffledOptions : {}
         };
         if (session.mode === 'exam' && !session.finished && !session.deadline) {
           session = createSession();
@@ -2488,6 +2509,7 @@
         customKeys,
         theme,
         radiusMode,
+        shuffleOptionsEnabled,
         topic,
         subset,
         revealMode,
@@ -2525,8 +2547,53 @@
   }
 
   /* ============================================================
-     4. LỌC CÂU HỎI & CẬP NHẬT GIAO DIỆN CHỦ ĐỀ
+     4. LỌC CÂU HỎI & CẬP NHẬT GIAO DIỆN CHỦ ĐỀ & TRÁO ĐÁP ÁN
      ============================================================ */
+  function getDisplayOptions(q) {
+    if (!q || !Array.isArray(q.options)) return [];
+    if (!shuffleOptionsEnabled) {
+      return q.options.map((opt, idx) => ({
+        displayLetter: 'ABCD'[idx],
+        origLetter: opt.letter,
+        text: opt.text
+      }));
+    }
+
+    if (!session.shuffledOptions) {
+      session.shuffledOptions = {};
+    }
+
+    if (!session.shuffledOptions[q.id]) {
+      const indices = q.options.map((_, i) => i);
+      for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]];
+      }
+      session.shuffledOptions[q.id] = indices;
+    }
+
+    const indices = session.shuffledOptions[q.id];
+    return indices.map((origIdx, displayIdx) => {
+      const origOpt = q.options[origIdx];
+      return {
+        displayLetter: 'ABCD'[displayIdx],
+        origLetter: origOpt.letter,
+        text: origOpt.text
+      };
+    });
+  }
+
+  function chooseOptionByDisplayIndex(idx) {
+    const id = session.ids[session.index];
+    if (!id) return;
+    const q = BY_ID.get(id);
+    if (!q) return;
+    const displayOptions = getDisplayOptions(q);
+    if (idx >= 0 && idx < displayOptions.length) {
+      chooseOption(displayOptions[idx].origLetter);
+    }
+  }
+
   function getFilteredIds() {
     return BANK
       .filter(item => topic === 'all' || item.topic === topic)
@@ -2557,6 +2624,14 @@
     // Reveal buttons
     $('btn-reveal-instant').classList.toggle('active', revealMode === 'instant');
     $('btn-reveal-submit').classList.toggle('active', revealMode === 'submit');
+
+    // Nút tráo đổi đáp án (Shuffle)
+    const shuffleBtn = $('btn-shuffle-toggle');
+    if (shuffleBtn) {
+      shuffleBtn.classList.toggle('active', shuffleOptionsEnabled);
+      const label = $('shuffle-label');
+      if (label) label.textContent = shuffleOptionsEnabled ? 'Tráo đáp án: Bật' : 'Tráo đáp án: Tắt';
+    }
 
     // Radius button
     const isSoft = radiusMode === 'soft';
@@ -2797,36 +2872,43 @@
       </div>
     ` : '';
 
-    const optionsHTML = q.options.map(opt => {
+    const displayOptions = getDisplayOptions(q);
+    const chosenDisplayOpt = displayOptions.find(o => o.origLetter === chosen);
+
+    const optionsHTML = displayOptions.map(opt => {
       let cls = '';
       let tagText = '';
 
-      if (chosen === opt.letter) {
+      if (chosen === opt.origLetter) {
         cls += ' selected';
       }
 
       if (isRevealed) {
-        if (isSupported && opt.letter === effKey) {
+        if (isSupported && opt.origLetter === effKey) {
           cls += ' correct';
           tagText = hasCustom ? 'Đáp án của bạn' : 'Đáp án đúng';
-        } else if (isSupported && chosen === opt.letter) {
+        } else if (isSupported && chosen === opt.origLetter) {
           cls += ' wrong';
           tagText = 'Bạn đã chọn';
-        } else if (!isSupported && q.key.startsWith(opt.letter)) {
+        } else if (!isSupported && q.key.startsWith(opt.origLetter)) {
           cls += ' suggested';
           tagText = 'Đề xuất';
         }
-      } else if (chosen === opt.letter) {
+      } else if (chosen === opt.origLetter) {
         tagText = 'Đã chọn';
       }
 
+      const origNotice = (shuffleOptionsEnabled && isRevealed && opt.displayLetter !== opt.origLetter)
+        ? `<span style="font-size:0.75rem;opacity:0.75;font-weight:600;margin-left:4px">[Gốc: ${opt.origLetter}]</span>`
+        : '';
+
       return `
-        <button class="study-option-card ${cls}" data-option="${opt.letter}" ${isLocked ? 'disabled' : ''}>
-          <div class="opt-badge">${opt.letter}</div>
-          <div class="opt-text-wrap">${escapeHTML(opt.text)}</div>
+        <button class="study-option-card ${cls}" data-option="${opt.origLetter}" ${isLocked ? 'disabled' : ''}>
+          <div class="opt-badge">${opt.displayLetter}</div>
+          <div class="opt-text-wrap">${escapeHTML(opt.text)} ${origNotice}</div>
           <div class="opt-end-wrap">
             ${tagText ? `<span class="opt-indicator-tag">${tagText}</span>` : ''}
-            <span class="opt-shortcut-hint">[${opt.letter}]</span>
+            <span class="opt-shortcut-hint">[${opt.displayLetter}]</span>
           </div>
         </button>
       `;
@@ -2838,6 +2920,7 @@
           <span class="meta-qnum">Câu ${q.id} <span style="opacity:0.6;font-weight:600">/ 65</span></span>
           <span class="meta-pill blue">${escapeHTML(q.topic)}</span>
           <span class="meta-pill ${isSupported ? 'green' : 'amber'}">${statusText}</span>
+          ${shuffleOptionsEnabled ? '<span class="meta-pill purple" title="Vị trí A, B, C, D đang được tráo ngẫu nhiên để chống học vẹt">🔀 Đã tráo đáp án</span>' : ''}
           ${hasCustom ? `<span class="meta-pill purple" title="Bạn đã đổi đáp án câu này">✏️ Đáp án tự chỉnh: ${customKeys[q.id].customKey}</span>` : ''}
           ${isFreq ? `<span class="meta-pill red" title="Bạn hay làm sai câu này">🚨 Hay sai (${questionStats[q.id].wrong} lần)</span>` : ''}
           <span class="meta-page-hint">Trang PDF ${q.examPage}/14</span>
@@ -2861,7 +2944,7 @@
 
       ${chosen && !isRevealed && revealMode === 'submit' ? `
         <div class="pending-submit-info">
-          <span>Đã ghi nhận phương án <strong>${chosen}</strong>.</span>
+          <span>Đã ghi nhận phương án <strong>${chosenDisplayOpt ? chosenDisplayOpt.displayLetter : chosen}</strong>${shuffleOptionsEnabled && chosenDisplayOpt && chosenDisplayOpt.displayLetter !== chosen ? ` (Gốc: ${chosen})` : ''}.</span>
           <button id="btn-reveal-now" class="small primary">✓ Chấm điểm câu này ngay</button>
         </div>
       ` : ''}
@@ -2951,6 +3034,9 @@
     SoundSystem.playClick();
     delete session.responses[id];
     session.revealed = session.revealed.filter(x => x !== id);
+    if (session.shuffledOptions) {
+      delete session.shuffledOptions[id];
+    }
     render();
     persist();
   }
@@ -3032,11 +3118,17 @@
     const total = countVal === 'all' ? pool.length : Math.min(Number(countVal), pool.length);
     const selectedIds = shuffle(pool).slice(0, total);
 
+    const examShuffleCb = $('exam-shuffle-options');
+    if (examShuffleCb) {
+      shuffleOptionsEnabled = examShuffleCb.checked;
+    }
+
     subset = 'all';
     session = {
       ...createSession(selectedIds),
       mode: 'exam',
-      deadline: Date.now() + Number($('exam-duration').value) * 60 * 1000
+      deadline: Date.now() + Number($('exam-duration').value) * 60 * 1000,
+      shuffledOptions: {}
     };
 
     closeDialog('exam-dialog');
@@ -3234,6 +3326,20 @@
     persist();
     showToast('Đã đổi: Nộp bài / Chấm điểm mới hiện đáp án');
   });
+
+  // Bật/tắt tráo đổi đáp án ngẫu nhiên (Chống học vẹt)
+  const btnShuffle = $('btn-shuffle-toggle');
+  if (btnShuffle) {
+    btnShuffle.addEventListener('click', () => {
+      SoundSystem.playClick();
+      shuffleOptionsEnabled = !shuffleOptionsEnabled;
+      session.shuffledOptions = {};
+      updateHeaderAndChips();
+      renderStudyCard();
+      persist();
+      showToast(shuffleOptionsEnabled ? '🔀 Đã BẬT tráo đổi đáp án ngẫu nhiên' : 'Đã TẮT tráo đổi đáp án (giữ thứ tự gốc)');
+    });
+  }
 
   // Tùy chọn Bo góc (Bo mềm mại vs Vuông phẳng)
   $('radius-toggle').addEventListener('click', () => {
@@ -3646,8 +3752,11 @@
     }
     if (e.key === 'ArrowLeft') navigateTo(session.index - 1);
     if (e.key === 'ArrowRight') navigateTo(session.index + 1);
-    if (/^[1-4]$/.test(e.key)) chooseOption('ABCD'[Number(e.key) - 1]);
-    if (/^[abcd]$/i.test(e.key)) chooseOption(e.key.toUpperCase());
+    if (/^[1-4]$/.test(e.key)) chooseOptionByDisplayIndex(Number(e.key) - 1);
+    if (/^[abcd]$/i.test(e.key)) {
+      const keyIdx = 'abcd'.indexOf(e.key.toLowerCase());
+      chooseOptionByDisplayIndex(keyIdx);
+    }
     if (e.key.toLowerCase() === 'f') {
       const curId = session.ids[session.index];
       if (flags.has(curId)) flags.delete(curId);
